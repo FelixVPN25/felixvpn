@@ -116,6 +116,16 @@
             "ProxyPort": "443",
             "Info": "Ssl"         
         },
+        {
+            "Name": "MOVISTAR WHATSAPP",
+            "FLAG": "ic_oi",
+            "Payload": "",
+            "SNI": "cdn.whatsapp.net",
+            "TlsIP": "",
+            "ProxyIP": "193.106.248.183",
+            "ProxyPort": "443",
+            "Info": "Ssl"         
+        },
        {
             "Name": "DIGICEL 150MG",
             "FLAG": "down",
