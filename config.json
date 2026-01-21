@@ -1,6 +1,6 @@
 {
    "Version": "1.0.2",
-    "ReleaseNotes": "Aplica esta actualizacion",
+    "ReleaseNotes": "HAY UNA NUEVA ACTUALIZACION😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
     "EmailFeedback": "",
@@ -105,16 +105,6 @@
             "ProxyIP": "193.106.248.183",
             "ProxyPort": "80",
             "Info": "Proxy"                  
-        },
-        {
-            "Name": "MOVISTAR WHATSAPP",
-            "FLAG": "ic_oi",
-            "Payload": "",
-            "SNI": "cdn.whatsapp.net",
-            "TlsIP": "",
-            "ProxyIP": "193.106.248.183",
-            "ProxyPort": "443",
-            "Info": "Ssl"         
         },
         {
             "Name": "MOVISTAR WHATSAPP",
