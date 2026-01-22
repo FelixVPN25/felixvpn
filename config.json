@@ -1,6 +1,6 @@
 {
-   "Version": "1.0.2",
-    "ReleaseNotes": "HAY UNA NUEVA ACTUALIZACION😎",
+   "Version": "1.0.3",
+    "ReleaseNotes": "Nueva actualizacion, se agrego optimización, estadistica, más RAM y CPU, nuevos metodos de conexion, límiter revision 22/01/2026",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
     "EmailFeedback": "",
@@ -17,8 +17,8 @@
             "Name": "EL SALVADOR",
             "TYPE": "PREMIUM",
             "FLAG": "br.png",
-            "ServerIP": "193.106.248.183",
-            "CheckUser": "",
+            "ServerIP": "193.106.248.226",
+            "CheckUser": "http://193.106.248.226:5454/checkUser",
             "ServerPort": "22",
             "SSLPort": "443",
             "USER": "",
@@ -27,9 +27,9 @@
     ],
     "Networks": [
     {
-            "Name": "CLARO INSTAGRAM 01",
+            "Name": "🔴CLARO INSTAGRAM 01",
             "FLAG": "ice_vivo",
-            "Payload": "OPTIONS / HTTP/1.1[crlf]Host: outlook.giphy.com[crlf][crlf][split]GET / HTTP/1.1[crlf]Host: dkcgyw5s1852y.cloudfront.net[crlf]Connection: Upgrade:  [crlf]Upgrade: Websocket[crlf][crlf]",
+            "Payload": "OPTIONS / HTTP/1.1[crlf]Host: outlook.giphy.com[crlf][crlf][split]GET / HTTP/1.1[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade:  [crlf]Upgrade: Websocket[crlf][crlf]",
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "outlook.giphy.com",
@@ -37,9 +37,9 @@
             "Info": "Proxy"                
         },  
      {
-            "Name": "CLARO INSTAGRAM 02",
+            "Name": "🔴CLARO INSTAGRAM 02",
             "FLAG": "ic_vivo",
-            "Payload": "OPTIONS / HTTP/1.1[crlf]Host: cookies.giphy.com[crlf][crlf][split]GET / HTTP/1.1[crlf]Host: dkcgyw5s1852y.cloudfront.net[crlf]Connection: Upgrade:  [crlf]Upgrade: Websocket[crlf][crlf]",
+            "Payload": "OPTIONS / HTTP/1.1[crlf]Host: cookies.giphy.com[crlf][crlf][split]GET / HTTP/1.1[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade:  [crlf]Upgrade: Websocket[crlf][crlf]",
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "cookies.giphy.com",
@@ -47,29 +47,29 @@
             "Info": "Proxy"                
         },    
     {
-            "Name": "CLARO SIN REDES 01",
+            "Name": "🔴CLARO SIN REDES 01",
             "FLAG": "claro",
             "Payload": "",
             "SNI": "pruebat.org",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.183",
+            "ProxyIP": "193.106.248.226",
             "ProxyPort": "443",
             "Info": "Ssl"         
         },  
     {
-            "Name": "CLARO SIN REDES 02",
+            "Name": "🔴CLARO SIN REDES 02",
             "FLAG": "claro",
             "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.183",
+            "ProxyIP": "193.106.248.226",
             "ProxyPort": "80",
             "Info": "Proxy"         
         },  
         {
-            "Name": "CLARO SIN REDES 03",
+            "Name": "🔴CLARO SIN REDES 03",
             "FLAG": "claro",
-            "Payload": "HEAD / HTTP/1.1[crlf]Host: processorpay.com[crlf][crlf][split]GET / HTTP/1.0[crlf]Host: dkcgyw5s1852y.cloudfront.net[crlf]Connection: Upgrade[crlf]CESARSHEN ???[US][crlf]Upgrade: Websocket[crlf][crlf]",
+            "Payload": "HEAD / HTTP/1.1[crlf]Host: processorpay.com[crlf][crlf][split]GET / HTTP/1.0[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade[crlf]CESARSHEN ???[US][crlf]Upgrade: Websocket[crlf][crlf]",
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "processorpay.com",
@@ -77,54 +77,64 @@
             "Info": "Proxy"                
         },        
             {
-            "Name": "TIGO SIN REDES 01",
+            "Name": "🔵TIGO SIN REDES 01",
             "FLAG": "tim",
             "Payload": "HTTP/1.1 200[crlf]Host:[reward.ff.garena.com]\\n200 Connection established\\nProxy-Connection: close\\nConnection-Keep-true\\nControl-Cache: no-cache\\nContent-Length: 9999999999999999999\\nUser-Agent: Yes \\nContent-Encoding: 88888888\\nContent-Language: 00000000\\nContent-Length: 55555555\\nContent-Location:33333333[crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.183",
+            "ProxyIP": "193.106.248.226",
             "ProxyPort": "80",
             "Info": "Proxy"                    
         },
         {
-            "Name": "TIGO SIN REDES 02",
+            "Name": "🔵TIGO SIN REDES 02",
             "FLAG": "tim",
             "Payload": "HTTP/1.1 200[crlf]Host:[ffsoporte.garena.com]\\n200 Connection established\\nProxy-Connection: close\\nConnection-Keep-true\\nControl-Cache: no-cache\\nContent-Length: 9999999999999999999\\nUser-Agent: Yes \\nContent-Encoding: 88888888\\nContent-Language: 00000000\\nContent-Length: 55555555\\nContent-Location:33333333[crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.183",
+            "ProxyIP": "193.106.248.226",
             "ProxyPort": "80",
             "Info": "Proxy"                   
         },
         {
-            "Name": "TIGO SIN REDES 03",
+            "Name": "🔵TIGO SIN REDES 03",
             "FLAG": "tim",
        "Payload": "HTTP/1.1 200[crlf]Host:[ff.garena.com]\\n200 Connection established\\nProxy-Connection: close\\nConnection-Keep-true\\nControl-Cache: no-cache\\nContent-Length: 9999999999999999999\\nUser-Agent: Yes \\nContent-Encoding: 88888888\\nContent-Language: 00000000\\nContent-Length: 55555555\\nContent-Location:33333333[crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.183",
+            "ProxyIP": "193.106.248.226",
             "ProxyPort": "80",
             "Info": "Proxy"                  
         },
         {
-            "Name": "MOVISTAR WHATSAPP",
+            "Name": "🟢MOVISTAR WHATSAPP",
             "FLAG": "ic_oi",
             "Payload": "",
             "SNI": "cdn.whatsapp.net",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.183",
+            "ProxyIP": "193.106.248.226",
             "ProxyPort": "443",
             "Info": "Ssl"         
         },
        {
-            "Name": "DIGICEL 150MG",
-            "FLAG": "down",
+            "Name": "🔴DIGICEL 150MG",
+            "FLAG": "ice_vivo",
             "Payload": "",
             "SNI": "mda.digicelgroup.com",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.183",
+            "ProxyIP": "193.106.248.226",
             "ProxyPort": "443",
             "Info": "Ssl"         
+        },
+        {
+            "Name": "🔴CLARO CANADA",
+            "FLAG": "claro",
+            "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "185.111.188.11",
+            "ProxyPort": "8080",
+            "Info": "Proxy"         
         } 
         
     ]
