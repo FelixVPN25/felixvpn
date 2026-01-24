@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.4",
+   "Version": "1.0.5",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
@@ -18,7 +18,7 @@
             "TYPE": "PREMIUM",
             "FLAG": "br.png",
             "ServerIP": "193.106.248.226",
-            "CheckUser": "http://193.106.248.226:5454/checkUser",
+            "CheckUser": "",
             "ServerPort": "22",
             "SSLPort": "443",
             "USER": "",
