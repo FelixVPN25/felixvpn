@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.5",
+   "Version": "1.0.6",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
@@ -17,7 +17,7 @@
             "Name": "EL SALVADOR",
             "TYPE": "PREMIUM",
             "FLAG": "br.png",
-            "ServerIP": "193.106.248.226",
+            "ServerIP": "102.129.137.103",
             "CheckUser": "",
             "ServerPort": "22",
             "SSLPort": "443",
@@ -52,7 +52,7 @@
             "Payload": "",
             "SNI": "pruebat.org",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
+            "ProxyIP": "102.129.137.103",
             "ProxyPort": "443",
             "Info": "Ssl"         
         },  
@@ -62,7 +62,7 @@
             "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
+            "ProxyIP": "102.129.137.103",
             "ProxyPort": "80",
             "Info": "Proxy"         
         },  
@@ -82,7 +82,7 @@
             "Payload": "HTTP/1.1 200[crlf]Host:[reward.ff.garena.com]\\n200 Connection established\\nProxy-Connection: close\\nConnection-Keep-true\\nControl-Cache: no-cache\\nContent-Length: 9999999999999999999\\nUser-Agent: Yes \\nContent-Encoding: 88888888\\nContent-Language: 00000000\\nContent-Length: 55555555\\nContent-Location:33333333[crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
+            "ProxyIP": "102.129.137.103",
             "ProxyPort": "80",
             "Info": "Proxy"                    
         },
@@ -92,7 +92,7 @@
             "Payload": "HTTP/1.1 200[crlf]Host:[ffsoporte.garena.com]\\n200 Connection established\\nProxy-Connection: close\\nConnection-Keep-true\\nControl-Cache: no-cache\\nContent-Length: 9999999999999999999\\nUser-Agent: Yes \\nContent-Encoding: 88888888\\nContent-Language: 00000000\\nContent-Length: 55555555\\nContent-Location:33333333[crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
+            "ProxyIP": "102.129.137.103",
             "ProxyPort": "80",
             "Info": "Proxy"                   
         },
@@ -102,7 +102,7 @@
        "Payload": "HTTP/1.1 200[crlf]Host:[ff.garena.com]\\n200 Connection established\\nProxy-Connection: close\\nConnection-Keep-true\\nControl-Cache: no-cache\\nContent-Length: 9999999999999999999\\nUser-Agent: Yes \\nContent-Encoding: 88888888\\nContent-Language: 00000000\\nContent-Length: 55555555\\nContent-Location:33333333[crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
+            "ProxyIP": "102.129.137.103",
             "ProxyPort": "80",
             "Info": "Proxy"                  
         },
@@ -112,7 +112,7 @@
             "Payload": "",
             "SNI": "cdn.whatsapp.net",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
+            "ProxyIP": "102.129.137.103",
             "ProxyPort": "443",
             "Info": "Ssl"         
         },
@@ -122,7 +122,7 @@
             "Payload": "",
             "SNI": "mda.digicelgroup.com",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
+            "ProxyIP": "102.129.137.103",
             "ProxyPort": "443",
             "Info": "Ssl"         
         },
