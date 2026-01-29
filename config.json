@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.8",
+   "Version": "1.0.9",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
@@ -93,7 +93,7 @@
             "TlsIP": "",
             "ProxyIP": "processorpay.com",
             "ProxyPort": "80",
-            "Info": "PROXY"                
+            "Info": "Proxy"                
         },        
             {
             "Name": "TIGO SIN REDES 01",
@@ -148,12 +148,12 @@
         {
             "Name": "CLARO CANADA",
             "FLAG": "claro",
-            "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
-            "SNI": "",
+            "Payload": "",
+            "SNI": "pruebat.org",
             "TlsIP": "",
-            "ProxyIP": "185.111.188.11",
-            "ProxyPort": "8080",
-            "Info": "Proxy"         
+            "ProxyIP": "102.129.137.103",
+            "ProxyPort": "443",
+            "Info": "Ssl"           
         } 
         
     ]
