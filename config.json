@@ -1,10 +1,10 @@
 {
-   "Version": "1.1.0",
+   "Version": "1.1.1",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
-    "logoonline": "https://i.ibb.co/N2ZCBZ4k/IMG-20260110-082112.png",
-    "fundoonline": "https://i.ibb.co/218qxv2z/papeldeparede1.jpg",
+    "logoonline": "",
+    "fundoonline": "",
     "banneRodapeOnline": "",
     "fundoDoLogOnline": "",
     "EmailFeedback": "",
@@ -53,7 +53,7 @@
             "TlsIP": "",
             "ProxyIP": "outlook.giphy.com",
             "ProxyPort": "80",
-            "Info": "Proxy"                
+            "Info": "PROXY"                
         },  
      {
             "Name": "CLARO INSTAGRAM 02",
@@ -63,7 +63,7 @@
             "TlsIP": "",
             "ProxyIP": "cookies.giphy.com",
             "ProxyPort": "80",
-            "Info": "Proxy"                
+            "Info": "PROXY"                
         },    
     {
             "Name": "CLARO SIN REDES 01",
@@ -93,7 +93,7 @@
             "TlsIP": "",
             "ProxyIP": "processorpay.com",
             "ProxyPort": "80",
-            "Info": "Proxy"                
+            "Info": "PROXY"                
         },        
             {
             "Name": "TIGO SIN REDES 01",
@@ -127,7 +127,7 @@
         },
         {
             "Name": "MOVISTAR WHATSAPP",
-            "FLAG": "oi",
+            "FLAG": "ice_oi",
             "Payload": "",
             "SNI": "cdn.whatsapp.net",
             "TlsIP": "",
