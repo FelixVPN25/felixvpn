@@ -1,10 +1,10 @@
 {
-   "Version": "1.0.7",
+   "Version": "1.0.8",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
-  "logoonline": "https://i.ibb.co/N2ZCBZ4k/IMG-20260110-082112.png",
-    "fundoonline": "https://i.ibb.co/218qxv2z/papeldeparede1.jpg",
+  "logoonline": "",
+    "fundoonline": "",
     "banneRodapeOnline": "",
     "fundoDoLogOnline": "",
     "EmailFeedback": "",
@@ -24,8 +24,8 @@
     "ModderCorBotaoIniciar": "",
     "ModderCorBotaoLog": "",
     "ModderCorBotaoConfig": "",
-    "DnsPrimario": "",
-    "DnsSecundario": "",
+    "DnsPrimario": "8.8.8.8",
+    "DnsSecundario": "1.1.1.1",
     "Udp": [
         {
             "Porta": "7300"
