@@ -1,10 +1,10 @@
 {
-   "Version": "1.0.9",
+   "Version": "1.1.0",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
-  "logoonline": "",
-    "fundoonline": "",
+    "logoonline": "https://i.ibb.co/N2ZCBZ4k/IMG-20260110-082112.png",
+    "fundoonline": "https://i.ibb.co/218qxv2z/papeldeparede1.jpg",
     "banneRodapeOnline": "",
     "fundoDoLogOnline": "",
     "EmailFeedback": "",
@@ -24,8 +24,8 @@
     "ModderCorBotaoIniciar": "",
     "ModderCorBotaoLog": "",
     "ModderCorBotaoConfig": "",
-    "DnsPrimario": "8.8.8.8",
-    "DnsSecundario": "1.1.1.1",
+    "DnsPrimario": "",
+    "DnsSecundario": "",
     "Udp": [
         {
             "Porta": "7300"
@@ -127,7 +127,7 @@
         },
         {
             "Name": "MOVISTAR WHATSAPP",
-            "FLAG": "ic_oi",
+            "FLAG": "oi",
             "Payload": "",
             "SNI": "cdn.whatsapp.net",
             "TlsIP": "",
