@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.3",
+   "Version": "1.0.4",
     "ReleaseNotes": "HAY UNA NUEVA ACTUALIZACIO😎",
     "UrlUpdate": "https://www.dropbox.com/scl/fi/ab1ulec44ft9rsa5gb0dh/config.json?rlkey=z1yr08kwuwlajwho3wkc2p0kq&st",
     "Sms": "",
@@ -27,38 +27,38 @@
     ],
  "Networks": [
         {
-            "Name": "CLARO SIN REDES",
-            "FLAG": "claro",
-            "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
+            "Name": "CLARO SV INSTAGRAM 01 🇸🇻",
+            "FLAG": "ice_vivo",
+            "Payload": "OPTIONS / HTTP/1.1[crlf]Host: outlook.giphy.com[crlf][crlf][split]GET / HTTP/1.1[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade:  [crlf]Upgrade: Websocket[crlf][crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
+            "ProxyIP": "outlook.giphy.com",
             "ProxyPort": "80",
             "Info": "Proxy"       
         },
         {
-            "Name": "CLARO SIN REDES",
-            "FLAG": "claro",
-            "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
+            "Name": "CLARO SV INSTAGRAM 02 🇸🇻",
+            "FLAG": "ice_vivo",
+            "Payload": "OPTIONS / HTTP/1.1[crlf]Host: cookies.giphy.com[crlf][crlf][split]GET / HTTP/1.1[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade:  [crlf]Upgrade: Websocket[crlf][crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
+            "ProxyIP": "cookies.giphy.com",
             "ProxyPort": "80",
             "Info": "Proxy"       
         },
         {
-            "Name": "CLARO SIN REDES",
+            "Name": "CLARO SIN REDES 01 🇸🇻",
             "FLAG": "claro",
-            "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
-            "SNI": "",
+            "Payload": "",
+            "SNI": "pruebat.org",
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
-            "ProxyPort": "80",
-            "Info": "Proxy"       
+            "ProxyPort": "443",
+            "Info": "Ssl"       
         },
         
         {
-            "Name": "CLARO SIN REDES",
+            "Name": "CLARO SIN REDES 02 🇸🇻",
             "FLAG": "claro",
             "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
             "SNI": "",
@@ -69,12 +69,12 @@
         },
         
 {
-            "Name": "CLARO SIN REDES",
+            "Name": "CLARO SIN REDES 03 🇸🇻",
             "FLAG": "claro",
-            "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
+            "Payload": "HEAD / HTTP/1.1[crlf]Host: processorpay.com[crlf][crlf][split]GET / HTTP/1.0[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade[crlf]CESARSHEN ???[US][crlf]Upgrade: Websocket[crlf][crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
+            "ProxyIP": "processorpay.com",
             "ProxyPort": "80",
             "Info": "Proxy"       
         },
