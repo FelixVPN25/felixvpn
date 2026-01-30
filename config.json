@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.4",
+   "Version": "1.1.8",
     "ReleaseNotes": "HAY UNA NUEVA ACTUALIZACIO😎",
     "UrlUpdate": "https://www.dropbox.com/scl/fi/ab1ulec44ft9rsa5gb0dh/config.json?rlkey=z1yr08kwuwlajwho3wkc2p0kq&st",
     "Sms": "",
@@ -27,7 +27,7 @@
     ],
  "Networks": [
         {
-            "Name": "CLARO SV INSTAGRAM 01 🇸🇻",
+            "Name": "CLARO INSTAGRAM 01 🇸🇻",
             "FLAG": "ice_vivo",
             "Payload": "OPTIONS / HTTP/1.1[crlf]Host: outlook.giphy.com[crlf][crlf][split]GET / HTTP/1.1[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade:  [crlf]Upgrade: Websocket[crlf][crlf]",
             "SNI": "",
@@ -37,7 +37,7 @@
             "Info": "Proxy"       
         },
         {
-            "Name": "CLARO SV INSTAGRAM 02 🇸🇻",
+            "Name": "CLARO INSTAGRAM 02 🇸🇻",
             "FLAG": "ice_vivo",
             "Payload": "OPTIONS / HTTP/1.1[crlf]Host: cookies.giphy.com[crlf][crlf][split]GET / HTTP/1.1[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade:  [crlf]Upgrade: Websocket[crlf][crlf]",
             "SNI": "",
