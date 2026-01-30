@@ -36,10 +36,10 @@
             "Name": "EEUU MIAMI",
             "TYPE": "premium",
             "FLAG": "us.png",
-            "ServerIP": "",
+            "ServerIP": "193.106.248.226",
             "CheckUser": "",
-            "ServerPort": "",
-            "SSLPort": "",
+            "ServerPort": "22",
+            "SSLPort": "443",
             "USER": "",
             "PASS": ""
         }
