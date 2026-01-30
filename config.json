@@ -27,7 +27,7 @@
     ],
  "Networks": [
         {
-          "Name": "CLARO INSTAGRAM 01🇸🇻",
+          "Name": "CLARO INSTAGRAM 01",
            "FLAG": "ice_vivo",
            "Payload": "OPTIONS / HTTP/1.1[crlf]Host: outlook.giphy.com[crlf][crlf][split]GET / HTTP/1.1[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade:  [crlf]Upgrade: Websocket[crlf][crlf]",
            "SNI": "",
