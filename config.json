@@ -1,7 +1,7 @@
 {
    "Version": "1.0.3",
     "ReleaseNotes": "HAY UNA NUEVA ACTUALIZACIO😎",
-     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
+    "UrlUpdate": "https://www.dropbox.com/scl/fi/ab1ulec44ft9rsa5gb0dh/config.json?rlkey=z1yr08kwuwlajwho3wkc2p0kq&st",
     "Sms": "",
     "EmailFeedback": "",
     "UrlContato": "",
@@ -27,16 +27,67 @@
     ],
  "Networks": [
         {
-          "Name": "CLARO INSTAGRAM 01",
-           "FLAG": "ice_vivo",
-           "Payload": "OPTIONS / HTTP/1.1[crlf]Host: outlook.giphy.com[crlf][crlf][split]GET / HTTP/1.1[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade:  [crlf]Upgrade: Websocket[crlf][crlf]",
-           "SNI": "",
-           "TlsIP": "",
-           "ProxyIP": "outlook.giphy.com",
-           "ProxyPort": "80",
-           "Info": "Proxy"
+            "Name": "CLARO SIN REDES",
+            "FLAG": "claro",
+            "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "193.106.248.226",
+            "ProxyPort": "80",
+            "Info": "Proxy"       
         },
-
+        {
+            "Name": "CLARO SIN REDES",
+            "FLAG": "claro",
+            "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "193.106.248.226",
+            "ProxyPort": "80",
+            "Info": "Proxy"       
+        },
+        {
+            "Name": "CLARO SIN REDES",
+            "FLAG": "claro",
+            "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "193.106.248.226",
+            "ProxyPort": "80",
+            "Info": "Proxy"       
+        },
+        
+        {
+            "Name": "CLARO SIN REDES",
+            "FLAG": "claro",
+            "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "193.106.248.226",
+            "ProxyPort": "80",
+            "Info": "Proxy"       
+        },
+        
+{
+            "Name": "CLARO SIN REDES",
+            "FLAG": "claro",
+            "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "193.106.248.226",
+            "ProxyPort": "80",
+            "Info": "Proxy"       
+        },
+{
+            "Name": "CLARO SIN REDES",
+            "FLAG": "claro",
+            "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "193.106.248.226",
+            "ProxyPort": "80",
+            "Info": "Proxy"       
+        },
 {
             "Name": "CLARO SIN REDES",
             "FLAG": "claro",
@@ -48,20 +99,7 @@
             "Info": "Proxy"       
         },
 
-
         {
-            "Name": "TIGO SIN REDES",
-            "FLAG": "tim",
-            "Payload": "HTTP/1.0 200[lf]Host: [rotate=www.meetic.com][crlf][crlf]][crlf]",
-            "SNI": "",
-            "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
-            "ProxyPort": "80",
-            "Info": "Proxy"                   
-        },
-
-
-{
             "Name": "TIGO SIN REDES",
             "FLAG": "tim",
             "Payload": "HTTP/1.0 200[lf]Host: [rotate=www.meetic.com][crlf][crlf]][crlf]",
