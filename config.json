@@ -1,5 +1,5 @@
 {
-   "Version": "1.1.5",
+   "Version": "1.1.6",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
@@ -33,9 +33,9 @@
     ],
     "Servers": [
         {
-            "Name": "EL SALVADOR",
+            "Name": "EEUU MIAMI",
             "TYPE": "PREMIUM",
-            "FLAG": "br.png",
+            "FLAG": "us.png",
             "ServerIP": "193.106.248.226",
             "CheckUser": "",
             "ServerPort": "22",
@@ -46,7 +46,7 @@
     ],
     "Networks": [
     {
-            "Name": "CLARO INSTAGRAM 01",
+            "Name": "CLARO INSTAGRAM 01 🇸🇻",
             "FLAG": "ice_vivo",
             "Payload": "OPTIONS / HTTP/1.1[crlf]Host: outlook.giphy.com[crlf][crlf][split]GET / HTTP/1.1[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade:  [crlf]Upgrade: Websocket[crlf][crlf]",
             "SNI": "",
@@ -56,7 +56,7 @@
             "Info": "Proxy"                
         },  
      {
-            "Name": "CLARO INSTAGRAM 02",
+            "Name": "CLARO INSTAGRAM 02 🇸🇻",
             "FLAG": "ic_vivo",
             "Payload": "OPTIONS / HTTP/1.1[crlf]Host: cookies.giphy.com[crlf][crlf][split]GET / HTTP/1.1[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade:  [crlf]Upgrade: Websocket[crlf][crlf]",
             "SNI": "",
@@ -66,8 +66,8 @@
             "Info": "Proxy"                
         },    
     {
-            "Name": "CLARO SIN REDES 01",
-            "FLAG": "claro",
+            "Name": "CLARO SIN PACK 01 🇸🇻",
+            "FLAG": "claro"
             "Payload": "",
             "SNI": "pruebat.org",
             "TlsIP": "",
@@ -76,7 +76,7 @@
             "Info": "Ssl"         
         },  
     {
-            "Name": "CLARO SIN REDES 02",
+            "Name": "CLARO SIN PACK 02 🇸🇻",
             "FLAG": "claro",
             "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
             "SNI": "",
@@ -86,7 +86,7 @@
             "Info": "Proxy"         
         },  
         {
-            "Name": "CLARO SIN REDES 03",
+            "Name": "CLARO SIN PACK 03 🇸🇻",
             "FLAG": "claro",
             "Payload": "HEAD / HTTP/1.1[crlf]Host: processorpay.com[crlf][crlf][split]GET / HTTP/1.0[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade[crlf]CESARSHEN ???[US][crlf]Upgrade: Websocket[crlf][crlf]",
             "SNI": "",
@@ -134,8 +134,7 @@
             "ProxyIP": "193.106.248.226",
             "ProxyPort": "443",
             "Info": "Ssl"         
-        },
-        
+        },      
         {
             "Name": "MOVISTAR SV SIN SALDO 🇸🇻",
             "FLAG": "ice_oi",
@@ -145,8 +144,7 @@
             "ProxyIP": "193.106.248.226",
             "ProxyPort": "443",
             "Info": "Ssl"         
-        },        
-        
+        },             
        {
             "Name": "DIGICEL SV 150MG 🇸🇻",
             "FLAG": "ice_vivo",
@@ -166,7 +164,33 @@
             "ProxyIP": "185.111.188.11",
             "ProxyPort": "443",
             "Info": "Ssl"           
-        } 
+        },
+        
+    
+        
+                
+          {
+            "Name": "TIGO GT 01 🇬🇹",
+            "FLAG": "tim",
+            "Payload": "HTTP/2 200[crlf]Host: [random=tigo.com.hn;claro.com.hn;miclaro.com.hn;filter-hn.portal-universal.com][crlf]200 Connection Established[crlf]Proxy-Connection: close[crlf]Control-Cache: no-cache[crlf]Content-length: 1045040528[crlf]User-Agent: [ua][crlf]Content-length: 1045040528[crlf]Content-Location: 1045040528[crlf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "193.106.248.226",
+            "ProxyPort": "80",
+            "Info": "Proxy"                   
+        },
+        {
+            "Name": "TIGO GT 02 🇬🇹",
+            "FLAG": "tim",
+            "Payload": "HTTP/2.0 1299[crlf]Host: http://survey.tigo.com[lf]Content-Length: 55555555[lf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "193.106.248.226",
+            "ProxyPort": "80",
+            "Info": "Proxy"                   
+        }          
+        
+        
         
     ]
 }
