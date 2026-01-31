@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.5",
+   "Version": "1.0.6",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
@@ -66,7 +66,7 @@
             "Info": "Proxy"                
         },    
     {
-            "Name": "CLARO SIN REDES 01 🇸🇻",
+            "Name": "CLARO SV SIN REDES 01 🇸🇻",
             "FLAG": "claro",
             "Payload": "",
             "SNI": "pruebat.org",
@@ -76,7 +76,7 @@
             "Info": "Ssl"         
         },  
     {
-            "Name": "CLARO SIN REDES 02 🇸🇻",
+            "Name": "CLARO SV SIN REDES 02 🇸🇻",
             "FLAG": "claro",
             "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
             "SNI": "",
@@ -86,7 +86,7 @@
             "Info": "Proxy"         
         },  
         {
-            "Name": "CLARO SIN REDES 03 🇸🇻",
+            "Name": "CLARO SV SIN REDES 03 🇸🇻",
             "FLAG": "claro",
             "Payload": "HEAD / HTTP/1.1[crlf]Host: processorpay.com[crlf][crlf][split]GET / HTTP/1.0[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade[crlf]CESARSHEN ???[US][crlf]Upgrade: Websocket[crlf][crlf]",
             "SNI": "",
@@ -126,7 +126,7 @@
             "Info": "Proxy"                  
         },
         {
-            "Name": "MOVISTAR WHATSAPP 🇸🇻 ",
+            "Name": "MOVISTAR SV WHATSAPP 🇸🇻 ",
             "FLAG": "ic_oi",
             "Payload": "",
             "SNI": "cdn.whatsapp.net",
@@ -136,7 +136,7 @@
             "Info": "Ssl"         
         },
         {
-            "Name": "MOVISTAR SIN SALDO 🇸🇻 ",
+            "Name": "MOVISTAR SV SIN SALDO 🇸🇻 ",
             "FLAG": "ic_oi",
             "Payload": "",
             "SNI": "www.googletagmanager.com",
@@ -146,7 +146,7 @@
             "Info": "Ssl"         
         },
        {
-            "Name": "DIGICEL 150MG 🇸🇻",
+            "Name": "DIGICEL SV 150MG 🇸🇻",
             "FLAG": "ice_vivo",
             "Payload": "",
             "SNI": "mda.digicelgroup.com",
@@ -176,7 +176,7 @@
             "Info": "Proxy"                  
         },
         {
-            "Name": "CLARO SIN REDES 01 🇬🇹",
+            "Name": "CLARO GT SIN REDES 🇬🇹",
             "FLAG": "claro",
             "Payload": "",
             "SNI": "www.googletagmanager.com",
