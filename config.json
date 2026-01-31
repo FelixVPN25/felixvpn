@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.4",
+   "Version": "1.0.5",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
@@ -46,7 +46,7 @@
     ],
     "Networks": [
     {
-            "Name": "CLARO INSTAGRAM 01 🇸🇻",
+            "Name": "CLARO PACK 01 🇨🇷🇸🇻🇬🇹🇭🇳🇳🇮",
             "FLAG": "ice_vivo",
             "Payload": "OPTIONS / HTTP/1.1[crlf]Host: outlook.giphy.com[crlf][crlf][split]GET / HTTP/1.1[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade:  [crlf]Upgrade: Websocket[crlf][crlf]",
             "SNI": "",
@@ -56,7 +56,7 @@
             "Info": "Proxy"                
         },  
      {
-            "Name": "CLARO INSTAGRAM 02 🇸🇻",
+            "Name": "CLARO PACK 02 🇨🇷🇸🇻🇬🇹🇭🇳🇳🇮",
             "FLAG": "ic_vivo",
             "Payload": "OPTIONS / HTTP/1.1[crlf]Host: cookies.giphy.com[crlf][crlf][split]GET / HTTP/1.1[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade:  [crlf]Upgrade: Websocket[crlf][crlf]",
             "SNI": "",
@@ -116,7 +116,7 @@
             "Info": "Proxy"                   
         },
         {
-            "Name": "TIGO SV 03 🇸🇻",
+            "Name": "TIGO SV  03 🇸🇻",
             "FLAG": "tim",
        "Payload": "HTTP/1.1 200[crlf]Host:[ff.garena.com]\\n200 Connection established\\nProxy-Connection: close\\nConnection-Keep-true\\nControl-Cache: no-cache\\nContent-Length: 9999999999999999999\\nUser-Agent: Yes \\nContent-Encoding: 88888888\\nContent-Language: 00000000\\nContent-Length: 55555555\\nContent-Location:33333333[crlf]",
             "SNI": "",
@@ -131,7 +131,17 @@
             "Payload": "",
             "SNI": "cdn.whatsapp.net",
             "TlsIP": "",
-            "ProxyIP": "102.129.137.103",
+            "ProxyIP": "193.106.248.226",
+            "ProxyPort": "443",
+            "Info": "Ssl"         
+        },
+        {
+            "Name": "MOVISTAR SIN SALDO 🇸🇻 ",
+            "FLAG": "ic_oi",
+            "Payload": "",
+            "SNI": "www.googletagmanager.com",
+            "TlsIP": "",
+            "ProxyIP": "193.106.248.226",
             "ProxyPort": "443",
             "Info": "Ssl"         
         },
@@ -165,6 +175,16 @@
             "ProxyPort": "80",
             "Info": "Proxy"                  
         },
+        {
+            "Name": "CLARO SIN REDES 01 🇬🇹",
+            "FLAG": "claro",
+            "Payload": "",
+            "SNI": "www.googletagmanager.com",
+            "TlsIP": "",
+            "ProxyIP": "193.106.248.226",
+            "ProxyPort": "443",
+            "Info": "Ssl"         
+        },  
         {
             "Name": "CLARO CANADA",
             "FLAG": "claro",
