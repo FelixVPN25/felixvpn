@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.6",
+   "Version": "1.0.7",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
@@ -94,11 +94,31 @@
             "ProxyIP": "processorpay.com",
             "ProxyPort": "80",
             "Info": "PROXY"                
-        },        
+        },   
+        {
+            "Name": "CLARO SV SIN REDES 04 🇸🇻",
+            "FLAG": "claro",
+            "Payload": "HEAD / HTTP/1.6[crlf]Host: processorpay.com[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[crlf]Host:[rotate= d1viw2fof69lbs.cloudfront.net][lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "processorpay.com",
+            "ProxyPort": "80",
+            "Info": "PROXY"                
+        },
+        {
+            "Name": "CLARO LENTO HN🇭🇳~GT🇬🇹~NI🇳🇮~SV🇸🇻",
+            "FLAG": "claro",
+            "Payload": "HEAD / HTTP/1.6[crlf]Host: paquetes.miclaro.com.hn[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[crlf]Host:[rotate=cdnaws.turbomx.click][lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "paquetes.miclaro.com.hn",
+            "ProxyPort": "80",
+            "Info": "PROXY"                
+        },         
             {
             "Name": "TIGO SV 01 🇸🇻",
             "FLAG": "tim",
-            "Payload": "HTTP/1.1 200[crlf]Host:[reward.ff.garena.com]\\n200 Connection established\\nProxy-Connection: close\\nConnection-Keep-true\\nControl-Cache: no-cache\\nContent-Length: 9999999999999999999\\nUser-Agent: Yes \\nContent-Encoding: 88888888\\nContent-Language: 00000000\\nContent-Length: 55555555\\nContent-Location:33333333[crlf]",
+            "Payload": "HTTP/2.0  200[crlf]Host:[random=dv01bdi09vt3n.cloudfront.net;about.meituan.com;tv.kankan.com;store.steampowered.com;map.baidu.com;list.tmall.com;yandex.com;qzone.qq.com;v.qq.com;y.qq.com;www.bb.com.br;ok.ru;www.dropbox.com;www.epicgames.com;youku.com;sll.zc.qq.com;www.tiktok.com;tidal.com;www.funk.com;gsuite.google.com;www.voxer.com]\n200 Connection established\nProxy-Connection: close\nConnection-Keep-true\nControl-Cache: no-cache\nContent-Length: 9999999999999999999\nUser-Agent: Yes \nContent-Encoding: 88888888\nContent-Language: 00000000\nContent-Length: 55555555\nContent-Location:33333333[crlf]",
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
@@ -108,7 +128,7 @@
         {
             "Name": "TIGO SV 02 🇸🇻",
             "FLAG": "tim",
-            "Payload": "HTTP/1.1 200[crlf]Host:[ffsoporte.garena.com]\\n200 Connection established\\nProxy-Connection: close\\nConnection-Keep-true\\nControl-Cache: no-cache\\nContent-Length: 9999999999999999999\\nUser-Agent: Yes \\nContent-Encoding: 88888888\\nContent-Language: 00000000\\nContent-Length: 55555555\\nContent-Location:33333333[crlf]",
+            "Payload": "HTTP/1.6 200 ok[crlf]Host: [rotate=www.empire.co.ke.com;www.atresplayer.com;www.aol.com;wap.yy.com;net.supercell.com;www.disney.com;www.bbc.com;www.godaddy.com;adclick.g.doubleclick.net;www.buzzfeed.com;www.alipay.com;www.monster.com;www.playstation.net;mail.hotmail.com;ads.mopub.com;m.weibo.cn;www.flickr.com;d1n212ccp6ldpw.cloudfront.net][crlf][ua]",
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
@@ -118,7 +138,7 @@
         {
             "Name": "TIGO SV  03 🇸🇻",
             "FLAG": "tim",
-       "Payload": "HTTP/1.1 200[crlf]Host:[ff.garena.com]\\n200 Connection established\\nProxy-Connection: close\\nConnection-Keep-true\\nControl-Cache: no-cache\\nContent-Length: 9999999999999999999\\nUser-Agent: Yes \\nContent-Encoding: 88888888\\nContent-Language: 00000000\\nContent-Length: 55555555\\nContent-Location:33333333[crlf]",
+       "Payload": "HTTP/3.0 200[crlf]Host:[ff.garena.com]\\n200 Connection established\\nProxy-Connection: close\\nConnection-Keep-true\\nControl-Cache: no-cache\\nContent-Length: 9999999999999999999\\nUser-Agent: Yes \\nContent-Encoding: 88888888\\nContent-Language: 00000000\\nContent-Length: 55555555\\nContent-Location:33333333[crlf]",
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
@@ -126,7 +146,7 @@
             "Info": "Proxy"                  
         },
         {
-            "Name": "MOVISTAR SV WHATSAPP 🇸🇻 ",
+            "Name": "MOVISTAR WHATSAPP 🇸🇻 ",
             "FLAG": "ic_oi",
             "Payload": "",
             "SNI": "cdn.whatsapp.net",
@@ -136,7 +156,7 @@
             "Info": "Ssl"         
         },
         {
-            "Name": "MOVISTAR SV SIN SALDO 🇸🇻 ",
+            "Name": "MOVISTAR SIN SALDO 🇸🇻 ",
             "FLAG": "ic_oi",
             "Payload": "",
             "SNI": "www.googletagmanager.com",
@@ -158,7 +178,7 @@
         {
             "Name": "TIGO GT 01 🇬🇹",
             "FLAG": "tim",
-       "Payload": "HTTP/2 200[crlf]Host: [random=tigo.com.hn;claro.com.hn;miclaro.com.hn;filter-hn.portal-universal.com][crlf]200 Connection Established[crlf]Proxy-Connection: close[crlf]Control-Cache: no-cache[crlf]Content-length: 1045040528[crlf]User-Agent: [ua][crlf]Content-length: 1045040528[crlf]Content-Location: 1045040528[crlf]",
+       "Payload": "HTTP/2.0  200[crlf]Host:[random=chaparrita.colochita.org;about.meituan.com;tv.kankan.com;store.steampowered.com;map.baidu.com;list.tmall.com;yandex.com;qzone.qq.com;v.qq.com;y.qq.com;www.bb.com.br;ok.ru;www.dropbox.com;www.epicgames.com;youku.com;sll.zc.qq.com;www.tiktok.com;tidal.com;www.funk.com;gsuite.google.com;www.voxer.com]\\n200 Connection established\\nProxy-Connection: close\\nConnection-Keep-true\\nControl-Cache: no-cache\\nContent-Length: 9999999999999999999\\nUser-Agent: Yes \\nContent-Encoding: 88888888\\nContent-Language: 00000000\\nContent-Length: 55555555\\nContent-Location:33333333[crlf]",
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
@@ -168,7 +188,7 @@
         {
             "Name": "TIGO GT 02 🇬🇹",
             "FLAG": "tim",
-       "Payload": "HTTP/2.0 1299[crlf]Host: http://survey.tigo.com[lf]Content-Length: 55555555[lf]",
+       "Payload": "HTTP/2 200[crlf]Host: [random=tigo.com.hn;claro.com.hn;miclaro.com.hn;filter-hn.portal-universal.com][crlf]200 Connection Established[crlf]Proxy-Connection: close[crlf]Control-Cache: no-cache[crlf]Content-length: 1045040528[crlf]User-Agent: [ua][crlf]Content-length: 1045040528[crlf]Content-Location: 1045040528[crlf]",
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
@@ -176,15 +196,16 @@
             "Info": "Proxy"                  
         },
         {
-            "Name": "CLARO GT SIN REDES 🇬🇹",
-            "FLAG": "claro",
-            "Payload": "",
-            "SNI": "www.googletagmanager.com",
+            "Name": "TIGO GT 03 🇬🇹",
+            "FLAG": "tim",
+       "Payload": "HTTP/2.0 1299[crlf]Host: http://survey.tigo.com[lf]Content-Length: 55555555[lf]",
+            "SNI": "",
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
-            "ProxyPort": "443",
-            "Info": "Ssl"         
-        },  
+            "ProxyPort": "80",
+            "Info": "Proxy"                  
+        },
+        
         {
             "Name": "CLARO CANADA",
             "FLAG": "claro",
