@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.10",
+   "Version": "1.0.11",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
@@ -106,7 +106,7 @@
             "Info": "PROXY"                
         },
         {
-            "Name": "CLARO FULL HN🇭🇳~GT🇬🇹~NI🇳🇮~SV🇸🇻",
+            "Name": "CLARO FULL 01 🇭🇳🇬🇹🇳🇮🇸🇻",
             "FLAG": "claro",
             "Payload": "HEAD / HTTP/1.6[crlf]Host: paquetes.miclaro.com.hn[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[crlf]Host:[rotate=d1viw2fof69lbs.cloudfront.net][lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
             "SNI": "",
@@ -114,7 +114,17 @@
             "ProxyIP": "paquetes.miclaro.com.hn",
             "ProxyPort": "80",
             "Info": "PROXY"                
-        },         
+        },   
+        {
+            "Name": "CLARO FULL 02 🇭🇳🇬🇹🇳🇮🇸🇻",
+            "FLAG": "claro",
+            "Payload": "HEAD / HTTP/1.6[crlf]Host: clubclaro.com.ni[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[crlf]Host:[rotate=d1viw2fof69lbs.cloudfront.net][lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "clubclaro.com.ni",
+            "ProxyPort": "80",
+            "Info": "PROXY"                
+        },               
             {
             "Name": "TIGO SV 01 🇸🇻",
             "FLAG": "tim",
