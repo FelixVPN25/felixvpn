@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.11",
+   "Version": "1.0.12",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
@@ -36,7 +36,7 @@
             "Name": "EEUU MIAMI",
             "TYPE": "PREMIUM",
             "FLAG": "us.png",
-            "ServerIP": "193.106.248.226",
+            "ServerIP": "51.79.51.3",
             "CheckUser": "",
             "ServerPort": "22",
             "SSLPort": "443",
@@ -81,7 +81,7 @@
             "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
+            "ProxyIP": "51.79.51.3",
             "ProxyPort": "80",
             "Info": "Proxy"         
         },  
@@ -131,7 +131,7 @@
             "Payload": "HTTP/2.0 200[crlf]Host:[random=dv01bdi09vt3n.cloudfront.net;about.meituan.com;tv.kankan.com;store.steampowered.com;map.baidu.com;list.tmall.com;yandex.com;qzone.qq.com;v.qq.com;y.qq.com;www.bb.com.br;ok.ru;www.dropbox.com;www.epicgames.com;youku.com;sll.zc.qq.com;www.tiktok.com;tidal.com;www.funk.com;gsuite.google.com;www.voxer.com]\n200 Connection established\nProxy-Connection: close\nConnection-Keep-true\nControl-Cache: no-cache\nContent-Length: 9999999999999999999\nUser-Agent: Yes \nContent-Encoding: 88888888\nContent-Language: 00000000\nContent-Length: 55555555\nContent-Location:33333333[crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
+            "ProxyIP": "51.79.51.3",
             "ProxyPort": "80",
             "Info": "Proxy"                    
         },
@@ -141,7 +141,7 @@
             "Payload": "HTTP/1.6 200 ok[crlf]Host: [rotate=www.empire.co.ke.com;www.atresplayer.com;www.aol.com;wap.yy.com;net.supercell.com;www.disney.com;www.bbc.com;www.godaddy.com;adclick.g.doubleclick.net;www.buzzfeed.com;www.alipay.com;www.monster.com;www.playstation.net;mail.hotmail.com;ads.mopub.com;m.weibo.cn;www.flickr.com;d1n212ccp6ldpw.cloudfront.net][crlf][ua]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
+            "ProxyIP": "51.79.51.3",
             "ProxyPort": "80",
             "Info": "Proxy"                   
         },
@@ -151,7 +151,7 @@
        "Payload": "HTTP/1.6 200[crlf]Host:[ff.garena.com]\\n200 Connection established\\nProxy-Connection: close\\nConnection-Keep-true\\nControl-Cache: no-cache\\nContent-Length: 9999999999999999999\\nUser-Agent: Yes \\nContent-Encoding: 88888888\\nContent-Language: 00000000\\nContent-Length: 55555555\\nContent-Location:33333333[crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
+            "ProxyIP": "51.79.51.3",
             "ProxyPort": "80",
             "Info": "Proxy"                  
         },
@@ -161,7 +161,7 @@
             "Payload": "",
             "SNI": "cdn.whatsapp.net",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
+            "ProxyIP": "51.79.51.3",
             "ProxyPort": "443",
             "Info": "Ssl"         
         },
@@ -171,7 +171,7 @@
             "Payload": "",
             "SNI": "www.googletagmanager.com",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
+            "ProxyIP": "51.79.51.3",
             "ProxyPort": "443",
             "Info": "Ssl"         
         },
@@ -181,7 +181,7 @@
             "Payload": "",
             "SNI": "mda.digicelgroup.com",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
+            "ProxyIP": "51.79.51.3",
             "ProxyPort": "443",
             "Info": "Ssl"         
         },
@@ -191,7 +191,7 @@
        "Payload": "HTTP/2 200[crlf]Host: [random=tigo.com.hn;claro.com.hn;miclaro.com.hn;filter-hn.portal-universal.com][crlf]200 Connection Established[crlf]Proxy-Connection: close[crlf]Control-Cache: no-cache[crlf]Content-length: 1045040528[crlf]User-Agent: [ua][crlf]Content-length: 1045040528[crlf]Content-Location: 1045040528[crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
+            "ProxyIP": "51.79.51.3",
             "ProxyPort": "80",
             "Info": "Proxy"                  
         },
@@ -201,7 +201,7 @@
        "Payload": "HTTP/2.0 1299[crlf]Host: http://survey.tigo.com[lf]Content-Length: 55555555[lf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
+            "ProxyIP": "51.79.51.3",
             "ProxyPort": "80",
             "Info": "Proxy"                  
         },
@@ -217,4 +217,4 @@
         } 
         
     ]
-}
+} 
