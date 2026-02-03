@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.12",
+   "Version": "1.0.13",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
@@ -33,9 +33,9 @@
     ],
     "Servers": [
         {
-            "Name": "EEUU MIAMI",
+            "Name": "CANADA (BHS)",
             "TYPE": "PREMIUM",
-            "FLAG": "us.png",
+            "FLAG": "ca.png",
             "ServerIP": "51.79.51.3",
             "CheckUser": "",
             "ServerPort": "22",
@@ -217,4 +217,4 @@
         } 
         
     ]
-} 
+}
