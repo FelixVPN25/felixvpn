@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.14",
+   "Version": "1.0.15",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
@@ -33,7 +33,7 @@
     ],
     "Servers": [
         {
-            "Name": "FELIX PREMIUM",
+            "Name": "👉FELIX PREMIUM SV👈",
             "TYPE": "PREMIUM",
             "FLAG": "br.png",
             "ServerIP": "51.79.51.3",
