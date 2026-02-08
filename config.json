@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.17",
+   "Version": "1.0.18",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
@@ -93,18 +93,8 @@
             "TlsIP": "",
             "ProxyIP": "processorpay.com",
             "ProxyPort": "80",
-            "Info": "PROXY"                
+            "Info": "Proxy"                
         },   
-        {
-            "Name": "CLARO SV SIN REDES 04 🇸🇻",
-            "FLAG": "claro",
-            "Payload": "HEAD / HTTP/1.6[crlf]Host: processorpay.com[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[crlf]Host:[rotate= d1viw2fof69lbs.cloudfront.net][lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
-            "SNI": "",
-            "TlsIP": "",
-            "ProxyIP": "processorpay.com",
-            "ProxyPort": "80",
-            "Info": "PROXY"                
-        },
         {
             "Name": "CLARO FULL 01 🇭🇳🇬🇹🇳🇮🇸🇻",
             "FLAG": "claro",
@@ -113,7 +103,7 @@
             "TlsIP": "",
             "ProxyIP": "paquetes.miclaro.com.hn",
             "ProxyPort": "80",
-            "Info": "PROXY"                
+            "Info": "Proxy"                
         },   
         {
             "Name": "CLARO FULL 02 🇭🇳🇬🇹🇳🇮🇸🇻",
@@ -123,7 +113,7 @@
             "TlsIP": "",
             "ProxyIP": "clubclaro.com.ni",
             "ProxyPort": "80",
-            "Info": "PROXY"                
+            "Info": "Proxy"                
         },               
             {
             "Name": "TIGO SV 01 🇸🇻",
@@ -133,7 +123,7 @@
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
             "ProxyPort": "80",
-            "Info": "Proxy"                    
+            "Info": "Direct"                    
         },
         {
             "Name": "TIGO SV 02 🇸🇻",
@@ -143,7 +133,7 @@
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
             "ProxyPort": "80",
-            "Info": "Proxy"                   
+            "Info": "Direct"                   
         },
         {
             "Name": "TIGO SV 03 🇸🇻",
@@ -153,7 +143,7 @@
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
             "ProxyPort": "80",
-            "Info": "Proxy"                  
+            "Info": "Direct"                  
         },
         {
             "Name": "MOVISTAR WHATSAPP 🇸🇻 ",
@@ -186,24 +176,24 @@
             "Info": "Ssl"         
         },
         {
-            "Name": "TIGO GT 02 🇬🇹",
+            "Name": "TIGO GT 01 🇬🇹",
             "FLAG": "tim",
-       "Payload": "HTTP/2 200[crlf]Host: [random=tigo.com.hn;claro.com.hn;miclaro.com.hn;filter-hn.portal-universal.com][crlf]200 Connection Established[crlf]Proxy-Connection: close[crlf]Control-Cache: no-cache[crlf]Content-length: 1045040528[crlf]User-Agent: [ua][crlf]Content-length: 1045040528[crlf]Content-Location: 1045040528[crlf]",
+       "Payload": "HTTP/1.6 200 ok[crlf]Host: [rotate=www.empire.co.ke.com;www.atresplayer.com;www.aol.com;wap.yy.com;net.supercell.com;www.disney.com;www.bbc.com;www.godaddy.com;adclick.g.doubleclick.net;www.buzzfeed.com;www.alipay.com;www.monster.com;www.playstation.net;mail.hotmail.com;ads.mopub.com;m.weibo.cn;www.flickr.com;d1n212ccp6ldpw.cloudfront.net][crlf][ua]",
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
             "ProxyPort": "80",
-            "Info": "Proxy"                  
+            "Info": "Direct"                  
         },
         {
-            "Name": "TIGO GT 03 🇬🇹",
+            "Name": "TIGO GT 02 🇬🇹",
             "FLAG": "tim",
-       "Payload": "HTTP/2.0 1299[crlf]Host: http://survey.tigo.com[lf]Content-Length: 55555555[lf]",
+       "Payload": "HTTP/2 200 ok[crlf]Host:http://axiomac.com:80.google.com;https://itunes.apple.com[crlf]Connexion :keep-alive[crlf]auth.mtn.ci[crlf]",
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
             "ProxyPort": "80",
-            "Info": "Proxy"                  
+            "Info": "Direct"                  
         },
         {
             "Name": "CLARO CANADA",
