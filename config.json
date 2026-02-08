@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.21",
+   "Version": "1.0.22",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
@@ -33,21 +33,10 @@
     ],
     "Servers": [
         {
-            "Name": "CANADA - (BHS)",
-            "TYPE": "PREMIUM",
-            "FLAG": "ca.png",
-            "ServerIP": "51.79.51.3",
-            "CheckUser": "",
-            "ServerPort": "22",
-            "SSLPort": "443",
-            "USER": "",
-            "PASS": ""
-        },
-        {
-            "Name": "EEUU - MIAMI",
+            "Name": "FELIX PREMIUM 1.0.22",
             "TYPE": "PREMIUM",
             "FLAG": "br.png",
-            "ServerIP": "193.106.248.226",
+            "ServerIP": "51.79.51.3",
             "CheckUser": "",
             "ServerPort": "22",
             "SSLPort": "443",
@@ -83,16 +72,6 @@
             "SNI": "pruebat.org",
             "TlsIP": "",
             "ProxyIP": "51.79.51.3",
-            "ProxyPort": "443",
-            "Info": "Ssl"         
-        },  
-        {
-            "Name": "CLARO SV MIAMI 🇸🇻",
-            "FLAG": "claro",
-            "Payload": "",
-            "SNI": "pruebat.org",
-            "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
             "ProxyPort": "443",
             "Info": "Ssl"         
         },  
