@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.23",
+   "Version": "1.0.24",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
@@ -33,7 +33,7 @@
     ],
     "Servers": [
         {
-            "Name": "FELIX PREMIUM 1.0.23",
+            "Name": "FELIX PREMIUM 1.0.24",
             "TYPE": "PREMIUM",
             "FLAG": "br.png",
             "ServerIP": "193.106.248.226",
@@ -81,7 +81,7 @@
             "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "51.79.51.3",
+            "ProxyIP": "193.106.248.226",
             "ProxyPort": "80",
             "Info": "Proxy"         
         },  
