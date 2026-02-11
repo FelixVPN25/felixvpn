@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.26",
+   "Version": "1.0.27",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
@@ -33,7 +33,7 @@
     ],
     "Servers": [
         {
-            "Name": "FELIX PREMIUM 1.0.26",
+            "Name": "FELIX PREMIUM 1.0.27",
             "TYPE": "PREMIUM",
             "FLAG": "br.png",
             "ServerIP": "193.106.248.226",
@@ -97,13 +97,13 @@
         },   
         {
             "Name": "CLARO FULL 01 🇭🇳🇬🇹🇳🇮🇸🇻",
-            "FLAG": "claro",
-            "Payload": "HEAD / HTTP/1.6[crlf]Host: paquetes.miclaro.com.hn[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[crlf]Host:[rotate=d1viw2fof69lbs.cloudfront.net][lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
-            "SNI": "",
+           "FLAG": "claro",
+            "Payload": "",
+            "SNI": "www.googletagmanager.com",
             "TlsIP": "",
-            "ProxyIP": "paquetes.miclaro.com.hn",
-            "ProxyPort": "80",
-            "Info": "Proxy"                
+            "ProxyIP": "193.106.248.226",
+            "ProxyPort": "443",
+            "Info": "Ssl"     
         },   
         {
             "Name": "CLARO FULL 02 🇭🇳🇬🇹🇳🇮🇸🇻",
@@ -194,6 +194,16 @@
             "ProxyIP": "193.106.248.226",
             "ProxyPort": "80",
             "Info": "Proxy"                  
-        }   
+        },   
+                {
+            "Name": "CLARO GT SIN REDES 🇬🇹",
+            "FLAG": "claro",
+            "Payload": "",
+            "SNI": "www.googletagmanager.com",
+            "TlsIP": "",
+            "ProxyIP": "193.106.248.226",
+            "ProxyPort": "443",
+            "Info": "Ssl"         
+        }
     ]
 }
