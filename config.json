@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.28",
+   "Version": "1.0.29",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
@@ -33,7 +33,7 @@
     ],
     "Servers": [
         {
-            "Name": "FELIX PREMIUM 1.0.28",
+            "Name": "FELIX PREMIUM 1.0.29",
             "TYPE": "PREMIUM",
             "FLAG": "br.png",
             "ServerIP": "193.106.248.226",
@@ -75,8 +75,18 @@
             "ProxyPort": "80",
             "Info": "Proxy"                
         },     
-    {
+                {
             "Name": "CLARO SIN REDES 02",
+            "FLAG": "claro",
+            "Payload": "GET / HTTP/1.1[lf]Host: sinfronteras-temp.claro.com.sv[lf][lf]GET / HTTP/1.1[lf]Host: d1viw2fof69lbs.cloudfront.net[lf]Connection: Upgrade[lf]User-Agent: [lf]Upgrade: websocket[lf][lf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "sinfronteras-temp.claro.com.sv",
+            "ProxyPort": "80",
+            "Info": "Proxy"                
+        }, 
+    {
+            "Name": "CLARO SIN REDES 03",
             "FLAG": "claro",
             "Payload": "",
             "SNI": "pruebat.org",
@@ -86,7 +96,7 @@
             "Info": "Ssl"         
         },  
     {
-            "Name": "CLARO SIN REDES 03",
+            "Name": "CLARO SIN REDES 04",
             "FLAG": "claro",
             "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
             "SNI": "",
@@ -96,7 +106,7 @@
             "Info": "Proxy"         
         },  
         {
-            "Name": "CLARO SIN REDES 04",
+            "Name": "CLARO SIN REDES 05",
             "FLAG": "claro",
             "Payload": "GET /qra-atsil/21112c41c8a952b/8888:811C922C89C02 HTTP/1.1\nHost: www.clarovideo.com \nContent-Length: 117930662\nCache-Control: no-cache\nPragma: no-cache\nConnection: close[crlf][crlf]",
             "SNI": "",
@@ -106,7 +116,7 @@
             "Info": "Proxy"                
         },   
         {
-            "Name": "CLARO SIN REDES 05",
+            "Name": "CLARO SIN REDES 06",
            "FLAG": "claro",
             "Payload": "GET /qra-atsil/21112c41c8a952b/8888:811C922C89C02 HTTP/1.1\nHost: asset.media \nContent-Length: 117930662\nCache-Control: no-cache\nPragma: no-cache\nConnection: close[crlf][crlf]",
             "SNI": "",
@@ -114,17 +124,7 @@
             "ProxyIP": "193.106.248.226",
             "ProxyPort": "80",
             "Info": "Proxy"     
-        },   
-        {
-            "Name": "CLARO SIN REDES 06",
-            "FLAG": "claro",
-            "Payload": "HEAD / HTTP/1.6[crlf]Host: clubclaro.com.ni[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[crlf]Host:[rotate=d1viw2fof69lbs.cloudfront.net][lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
-            "SNI": "",
-            "TlsIP": "",
-            "ProxyIP": "clubclaro.com.ni",
-            "ProxyPort": "80",
-            "Info": "Proxy"                
-        },               
+        },                
             {
             "Name": "TIGO EL SALVADOR 01",
             "FLAG": "tim",
@@ -179,7 +179,7 @@
             "Name": "MOVISTAR EL SALVADOR 01",
             "FLAG": "ic_oi",
             "Payload": "",
-            "SNI": "www.google.com",
+            "SNI": "www.googletagmanager.com",
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
             "ProxyPort": "443",
@@ -189,7 +189,7 @@
             "Name": "MOVISTAR EL SALVADOR 02",
             "FLAG": "ic_oi",
             "Payload": "",
-            "SNI": "www.googletagmanager.com",
+            "SNI": "www.google.com",
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
             "ProxyPort": "443",
