@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.27",
+   "Version": "1.0.28",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
@@ -33,7 +33,7 @@
     ],
     "Servers": [
         {
-            "Name": "FELIX PREMIUM 1.0.27",
+            "Name": "FELIX PREMIUM 1.0.28",
             "TYPE": "PREMIUM",
             "FLAG": "br.png",
             "ServerIP": "193.106.248.226",
@@ -46,7 +46,7 @@
     ],
     "Networks": [
     {
-            "Name": "CLARO PACK 01 🇨🇷🇸🇻🇬🇹🇭🇳🇳🇮",
+            "Name": "CLARO PQTE Instagram",
             "FLAG": "ice_vivo",
             "Payload": "OPTIONS / HTTP/1.1[crlf]Host: outlook.giphy.com[crlf][crlf][split]GET / HTTP/1.1[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade:  [crlf]Upgrade: Websocket[crlf][crlf]",
             "SNI": "",
@@ -56,17 +56,27 @@
             "Info": "Proxy"                
         },  
      {
-            "Name": "CLARO PACK 02 🇨🇷🇸🇻🇬🇹🇭🇳🇳🇮",
+            "Name": "CLARO PQTE $0.25 Instagram",
             "FLAG": "ic_vivo",
-            "Payload": "OPTIONS / HTTP/1.1[crlf]Host: cookies.giphy.com[crlf][crlf][split]GET / HTTP/1.1[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade:  [crlf]Upgrade: Websocket[crlf][crlf]",
+            "Payload": "GET / HTTP/1.1[crlf]Host: cookies.giphy.com[crlf][crlf][split][crlf][crlf]GET- / HTTP/1.1[crlf]Host: cookies.giphy.com[crlf][crlf]GET / HTTP/1.1[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade[crlf]Upgrade: Websocket[crlf][crlf]",
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "cookies.giphy.com",
             "ProxyPort": "80",
             "Info": "Proxy"                
-        },    
+        },  
+        {
+            "Name": "CLARO SIN REDES 01",
+            "FLAG": "claro",
+            "Payload": "HEAD / HTTP/1.6[crlf]Host: paquetes1.miclaro.com.sv[[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[crlf]Host:[rotate=d1viw2fof69lbs.cloudfront.net][lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "paquetes1.miclaro.com.sv",
+            "ProxyPort": "80",
+            "Info": "Proxy"                
+        },     
     {
-            "Name": "CLARO SV SIN REDES 01 🇸🇻",
+            "Name": "CLARO SIN REDES 02",
             "FLAG": "claro",
             "Payload": "",
             "SNI": "pruebat.org",
@@ -76,7 +86,7 @@
             "Info": "Ssl"         
         },  
     {
-            "Name": "CLARO SV SIN REDES 02 🇸🇻",
+            "Name": "CLARO SIN REDES 03",
             "FLAG": "claro",
             "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
             "SNI": "",
@@ -86,27 +96,27 @@
             "Info": "Proxy"         
         },  
         {
-            "Name": "CLARO SV SIN REDES 03 🇸🇻",
+            "Name": "CLARO SIN REDES 04",
             "FLAG": "claro",
-            "Payload": "HEAD / HTTP/1.1[crlf]Host: processorpay.com[crlf][crlf][split]GET / HTTP/1.0[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade[crlf]CESARSHEN ???[US][crlf]Upgrade: Websocket[crlf][crlf]",
+            "Payload": "GET /qra-atsil/21112c41c8a952b/8888:811C922C89C02 HTTP/1.1\nHost: www.clarovideo.com \nContent-Length: 117930662\nCache-Control: no-cache\nPragma: no-cache\nConnection: close[crlf][crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "processorpay.com",
+            "ProxyIP": "193.106.248.226",
             "ProxyPort": "80",
             "Info": "Proxy"                
         },   
         {
-            "Name": "CLARO FULL 01 🇭🇳🇬🇹🇳🇮🇸🇻",
+            "Name": "CLARO SIN REDES 05",
            "FLAG": "claro",
-            "Payload": "",
-            "SNI": "www.googletagmanager.com",
+            "Payload": "GET /qra-atsil/21112c41c8a952b/8888:811C922C89C02 HTTP/1.1\nHost: asset.media \nContent-Length: 117930662\nCache-Control: no-cache\nPragma: no-cache\nConnection: close[crlf][crlf]",
+            "SNI": "",
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
-            "ProxyPort": "443",
-            "Info": "Ssl"     
+            "ProxyPort": "80",
+            "Info": "Proxy"     
         },   
         {
-            "Name": "CLARO FULL 02 🇭🇳🇬🇹🇳🇮🇸🇻",
+            "Name": "CLARO SIN REDES 06",
             "FLAG": "claro",
             "Payload": "HEAD / HTTP/1.6[crlf]Host: clubclaro.com.ni[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[crlf]Host:[rotate=d1viw2fof69lbs.cloudfront.net][lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
             "SNI": "",
@@ -116,7 +126,7 @@
             "Info": "Proxy"                
         },               
             {
-            "Name": "TIGO SV 01 🇸🇻",
+            "Name": "TIGO EL SALVADOR 01",
             "FLAG": "tim",
             "Payload": "HTTP/2.0 200[crlf]Host:[random=dv01bdi09vt3n.cloudfront.net;about.meituan.com;tv.kankan.com;store.steampowered.com;map.baidu.com;list.tmall.com;yandex.com;qzone.qq.com;v.qq.com;y.qq.com;www.bb.com.br;ok.ru;www.dropbox.com;www.epicgames.com;youku.com;sll.zc.qq.com;www.tiktok.com;tidal.com;www.funk.com;gsuite.google.com;www.voxer.com]\n200 Connection established\nProxy-Connection: close\nConnection-Keep-true\nControl-Cache: no-cache\nContent-Length: 9999999999999999999\nUser-Agent: Yes \nContent-Encoding: 88888888\nContent-Language: 00000000\nContent-Length: 55555555\nContent-Location:33333333[crlf]",
             "SNI": "",
@@ -126,7 +136,7 @@
             "Info": "Proxy"                    
         },
         {
-            "Name": "TIGO SV 02 🇸🇻",
+            "Name": "TIGO EL SALVADOR 02",
             "FLAG": "tim",
             "Payload": "HTTP/1.6 200 ok[crlf]Host: [rotate=www.empire.co.ke.com;www.atresplayer.com;www.aol.com;wap.yy.com;net.supercell.com;www.disney.com;www.bbc.com;www.godaddy.com;adclick.g.doubleclick.net;www.buzzfeed.com;www.alipay.com;www.monster.com;www.playstation.net;mail.hotmail.com;ads.mopub.com;m.weibo.cn;www.flickr.com;d1n212ccp6ldpw.cloudfront.net][crlf][ua]",
             "SNI": "",
@@ -136,9 +146,9 @@
             "Info": "Proxy"                   
         },
         {
-            "Name": "TIGO SV 03 🇸🇻",
+            "Name": "TIGO EL SALVADOR 03",
             "FLAG": "tim",
-       "Payload": "HTTP/1.6 200[crlf]Host:[ff.garena.com]\\n200 Connection established\\nProxy-Connection: close\\nConnection-Keep-true\\nControl-Cache: no-cache\\nContent-Length: 9999999999999999999\\nUser-Agent: Yes \\nContent-Encoding: 88888888\\nContent-Language: 00000000\\nContent-Length: 55555555\\nContent-Location:33333333[crlf]",
+       "Payload": "HTTP/2.0  200[crlf]Host:[random=awsclonfrontdns.k.admcgh.online;about.meituan.com;tv.kankan.com;store.steampowered.com;map.baidu.com;list.tmall.com;yandex.com;qzone.qq.com;v.qq.com;y.qq.com;www.bb.com.br;ok.ru;www.dropbox.com;www.epicgames.com;youku.com;sll.zc.qq.com;www.tiktok.com;tidal.com;www.funk.com;gsuite.google.com;www.voxer.com]\n200 Connection established\nProxy-Connection: close\nConnection-Keep-true\nControl-Cache: no-cache\nContent-Length: 9999999999999999999\nUser-Agent: Yes \nContent-Encoding: 88888888\nContent-Language: 00000000\nContent-Length: 55555555\nContent-Location:33333333[crlf]",
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
@@ -146,47 +156,7 @@
             "Info": "Proxy"                  
         },
         {
-            "Name": "MOVISTAR WHATSAPP 🇸🇻 ",
-            "FLAG": "ic_oi",
-            "Payload": "",
-            "SNI": "cdn.whatsapp.net",
-            "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
-            "ProxyPort": "443",
-            "Info": "Ssl"         
-        },
-        {
-            "Name": "MOVISTAR SIN SALDO 🇸🇻 ",
-            "FLAG": "ic_oi",
-            "Payload": "",
-            "SNI": "www.googletagmanager.com",
-            "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
-            "ProxyPort": "443",
-            "Info": "Ssl"         
-        },
-       {
-            "Name": "DIGICEL SV 150MG 🇸🇻",
-            "FLAG": "ice_vivo",
-            "Payload": "",
-            "SNI": "mda.digicelgroup.com",
-            "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
-            "ProxyPort": "443",
-            "Info": "Ssl"         
-        },
-        {
-            "Name": "TIGO GT 01 🇬🇹",
-            "FLAG": "tim",
-       "Payload": "HTTP/1.6 200 ok[crlf]Host: [rotate=www.empire.co.ke.com;www.atresplayer.com;www.aol.com;wap.yy.com;net.supercell.com;www.disney.com;www.bbc.com;www.godaddy.com;adclick.g.doubleclick.net;www.buzzfeed.com;www.alipay.com;www.monster.com;www.playstation.net;mail.hotmail.com;ads.mopub.com;m.weibo.cn;www.flickr.com;d1n212ccp6ldpw.cloudfront.net][crlf][ua]",
-            "SNI": "",
-            "TlsIP": "",
-            "ProxyIP": "193.106.248.226",
-            "ProxyPort": "80",
-            "Info": "Proxy"                  
-        },
-        {
-            "Name": "TIGO GT 02 🇬🇹",
+            "Name": "TIGO EL SALVADOR 04",
             "FLAG": "tim",
        "Payload": "HTTP/2 200 ok[crlf]Host:http://axiomac.com:80.google.com;https://itunes.apple.com[crlf]Connexion :keep-alive[crlf]auth.mtn.ci[crlf]",
             "SNI": "",
@@ -194,16 +164,56 @@
             "ProxyIP": "193.106.248.226",
             "ProxyPort": "80",
             "Info": "Proxy"                  
-        },   
-                {
-            "Name": "CLARO GT SIN REDES 🇬🇹",
-            "FLAG": "claro",
+        },
+        {
+            "Name": "TIGO EL SALVADOR 05",
+            "FLAG": "tim",
+       "Payload": "HTTP/2.0  200[crlf]Host:[random=chaparrita.colochita.org;about.meituan.com;tv.kankan.com;store.steampowered.com;map.baidu.com;list.tmall.com;yandex.com;qzone.qq.com;v.qq.com;y.qq.com;www.bb.com.br;ok.ru;www.dropbox.com;www.epicgames.com;youku.com;sll.zc.qq.com;www.tiktok.com;tidal.com;www.funk.com;gsuite.google.com;www.voxer.com]\n200 Connection established\nProxy-Connection: close\nConnection-Keep-true\nControl-Cache: no-cache\nContent-Length: 9999999999999999999\nUser-Agent: Yes \nContent-Encoding: 88888888\nContent-Language: 00000000\nContent-Length: 55555555\nContent-Location:33333333[crlf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "193.106.248.226",
+            "ProxyPort": "80",
+            "Info": "Proxy"                  
+        },
+        {
+            "Name": "MOVISTAR EL SALVADOR 01",
+            "FLAG": "ic_oi",
+            "Payload": "",
+            "SNI": "www.google.com",
+            "TlsIP": "",
+            "ProxyIP": "193.106.248.226",
+            "ProxyPort": "443",
+            "Info": "Ssl"         
+        },
+        {
+            "Name": "MOVISTAR EL SALVADOR 02",
+            "FLAG": "ic_oi",
             "Payload": "",
             "SNI": "www.googletagmanager.com",
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
             "ProxyPort": "443",
             "Info": "Ssl"         
+        },
+                {
+            "Name": "MOVISTAR EL SALVADOR 03",
+            "FLAG": "ic_oi",
+            "Payload": "",
+            "SNI": "www.who.int",
+            "TlsIP": "",
+            "ProxyIP": "193.106.248.226",
+            "ProxyPort": "443",
+            "Info": "Ssl"         
+        },
+       {
+            "Name": "DIGICEL SV 150MG",
+            "FLAG": "ice_vivo",
+            "Payload": "",
+            "SNI": "mda.digicelgroup.com",
+            "TlsIP": "",
+            "ProxyIP": "193.106.248.226",
+            "ProxyPort": "443",
+            "Info": "Ssl"               
         }
     ]
 }
