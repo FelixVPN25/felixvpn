@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.30",
+   "Version": "1.0.31",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
     "Sms": "",
@@ -33,7 +33,7 @@
     ],
     "Servers": [
         {
-            "Name": "FELIX PREMIUM 1.0.30",
+            "Name": "FELIX PREMIUM 1.0.31",
             "TYPE": "PREMIUM",
             "FLAG": "br.png",
             "ServerIP": "193.106.248.226",
@@ -82,21 +82,11 @@
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
-            "ProxyPort": "80",
+            "ProxyPort": "8080",
             "Info": "Proxy"         
         },  
-        {
+                        {
             "Name": "CLARO SIN REDES 03",
-            "FLAG": "claro",
-            "Payload": "HEAD / HTTP/1.6[crlf]Host: paquetes1.miclaro.com.sv[[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[crlf]Host:[rotate=d1viw2fof69lbs.cloudfront.net][lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
-            "SNI": "",
-            "TlsIP": "",
-            "ProxyIP": "paquetes1.miclaro.com.sv",
-            "ProxyPort": "80",
-            "Info": "Proxy"                
-        },     
-                {
-            "Name": "CLARO SIN REDES 04",
             "FLAG": "claro",
             "Payload": "HEAD / HTTP/1.1[crlf]Host: processorpay.com[crlf][crlf][split]GET / HTTP/1.0[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade[crlf]CESARSHEN 𝟓𝟎𝟕[US][crlf]Upgrade: Websocket[crlf][crlf]",
             "SNI": "",
@@ -106,13 +96,23 @@
             "Info": "Proxy"                
         }, 
         {
+            "Name": "CLARO SIN REDES 04",
+            "FLAG": "claro",
+            "Payload": "HEAD / HTTP/1.6[crlf]Host: paquetes1.miclaro.com.sv[[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[crlf]Host:[rotate=d1viw2fof69lbs.cloudfront.net][lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "paquetes1.miclaro.com.sv",
+            "ProxyPort": "80",
+            "Info": "Proxy"                
+        },     
+        {
             "Name": "CLARO SIN REDES 05",
             "FLAG": "claro",
             "Payload": "GET /qra-atsil/21112c41c8a952b/8888:811C922C89C02 HTTP/1.1\nHost: www.clarovideo.com \nContent-Length: 117930662\nCache-Control: no-cache\nPragma: no-cache\nConnection: close[crlf][crlf]",
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
-            "ProxyPort": "80",
+            "ProxyPort": "8080",
             "Info": "Proxy"                
         },   
         {
@@ -122,7 +122,7 @@
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "193.106.248.226",
-            "ProxyPort": "80",
+            "ProxyPort": "8080",
             "Info": "Proxy"     
         },                
             {
