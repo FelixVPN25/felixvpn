@@ -1,9 +1,9 @@
 {
-   "Version": "1.0.33",
+   "Version": "1.0.34",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
-    "Sms": "",
-  "logoonline": "https://i.ibb.co/N2ZCBZ4k/IMG-20260110-082112.png",
+      "Sms":"",
+      "logoonline": "https://i.ibb.co/N2ZCBZ4k/IMG-20260110-082112.png",
     "fundoonline": "https://i.ibb.co/218qxv2z/papeldeparede1.jpg",
     "banneRodapeOnline": "",
     "fundoDoLogOnline": "",
@@ -13,6 +13,19 @@
     "CheckUser": "true",
     "ModderLinkWhatsapp": "https://chat.whatsapp.com/HcvWuEqdqMSDZxqAyV5XAG?mode=hqrt1",
     "ModderLinkTelegram": "https://t.me/felixpremium",
+    "EmailFeedback":"",
+    "UrlContato":"https://wa.me/50372378370",
+    "UrlTermos":"",
+    "CorUser":"#FFFFFFFF",
+    "CorGeral":"#FFFFFFFF",
+    "CorMenu":"#FFFFFFFF",
+    "CorTexto":"#FFFFFFFF",
+    "LogoLink":"https://i.ibb.co/Fkq5yHZQ/IMG-20260206-095755.png",
+    "BackgroundLink":"https://i.ibb.co/dJtfbTxn/papeldeparede1.jpg",
+    "1BackgroundLink":"",
+    "BackgroundLink2":"",
+    "BackgroundLink1":"",
+    "UrlUpdate":"https://bit.ly/4rntUys",
     "ModderCorCaixaServ": "",
     "ModderCorCaixaPay": "",
     "ModderCorCaixaCentral": "",
@@ -26,6 +39,7 @@
     "ModderCorBotaoConfig": "",
     "DnsPrimario": "",
     "DnsSecundario": "",
+    "UdpPort":"7300;7400",  
     "Udp": [
         {
             "Porta": "7300"
@@ -33,10 +47,10 @@
     ],
     "Servers": [
         {
-            "Name": "FELIX PREMIUM 1.0.33",
+            "Name": "FELIX PREMIUM 1.0.34",
             "TYPE": "PREMIUM",
-            "FLAG": "br.png",
-            "ServerIP": "217.216.91.14",
+            "FLAG": "us.png",
+            "ServerIP": "193.106.248.226",
             "CheckUser": "",
             "ServerPort": "22",
             "SSLPort": "443",
@@ -46,22 +60,12 @@
     ],
     "Networks": [
     {
-            "Name": "CLARO PQTE Instagram",
+            "Name": "CLARO PQTE $0.25 Instagram",
             "FLAG": "ice_vivo",
             "Payload": "OPTIONS / HTTP/1.1[crlf]Host: outlook.giphy.com[crlf][crlf][split]GET / HTTP/1.1[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade:  [crlf]Upgrade: Websocket[crlf][crlf]",
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "outlook.giphy.com",
-            "ProxyPort": "80",
-            "Info": "Proxy"                
-        },  
-     {
-            "Name": "CLARO PQTE $0.25 Instagram",
-            "FLAG": "ic_vivo",
-            "Payload": "GET / HTTP/1.1[crlf]Host: cookies.giphy.com[crlf][crlf][split][crlf][crlf]GET- / HTTP/1.1[crlf]Host: cookies.giphy.com[crlf][crlf]GET / HTTP/1.1[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade[crlf]Upgrade: Websocket[crlf][crlf]",
-            "SNI": "",
-            "TlsIP": "",
-            "ProxyIP": "cookies.giphy.com",
             "ProxyPort": "80",
             "Info": "Proxy"                
         },  
@@ -71,7 +75,7 @@
             "Payload": "",
             "SNI": "pruebat.org",
             "TlsIP": "",
-            "ProxyIP": "217.216.91.14",
+            "ProxyIP": "193.106.248.226",
             "ProxyPort": "443",
             "Info": "Ssl"         
         },  
@@ -81,7 +85,7 @@
             "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "217.216.91.14",
+            "ProxyIP": "193.106.248.226",
             "ProxyPort": "8080",
             "Info": "Proxy"         
         },  
@@ -95,43 +99,13 @@
             "ProxyPort": "80",
             "Info": "Proxy"                
         }, 
-        {
-            "Name": "CLARO SIN REDES 04",
-            "FLAG": "claro",
-            "Payload": "HEAD / HTTP/1.6[crlf]Host: paquetes1.miclaro.com.sv[[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[crlf]Host:[rotate=d1viw2fof69lbs.cloudfront.net][lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
-            "SNI": "",
-            "TlsIP": "",
-            "ProxyIP": "paquetes1.miclaro.com.sv",
-            "ProxyPort": "80",
-            "Info": "Proxy"                
-        },     
-        {
-            "Name": "CLARO SIN REDES 05",
-            "FLAG": "claro",
-            "Payload": "GET /qra-atsil/21112c41c8a952b/8888:811C922C89C02 HTTP/1.1\nHost: www.clarovideo.com \nContent-Length: 117930662\nCache-Control: no-cache\nPragma: no-cache\nConnection: close[crlf][crlf]",
-            "SNI": "",
-            "TlsIP": "",
-            "ProxyIP": "217.216.91.14",
-            "ProxyPort": "8080",
-            "Info": "Proxy"                
-        },   
-        {
-            "Name": "CLARO SIN REDES 06",
-           "FLAG": "claro",
-            "Payload": "GET /qra-atsil/21112c41c8a952b/8888:811C922C89C02 HTTP/1.1\nHost: asset.media \nContent-Length: 117930662\nCache-Control: no-cache\nPragma: no-cache\nConnection: close[crlf][crlf]",
-            "SNI": "",
-            "TlsIP": "",
-            "ProxyIP": "217.216.91.14",
-            "ProxyPort": "8080",
-            "Info": "Proxy"     
-        },                
             {
             "Name": "TIGO EL SALVADOR 01",
             "FLAG": "tim",
             "Payload": "HTTP/2.0 200[crlf]Host:[random=dv01bdi09vt3n.cloudfront.net;about.meituan.com;tv.kankan.com;store.steampowered.com;map.baidu.com;list.tmall.com;yandex.com;qzone.qq.com;v.qq.com;y.qq.com;www.bb.com.br;ok.ru;www.dropbox.com;www.epicgames.com;youku.com;sll.zc.qq.com;www.tiktok.com;tidal.com;www.funk.com;gsuite.google.com;www.voxer.com]\n200 Connection established\nProxy-Connection: close\nConnection-Keep-true\nControl-Cache: no-cache\nContent-Length: 9999999999999999999\nUser-Agent: Yes \nContent-Encoding: 88888888\nContent-Language: 00000000\nContent-Length: 55555555\nContent-Location:33333333[crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "217.216.91.14",
+            "ProxyIP": "193.106.248.226",
             "ProxyPort": "80",
             "Info": "Proxy"                    
         },
@@ -141,7 +115,7 @@
             "Payload": "HTTP/1.6 200 ok[crlf]Host: [rotate=www.empire.co.ke.com;www.atresplayer.com;www.aol.com;wap.yy.com;net.supercell.com;www.disney.com;www.bbc.com;www.godaddy.com;adclick.g.doubleclick.net;www.buzzfeed.com;www.alipay.com;www.monster.com;www.playstation.net;mail.hotmail.com;ads.mopub.com;m.weibo.cn;www.flickr.com;d1n212ccp6ldpw.cloudfront.net][crlf][ua]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "217.216.91.14",
+            "ProxyIP": "193.106.248.226",
             "ProxyPort": "80",
             "Info": "Proxy"                   
         },
@@ -151,27 +125,7 @@
        "Payload": "HTTP/2.0  200[crlf]Host:[random=awsclonfrontdns.k.admcgh.online;about.meituan.com;tv.kankan.com;store.steampowered.com;map.baidu.com;list.tmall.com;yandex.com;qzone.qq.com;v.qq.com;y.qq.com;www.bb.com.br;ok.ru;www.dropbox.com;www.epicgames.com;youku.com;sll.zc.qq.com;www.tiktok.com;tidal.com;www.funk.com;gsuite.google.com;www.voxer.com]\n200 Connection established\nProxy-Connection: close\nConnection-Keep-true\nControl-Cache: no-cache\nContent-Length: 9999999999999999999\nUser-Agent: Yes \nContent-Encoding: 88888888\nContent-Language: 00000000\nContent-Length: 55555555\nContent-Location:33333333[crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "217.216.91.14",
-            "ProxyPort": "80",
-            "Info": "Proxy"                  
-        },
-        {
-            "Name": "TIGO EL SALVADOR 04",
-            "FLAG": "tim",
-       "Payload": "HTTP/2 200 ok[crlf]Host:http://axiomac.com:80.google.com;https://itunes.apple.com[crlf]Connexion :keep-alive[crlf]auth.mtn.ci[crlf]",
-            "SNI": "",
-            "TlsIP": "",
-            "ProxyIP": "217.216.91.14",
-            "ProxyPort": "80",
-            "Info": "Proxy"                  
-        },
-        {
-            "Name": "TIGO EL SALVADOR 05",
-            "FLAG": "tim",
-       "Payload": "HTTP/2.0  200[crlf]Host:[random=chaparrita.colochita.org;about.meituan.com;tv.kankan.com;store.steampowered.com;map.baidu.com;list.tmall.com;yandex.com;qzone.qq.com;v.qq.com;y.qq.com;www.bb.com.br;ok.ru;www.dropbox.com;www.epicgames.com;youku.com;sll.zc.qq.com;www.tiktok.com;tidal.com;www.funk.com;gsuite.google.com;www.voxer.com]\n200 Connection established\nProxy-Connection: close\nConnection-Keep-true\nControl-Cache: no-cache\nContent-Length: 9999999999999999999\nUser-Agent: Yes \nContent-Encoding: 88888888\nContent-Language: 00000000\nContent-Length: 55555555\nContent-Location:33333333[crlf]",
-            "SNI": "",
-            "TlsIP": "",
-            "ProxyIP": "217.216.91.14",
+            "ProxyIP": "193.106.248.226",
             "ProxyPort": "80",
             "Info": "Proxy"                  
         },
@@ -181,7 +135,7 @@
             "Payload": "",
             "SNI": "www.googletagmanager.com",
             "TlsIP": "",
-            "ProxyIP": "217.216.91.14",
+            "ProxyIP": "193.106.248.226",
             "ProxyPort": "443",
             "Info": "Ssl"         
         },
@@ -191,7 +145,7 @@
             "Payload": "",
             "SNI": "www.google.com",
             "TlsIP": "",
-            "ProxyIP": "217.216.91.14",
+            "ProxyIP": "193.106.248.226",
             "ProxyPort": "443",
             "Info": "Ssl"         
         },
@@ -201,7 +155,7 @@
             "Payload": "",
             "SNI": "www.who.int",
             "TlsIP": "",
-            "ProxyIP": "217.216.91.14",
+            "ProxyIP": "193.106.248.226",
             "ProxyPort": "443",
             "Info": "Ssl"         
         },
@@ -211,7 +165,7 @@
             "Payload": "",
             "SNI": "mda.digicelgroup.com",
             "TlsIP": "",
-            "ProxyIP": "217.216.91.14",
+            "ProxyIP": "193.106.248.226",
             "ProxyPort": "443",
             "Info": "Ssl"               
         }
