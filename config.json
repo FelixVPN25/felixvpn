@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.34",
+   "Version": "1.0.35",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
       "Sms":"",
@@ -47,7 +47,7 @@
     ],
     "Servers": [
         {
-            "Name": "FELIX PREMIUM 1.0.34",
+            "Name": "FELIX PREMIUM 1.0.35",
             "TYPE": "PREMIUM",
             "FLAG": "us.png",
             "ServerIP": "193.106.248.226",
@@ -131,7 +131,7 @@
         },
         {
             "Name": "MOVISTAR EL SALVADOR 01",
-            "FLAG": "ic_oi",
+            "FLAG": "oi",
             "Payload": "",
             "SNI": "www.googletagmanager.com",
             "TlsIP": "",
@@ -141,7 +141,7 @@
         },
         {
             "Name": "MOVISTAR EL SALVADOR 02",
-            "FLAG": "ic_oi",
+            "FLAG": "oi",
             "Payload": "",
             "SNI": "www.google.com",
             "TlsIP": "",
@@ -151,7 +151,7 @@
         },
                 {
             "Name": "MOVISTAR EL SALVADOR 03",
-            "FLAG": "ic_oi",
+            "FLAG": "oi",
             "Payload": "",
             "SNI": "www.who.int",
             "TlsIP": "",
@@ -161,7 +161,7 @@
         },
        {
             "Name": "DIGICEL SV 150MG",
-            "FLAG": "ice_vivo",
+            "FLAG": "vivo",
             "Payload": "",
             "SNI": "mda.digicelgroup.com",
             "TlsIP": "",
