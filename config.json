@@ -41,7 +41,7 @@
             "ServerPort": "22",
             "SSLPort": "443",
             "USER": "",
-            "PASS": "",
+            "PASS": ""
         }
     ],
     "Networks": [
