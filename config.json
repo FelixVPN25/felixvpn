@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.36",
+   "Version": "1.0.37",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
       "Sms":"",
@@ -47,7 +47,7 @@
     ],
     "Servers": [
         {
-            "Name": "FELIX PREMIUM 1.0.36",
+            "Name": "FELIX PREMIUM 1.0.37",
             "TYPE": "PREMIUM",
             "FLAG": "us.png",
             "ServerIP": "193.106.248.226",
@@ -89,7 +89,7 @@
             "ProxyPort": "8080",
             "Info": "Proxy"         
         },  
-                        {
+        {
             "Name": "CLARO SIN REDES 03",
             "FLAG": "claro",
             "Payload": "HEAD / HTTP/1.1[crlf]Host: processorpay.com[crlf][crlf][split]GET / HTTP/1.0[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade[crlf]CESARSHEN 𝟓𝟎𝟕[US][crlf]Upgrade: Websocket[crlf][crlf]",
@@ -99,7 +99,7 @@
             "ProxyPort": "80",
             "Info": "Proxy"                
         }, 
-                                {
+        {
             "Name": "CLARO SIN REDES 04",
             "FLAG": "claro",
             "Payload": "GET /app53 HTTP/1.1\\nHost: [rotate=cloudrun-22fe-291269986346.us-central1.run.app]\\nConnection: Upgrade\\nUpgrade: Websocket[crlf][crlf]",
