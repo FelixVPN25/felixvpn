@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.37",
+   "Version": "1.0.38",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
       "Sms":"",
@@ -13,19 +13,6 @@
     "CheckUser": "true",
     "ModderLinkWhatsapp": "https://chat.whatsapp.com/HcvWuEqdqMSDZxqAyV5XAG?mode=hqrt1",
     "ModderLinkTelegram": "https://t.me/felixpremium",
-    "EmailFeedback":"",
-    "UrlContato":"https://wa.me/50372378370",
-    "UrlTermos":"",
-    "CorUser":"#FFFFFFFF",
-    "CorGeral":"#FFFFFFFF",
-    "CorMenu":"#FFFFFFFF",
-    "CorTexto":"#FFFFFFFF",
-    "LogoLink":"https://i.ibb.co/Fkq5yHZQ/IMG-20260206-095755.png",
-    "BackgroundLink":"https://i.ibb.co/dJtfbTxn/papeldeparede1.jpg",
-    "1BackgroundLink":"",
-    "BackgroundLink2":"",
-    "BackgroundLink1":"",
-    "UrlUpdate":"https://bit.ly/4rntUys",
     "ModderCorCaixaServ": "",
     "ModderCorCaixaPay": "",
     "ModderCorCaixaCentral": "",
@@ -39,7 +26,6 @@
     "ModderCorBotaoConfig": "",
     "DnsPrimario": "",
     "DnsSecundario": "",
-    "UdpPort":"7300;7400",  
     "Udp": [
         {
             "Porta": "7300"
@@ -47,7 +33,7 @@
     ],
     "Servers": [
         {
-            "Name": "FELIX PREMIUM 1.0.37",
+            "Name": "FELIX PREMIUM 1.0.38",
             "TYPE": "PREMIUM",
             "FLAG": "us.png",
             "ServerIP": "193.106.248.226",
