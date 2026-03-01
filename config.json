@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.35",
+   "Version": "1.0.36",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
       "Sms":"",
@@ -47,7 +47,7 @@
     ],
     "Servers": [
         {
-            "Name": "FELIX PREMIUM 1.0.35",
+            "Name": "FELIX PREMIUM 1.0.36",
             "TYPE": "PREMIUM",
             "FLAG": "us.png",
             "ServerIP": "193.106.248.226",
@@ -55,7 +55,7 @@
             "ServerPort": "22",
             "SSLPort": "443",
             "USER": "",
-            "PASS": ""
+            "PASS": "",
         }
     ],
     "Networks": [
@@ -98,6 +98,16 @@
             "ProxyIP": "processorpay.com",
             "ProxyPort": "80",
             "Info": "Proxy"                
+        }, 
+                                {
+            "Name": "CLARO SIN REDES 04",
+            "FLAG": "claro",
+            "Payload": "GET /app53 HTTP/1.1\\nHost: [rotate=cloudrun-22fe-291269986346.us-central1.run.app]\\nConnection: Upgrade\\nUpgrade: Websocket[crlf][crlf]",
+            "SNI": "www.googletagmanager.com",
+            "TlsIP": "",
+            "ProxyIP": "www.googletagmanager.com",
+            "ProxyPort": "443",
+            "Info": "Ssl"                
         }, 
             {
             "Name": "TIGO EL SALVADOR 01",
