@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.41",
+   "Version": "1.0.42",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
       "Sms":"",
@@ -44,7 +44,7 @@
     ],
     "Servers": [
         {
-            "Name": "FELIX PREMIUM 1.0.41",
+            "Name": "FELIX PREMIUM 1.0.42",
             "TYPE": "PREMIUM",
             "FLAG": "br.png",
             "ServerIP": "66.70.188.143",
@@ -57,12 +57,22 @@
     ],
     "Networks": [
     {
-            "Name": "CLARO PQTE $1.25 YouTube🚀",
+            "Name": "CLARO PQTE $1.25 YouTube 1🚀",
             "FLAG": "ice_vivo",
-            "Payload": "OPTIONS / HTTP/1.1[crlf]Host: outlook.giphy.com[crlf][crlf][split]GET / HTTP/1.1[crlf]Host: d1viw2fof69lbs.cloudfront.net[crlf]Connection: Upgrade:  [crlf]Upgrade: Websocket[crlf][crlf]",
+            "Payload": "HEAD / HTTP/1.1[crlf]Host: outlook.giphy.com[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[lf]Host: d1viw2fof69lbs.cloudfront.net[lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "outlook.giphy.com",
+            "ProxyPort": "80",
+            "Info": "Proxy"                
+        },  
+        {
+            "Name": "CLARO PQTE $1.25 YouTube 2🚀",
+            "FLAG": "ice_vivo",
+            "Payload": "HEAD / HTTP/1.1[crlf]Host: cookies.giphy.com[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[lf]Host: d1viw2fof69lbs.cloudfront.net[lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "cookies.giphy.com",
             "ProxyPort": "80",
             "Info": "Proxy"                
         },  
@@ -83,7 +93,7 @@
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "66.70.188.143",
-            "ProxyPort": "80",
+            "ProxyPort": "8080",
             "Info": "Proxy"         
         },  
         {
@@ -96,6 +106,16 @@
             "ProxyPort": "80",
             "Info": "Proxy"                
         }, 
+                {
+            "Name": "TIGO CONGELA MG🥶",
+            "FLAG": "tim",
+            "Payload": "HEAD / HTTP/1.1[crlf]Host: mobile2.twimg.com[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[lf]Host: d1viw2fof69lbs.cloudfront.net[lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "mobile2.twimg.com",
+            "ProxyPort": "80",
+            "Info": "Proxy"                   
+        },
             {
             "Name": "TIGO FULL 1🌐",
             "FLAG": "tim",
@@ -109,7 +129,7 @@
         {
             "Name": "TIGO FULL 2🌐",
             "FLAG": "tim",
-            "Payload": "HTTP/2.0 200[crlf]Host:[random=dv01bdi09vt3n.cloudfront.net;about.meituan.com;tv.kankan.com;store.steampowered.com;map.baidu.com;list.tmall.com;yandex.com;qzone.qq.com;v.qq.com;y.qq.com;www.bb.com.br;ok.ru;www.dropbox.com;www.epicgames.com;youku.com;sll.zc.qq.com;www.tiktok.com;tidal.com;www.funk.com;gsuite.google.com;www.voxer.com]\n200 Connection established\nProxy-Connection: close\nConnection-Keep-true\nControl-Cache: no-cache\nContent-Length: 9999999999999999999\nUser-Agent: Yes \nContent-Encoding: 88888888\nContent-Language: 00000000\nContent-Length: 55555555\nContent-Location:33333333[crlf]",
+            "Payload": "HTTP/2 200 ok[crlf]Host:http://axiomac.com:80.google.com;https://itunes.apple.com[crlf]Connexion :keep-alive[crlf]auth.mtn.ci[crlf]",
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "66.70.188.143",
