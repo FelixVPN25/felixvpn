@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.44",
+   "Version": "1.0.45",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
       "Sms":"",
@@ -44,7 +44,7 @@
     ],
     "Servers": [
         {
-            "Name": "FELIX PREMIUM 1.0.44",
+            "Name": "FELIX PREMIUM 1.0.45",
             "TYPE": "PREMIUM",
             "FLAG": "br.png",
             "ServerIP": "206.183.128.49",
@@ -86,16 +86,6 @@
             "ProxyPort": "80",
             "Info": "Proxy"                   
         },
-        {
-            "Name": "CLARO SLOW🌐",
-            "FLAG": "claro",
-            "Payload": "228cdd3485524d7f0b7382afce91548fa6d02524e530184dc535f48824006523",
-            "SNI": "",
-            "TlsIP": "",
-            "ProxyIP": "dns.felixpremiun.shop",
-            "ProxyPort": "8.8.8.8",
-            "Info": "Proxy"         
-        },  
         {
             "Name": "CLARO SIN REDES 1🌐",
             "FLAG": "claro",
