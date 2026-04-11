@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Felix PRO - Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { 
+            --bg: #0b0f19; --card: #151a27; --primary: #00d2ff; --danger: #ff1744; 
+            --text: #ffffff; --success: #00e676; --warning: #ff9800;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+        
+        /* Layout Principal */
+        .main-content { flex: 1; display: flex; flex-direction: column; padding: 60px 22px 30px; justify-content: space-between; }
+        .header-section { text-align: center; }
+        .top-row { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 5px; }
+        .app-title { font-size: 24px; font-weight: 900; letter-spacing: 2px; text-shadow: 0 0 15px var(--primary); flex: 1; text-transform: uppercase; }
+        .user-greeting { font-size: 14px; color: var(--primary); font-weight: bold; margin-top: 5px; display: none; text-transform: capitalize; }
+        
+        /* Botones Superiores */
+        .btn-top { background: rgba(255, 255, 255, 0.05); width: 48px; height: 48px; border-radius: 15px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
+        .proxy-btn { background: rgba(0, 230, 118, 0.1); border-color: var(--success); color: var(--success); }
+        .btn-top:active { transform: scale(0.95); background: rgba(255,255,255,0.1); }
+
+        /* Tag VIP */
+        .expiry-tag { background: rgba(0, 230, 118, 0.1); color: var(--success); font-size: 13px; font-weight: bold; padding: 6px 20px; border-radius: 50px; border: 1px solid var(--success); margin: 10px auto; width: fit-content; }
+        
+        /* Cronómetro */
+        .timer { font-family: monospace; font-size: 55px; color: var(--primary); font-weight: bold; margin: 5px 0; }
+        
+        /* Logo y Anillo de Progreso (DISEÑO PREMIUM) */
+        .center-section { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; min-height: 200px; }
+        .logo-container { position: relative; width: 180px; height: 180px; display: flex; justify-content: center; align-items: center; }
+        .progress-ring { position: absolute; top: 0; left: 0; transform: rotate(-90deg); width: 180px; height: 180px; }
+        .progress-ring__circle { stroke: rgba(255, 255, 255, 0.05); stroke-width: 8; fill: transparent; }
+        .progress-ring__bar { 
+            stroke: var(--primary); stroke-width: 8; stroke-linecap: round; fill: transparent; 
+            stroke-dasharray: 440; stroke-dashoffset: 440; transition: stroke-dashoffset 0.5s ease, stroke 0.5s ease; 
+        }
+        .logo-main { width: 120px; height: 120px; z-index: 2; transition: 0.8s ease; border-radius: 50%; object-fit: cover; }
+
+        /* Contenedor de ID (DISEÑO PREMIUM) */
+        .id-container { width: 100%; background: rgba(0,210,255,0.03); border-radius: 20px; border: 2px solid rgba(0,210,255,0.3); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; margin-top: 25px; transition: 0.3s; }
+        .id-container:active { background: rgba(0,210,255,0.06); }
+        .id-label { color: var(--primary); font-weight: 900; font-family: monospace; font-size: 10px; letter-spacing: 0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .id-label.registrado { color: var(--success); text-shadow: 0 0 10px rgba(0, 230, 118, 0.5); }
+        
+        /* Botón de Acción y Pill de Estado */
+        .bottom-section { display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; }
+        .status-pill { font-size: 11px; font-weight: 900; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; margin: 0 auto; padding: 5px 15px; border: 1px solid rgba(0,210,255,0.2); border-radius: 50px; }
+        .status-pill.on { color: var(--success); border-color: var(--success); }
+        
+        .btn-action { width: 100%; height: 65px; background: #1e2433; color: white; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; font-weight: 900; font-size: 19px; text-transform: uppercase; transition: all 0.3s ease; }
+        .btn-action.connecting { background: var(--warning) !important; border-color: var(--warning); box-shadow: 0 0 20px rgba(255, 152, 0, 0.4); color: white; }
+        .btn-action.connected { background: var(--success) !important; color: #0b0f19; border-color: var(--success); box-shadow: 0 0 25px rgba(0, 230, 118, 0.6); }
+        .btn-action:active { transform: scale(0.98); }
+
+        /* Tarjeta de Servidor */
+        .server-card { background: var(--card); padding: 18px; border-radius: 25px; display: flex; align-items: center; border: 1px solid rgba(255,255,255,0.08); transition: 0.3s; }
+        .server-card:active { background: rgba(255,255,255,0.03); }
+        
+        /* Tarjetas de Hotspot (DISEÑO PREMIUM) */
+        .hotspot-card { width: 100%; background: rgba(255,255,255,0.03); padding: 15px 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: 0.3s; }
+        .hotspot-card:active { background: rgba(255,255,255,0.06); }
+        .copy-icon-box { width: 40px; height: 40px; background: rgba(0,210,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--primary); }
+        .tool-btn { background: rgba(255,255,255,0.03); padding: 15px 5px; border-radius: 18px; border: 1px solid rgba(255,255,255,0.05); text-align: center; cursor: pointer; transition: 0.3s; }
+        .tool-btn:active { background: rgba(255,255,255,0.06); transform: scale(0.95); }
+
+        /* Modales y Alertas */
+        #customAlert { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 10000; align-items: center; justify-content: center; backdrop-filter: blur(10px); }
+        .alert-ui { background: var(--card); width: 85%; border-radius: 35px; border: 1px solid var(--primary); padding: 35px; text-align: center; }
+        #serverModal, #proxyModal, #logModal { position: fixed; inset: 0; background: var(--bg); z-index: 9999; display: none; flex-direction: column; overflow-y: auto; }
+        #logContainer { flex: 1; padding: 20px; font-family: monospace; font-size: 12px; color: #88c0d0; background: #080b12; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+        .log-entry { border-left: 2px solid var(--primary); padding-left: 10px; }
+    </style>
+</head>
+<body onload="initApp()">
+
+    <div id="customAlert"><div class="alert-ui"><i id="alertIcon" class="fa-solid fa-microchip" style="font-size: 50px;"></i><h2 id="alertTitle" style="margin-top:15px;"></h2><p id="alertMsg" style="margin: 10px 0 25px; opacity: 0.7;"></p><button style="background:var(--primary); border:none; padding:16px; width:100%; border-radius:50px; font-weight:bold;" onclick="cerrarAlerta()">ENTENDIDO</button></div></div>
+
+    <div class="main-content">
+        <div class="header-section">
+            <div class="top-row">
+                <div class="btn-top" onclick="openLog()"><i class="fa-solid fa-terminal" style="color:var(--primary)"></i></div>
+                <div class="app-title">Felix PRO</div>
+                <div class="btn-top proxy-btn" onclick="openProxy()"><i class="fa-solid fa-tower-broadcast"></i></div>
+            </div>
+            <div id="userGreeting" class="user-greeting"></div>
+            <div id="expiryTag" class="expiry-tag">VERIFICANDO...</div>
+            <div class="timer" id="timer">00:00:00</div>
+        </div>
+
+        <div class="center-section">
+            <div class="logo-container">
+                <svg class="progress-ring" viewBox="0 0 180 180">
+                    <circle class="progress-ring__circle" cx="90" cy="90" r="70"></circle>
+                    <circle id="progressBar" class="progress-ring__bar" cx="90" cy="90" r="70"></circle>
+                </svg>
+                <img id="mainLogo" src="https://i.ibb.co/gL5K7GpN/2025102893528481.png" class="logo-main">
+            </div>
+            <div class="id-container" onclick="copiarID()">
+                <div style="display:flex; align-items:center; gap:12px; overflow: hidden; flex: 1;">
+                    <i class="fa-solid fa-fingerprint" style="color: var(--primary); font-size: 24px;"></i>
+                    <span class="id-label" id="displayID">GENERANDO...</span>
+                </div>
+                <i class="fa-solid fa-copy" style="opacity: 0.4;"></i>
+            </div>
+        </div>
+
+        <div class="bottom-section">
+            <div class="status-pill" id="stLabel">DESCONECTADO</div>
+            <button class="btn-action" id="connBtn" onclick="gestionarBoton()">CONECTAR VPN</button>
+            <div class="server-card" onclick="openServers()">
+                <img id="flag" src="https://cdn-icons-png.flaticon.com/512/197/197574.png" width="32" style="border-radius: 50%;">
+                <div style="flex: 1; margin-left: 18px;">
+                    <div id="sName" style="color:white; font-weight:bold; font-size:17px;">SELECCIONAR NODO</div>
+                    <div id="pIP" style="font-size: 11px; opacity: 0.5;">IP: 0.0.0.0</div>
+                </div>
+                <i class="fa-solid fa-chevron-right" style="opacity: 0.3;"></i>
+            </div>
+        </div>
+    </div>
+
+    <div id="logModal" style="padding-top: 50px;"><div style="padding: 20px; display: flex; justify-content: space-between; align-items: center;"><b>REGISTRO DE CONEXIÓN</b><i class="fa-solid fa-xmark" style="font-size: 28px;" onclick="closeLog()"></i></div><div id="logContainer"></div></div>
+    
+    <div id="serverModal" style="padding-top: 50px;"><div style="padding: 20px; display: flex; justify-content: space-between; align-items: center;"><b>NODOS PREMIUM</b><i class="fa-solid fa-xmark" style="font-size: 28px;" onclick="closeServers()"></i></div><div id="serverList" style="flex: 1; padding-bottom: 30px;"></div></div>
+    
+    <div id="proxyModal" style="padding-top: 50px;">
+        <div style="padding: 20px; display: flex; justify-content: space-between; align-items: center;">
+            <b style="letter-spacing: 1px;">HOTSPOT SHARE</b>
+            <i class="fa-solid fa-xmark" style="font-size: 28px; color: var(--danger);" onclick="closeProxy()"></i>
+        </div>
+        
+        <div style="flex: 1; padding: 25px; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+            <div style="width: 80px; height: 80px; background: rgba(0, 230, 118, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--success); margin-bottom: 10px;">
+                <i class="fa-solid fa-wifi" style="color: var(--success); font-size: 32px;"></i>
+            </div>
+
+            <div class="hotspot-card" onclick="copiarDato('192.168.43.1', 'IP DE HOST')">
+                <div>
+                    <span style="font-size: 10px; color: var(--primary); font-weight: 900; letter-spacing: 1px; display: block;">DIRECCIÓN IP</span>
+                    <span style="font-size: 20px; font-family: monospace; font-weight: bold; color: white;">192.168.43.1</span>
+                </div>
+                <div class="copy-icon-box"><i class="fa-solid fa-copy"></i></div>
+            </div>
+
+            <div class="hotspot-card" onclick="copiarDato('8080', 'PUERTO PROXY')">
+                <div>
+                    <span style="font-size: 10px; color: var(--primary); font-weight: 900; letter-spacing: 1px; display: block;">PUERTO PROXY</span>
+                    <span style="font-size: 20px; font-family: monospace; font-weight: bold; color: white;">8080</span>
+                </div>
+                <div class="copy-icon-box"><i class="fa-solid fa-copy"></i></div>
+            </div>
+
+            <div style="width: 100%; margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 25px;">
+                <p style="text-align: center; font-size: 10px; font-weight: 900; color: var(--success); letter-spacing: 2px; margin-bottom: 20px;">APLICACIONES DE APOYO</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+                    <div class="tool-btn" onclick="window.open('https://everyproxy.com/', '_blank')">
+                        <i class="fa-solid fa-share-nodes" style="color: var(--primary); font-size: 20px; margin-bottom: 8px;"></i>
+                        <span style="display: block; font-size: 8px; font-weight: bold; opacity: 0.6; text-transform: uppercase;">EVERY PROXY</span>
+                    </div>
+                    <div class="tool-btn" onclick="mostrarAlerta('VPN SHARE', 'Usa la IP y Puerto mostrados arriba en el dispositivo receptor.', 'fa-network-wired', 'var(--success)')">
+                        <i class="fa-solid fa-network-wired" style="color: var(--success); font-size: 20px; margin-bottom: 8px;"></i>
+                        <span style="display: block; font-size: 8px; font-weight: bold; opacity: 0.6; text-transform: uppercase;">VPN SHARE</span>
+                    </div>
+                    <div class="tool-btn" onclick="window.open('https://www.whatismyip.com/', '_blank')">
+                        <i class="fa-solid fa-magnifying-glass-location" style="color: var(--danger); font-size: 20px; margin-bottom: 8px;"></i>
+                        <span style="display: block; font-size: 8px; font-weight: bold; opacity: 0.6; text-transform: uppercase;">BUSCAR IP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const URL_DB = "https://raw.githubusercontent.com/FelixVPN25/felixvpn/main/premium.txt";
+        let isConectada = false, crono = 0;
+        const bar = document.getElementById('progressBar'), logo = document.getElementById('mainLogo');
+        const circumference = 2 * Math.PI * 70;
+        const coloresNeon = ["#00e676", "#00d2ff", "#ff1744", "#ffab40", "#d500f9", "#ffff00"];
+
+        // Funciones de UI Fundamentales
+        function setProgress(percent) {
+            const offset = circumference - (percent / 100 * circumference);
+            bar.style.strokeDashoffset = offset;
+        }
+
+        function addLog(msg, color = "#88c0d0") {
+            const container = document.getElementById('logContainer');
+            if(!container) return;
+            const entry = document.createElement('div');
+            entry.className = "log-entry"; entry.style.color = color;
+            entry.innerHTML = `<span style="opacity:0.4; font-size:9px;">[${new Date().toLocaleTimeString()}]</span> ${msg}`;
+            container.appendChild(entry); container.scrollTop = container.scrollHeight;
+        }
+
+        // GENERADOR DE ID ÚNICO E IRREPETIBLE POR CAPA 3
+        function obtenerHWID() {
+            let idFisico = (window.DtGetHardwareId) ? window.DtGetHardwareId.execute() : "";
+            
+            // Si no hay ID real o es el genérico, fabricamos uno basado en GPU y Software Hash
+            if (!idFisico || idFisico === "ID-FIX-16024") {
+                const s = window.screen, nav = window.navigator;
+                
+                // Huella de GPU (Canvas)
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                ctx.textBaseline = "top"; ctx.font = "14px Arial";
+                ctx.fillStyle = "#f60"; ctx.fillRect(100,1,50,20);
+                ctx.fillStyle = "#069"; ctx.fillText("FX_PRO_ANTI_DUP_V3", 2, 15);
+                const fingerprint = btoa(canvas.toDataURL()).substring(160, 175).toUpperCase().replace(/[/+=]/g, "");
+                
+                // Huella de Software (Browser User Agent)
+                const softHash = btoa(nav.userAgent).substring(10, 15).toUpperCase();
+                
+                return `FX-PRO-${s.width}X${s.height}-${softHash}-${fingerprint}`;
+            }
+            return idFisico;
+        }
+
+        // Lógica de Conexión y Estado
+        function checkStatus() {
+            if(!window.DtGetVpnState) return;
+            const s = window.DtGetVpnState.execute();
+            const btn = document.getElementById('connBtn');
+            const pill = document.getElementById('stLabel');
+            
+            if (s === 'CONNECTED' && !isConectada) {
+                isConectada = true;
+                addLog("TÚNEL ESTABLECIDO CON ÉXITO", "var(--success)");
+                pill.innerText = "SISTEMA PROTEGIDO";
+                pill.className = "status-pill on";
+                btn.innerText = "DESCONECTAR VPN";
+                btn.className = "btn-action connected";
+                if(window.DtGetPublicIp) document.getElementById('pIP').innerText = "IP: " + window.DtGetPublicIp.execute();
+            } else if ((s === 'IDLE' || s === 'DISCONNECTED') && (isConectada || btn.classList.contains('connecting'))) { 
+                resetUI(); 
+                addLog("VPN Desconectada del servidor.", "var(--danger)"); 
+            }
+        }
+
+        function gestionarBoton() {
+            if (localStorage.getItem('vip') !== 'true') { verificarAcceso(true); return; }
+            const btn = document.getElementById('connBtn');
+            if (isConectada || btn.classList.contains('connecting')) { 
+                addLog("Solicitando desconexión...");
+                if(window.DtExecuteVpnStop) window.DtExecuteVpnStop.execute();
+                resetUI();
+            } else { 
+                addLog("Iniciando conexión segura...", "var(--primary)");
+                btn.innerText = "CONECTANDO...";
+                btn.className = "btn-action connecting";
+                if(window.DtExecuteVpnStart) window.DtExecuteVpnStart.execute(); 
+            }
+        }
+
+        function resetUI() {
+            isConectada = false; crono = 0;
+            const btn = document.getElementById('connBtn');
+            const pill = document.getElementById('stLabel');
+            pill.innerText = "DESCONECTADO";
+            pill.className = "status-pill";
+            btn.innerText = "CONECTAR VPN";
+            btn.className = "btn-action";
+            document.getElementById('timer').innerText = "00:00:00";
+            logo.style.filter = "none"; 
+            bar.style.stroke = "var(--primary)";
+            setProgress(0);
+        }
+
+        // Sistema VIP y GitHub
+        async function verificarAcceso(alerta) {
+            const miID = document.getElementById('displayID').innerText;
+            const tag = document.getElementById('expiryTag');
+            const greeting = document.getElementById('userGreeting');
+            const idLabel = document.getElementById('displayID');
+            
+            try {
+                const res = await fetch(`${URL_DB}?t=${Date.now()}`);
+                const text = await res.text(), lines = text.split('\n');
+                let found = false;
+                for (let line of lines) {
+                    const p = line.trim().split(',');
+                    if (p[0] === miID) {
+                        let rest = Math.ceil((new Date(p[1]) - new Date()) / 86400000);
+                        if (rest > 0) {
+                            localStorage.setItem('vip', 'true');
+                            tag.innerText = `VIP ACTIVO: ${rest} DÍAS`;
+                            tag.style.color = "var(--success)";
+                            idLabel.classList.add('registrado');
+                            if(p[2]) { greeting.innerText = `Hola, ${p[2]}`; greeting.style.display = "block"; }
+                            found = true; break;
+                        }
+                    }
+                }
+                if (!found) {
+                    localStorage.setItem('vip', 'false');
+                    tag.innerText = "ACCESO RESTRINGIDO";
+                    tag.style.color = "var(--danger)";
+                    greeting.style.display = "none";
+                    idLabel.classList.remove('registrado');
+                    if(alerta) mostrarAlerta("BLOQUEADO", "Tu ID no está registrado en la base de datos Premium.", "fa-user-lock", "var(--danger)");
+                }
+            } catch (e) { addLog("Error de red en verificación VIP", "var(--danger)"); }
+        }
+
+        // Inicialización y Modales
+        function initApp() {
+            document.getElementById('displayID').innerText = obtenerHWID();
+            bar.style.strokeDasharray = circumference;
+            setProgress(0);
+            addLog("Sistema Felix PRO Inicializado", "var(--primary)");
+            setInterval(checkStatus, 1500); // Revisión más rápida del estado
+            setInterval(() => { if(isConectada) { 
+                crono++; 
+                let h=Math.floor(crono/3600).toString().padStart(2,'0'), m=Math.floor((crono%3600)/60).toString().padStart(2,'0'), s=(crono%60).toString().padStart(2,'0');
+                document.getElementById('timer').innerText=`${h}:${m}:${s}`;
+                let p = (crono % 60) * (100 / 60);
+                setProgress(p);
+                // Efecto Camaleón del logo al tope
+                if (p === 0) {
+                    let color = coloresNeon[Math.floor(Math.random() * coloresNeon.length)];
+                    bar.style.stroke = color;
+                    logo.style.filter = `drop-shadow(0 0 15px ${color}) brightness(1.2)`;
+                }
+            }}, 1000);
+            verificarAcceso(false);
+        }
+
+        // Control de Modales
+        function mostrarAlerta(t, m, i, c) { document.getElementById('alertIcon').className = `fa-solid ${i}`; document.getElementById('alertIcon').style.color = c; document.getElementById('alertTitle').innerText = t; document.getElementById('alertMsg').innerText = m; document.getElementById('customAlert').style.display = 'flex'; }
+        function cerrarAlerta() { document.getElementById('customAlert').style.display = 'none'; }
+        
+        function copiarID() { navigator.clipboard.writeText(document.getElementById('displayID').innerText); mostrarAlerta("COPIADO", "Tu firma única ha sido copiada.", "fa-fingerprint", "var(--primary)"); }
+        function copiarDato(v, t) { navigator.clipboard.writeText(v); mostrarAlerta(t, "Dato copiado correctamente.", "fa-check", "var(--success)"); }
+        
+        function openLog() { document.getElementById('logModal').style.display = 'flex'; }
+        function closeLog() { document.getElementById('logModal').style.display = 'none'; }
+        
+        function openProxy() { if (localStorage.getItem('vip') !== 'true') { verificarAcceso(true); return; } document.getElementById('proxyModal').style.display = 'flex'; }
+        function closeProxy() { document.getElementById('proxyModal').style.display = 'none'; }
+        
+        function openServers() { if (localStorage.getItem('vip') !== 'true') { verificarAcceso(true); return; } document.getElementById('serverModal').style.display = 'flex'; 
+            try {
+                const data = JSON.parse(window.DtGetConfigs.execute()), list = document.getElementById('serverList'); list.innerHTML = "";
+                data.forEach(cat => cat.items.forEach(item => {
+                    let el = document.createElement('div'); el.style.cssText = "padding:20px; border-bottom:1px solid rgba(255,255,255,0.05); display:flex; align-items:center; gap:15px;";
+                    el.innerHTML = `<img src="${item.icon}" width="32" style="border-radius:50%;"><b>${item.name}</b>`;
+                    el.onclick = () => { window.DtSetConfig.execute(item.id); document.getElementById('sName').innerText = item.name; document.getElementById('flag').src = item.icon; closeServers(); };
+                    list.appendChild(el);
+                }));
+            } catch(e){}
+        }
+        function closeServers() { document.getElementById('serverModal').style.display = 'none'; }
+    </script>
+</body>
+</html>
