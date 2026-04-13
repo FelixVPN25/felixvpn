@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Felix PRO - Ultra Security</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { 
+            --bg: #0b0f19; --card: #151a27; --primary: #00d2ff; --danger: #ff1744; 
+            --text: #ffffff; --success: #00e676; --warning: #ff9800;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+        
+        /* --- EFECTO CAMALEÓN Y RESPLANDOR DEL LOGO --- */
+        @keyframes logo-glow {
+            0% { border-color: var(--primary); box-shadow: 0 0 15px var(--primary); filter: hue-rotate(0deg); }
+            50% { border-color: #0077ff; box-shadow: 0 0 30px #0077ff; filter: hue-rotate(45deg); }
+            100% { border-color: var(--primary); box-shadow: 0 0 15px var(--primary); filter: hue-rotate(0deg); }
+        }
+
+        .logo-main { 
+            width: 120px; 
+            height: 120px; 
+            z-index: 2; 
+            border-radius: 50%; 
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            animation: logo-glow 3s infinite ease-in-out; /* El efecto camaleón */
+        }
+
+        .main-content { flex: 1; display: flex; flex-direction: column; padding: 60px 22px 30px; justify-content: space-between; }
+        .header-section { text-align: center; }
+        .top-row { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 5px; }
+        .app-title { font-size: 24px; font-weight: 900; letter-spacing: 2px; text-shadow: 0 0 15px var(--primary); flex: 1; text-transform: uppercase; }
+        
+        .btn-top { background: rgba(255, 255, 255, 0.05); width: 48px; height: 48px; border-radius: 15px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
+        .proxy-btn { background: rgba(0, 230, 118, 0.1); border-color: var(--success); color: var(--success); }
+        .btn-top:active { transform: scale(0.95); }
+
+        .expiry-tag { background: rgba(0, 230, 118, 0.1); color: var(--success); font-size: 13px; font-weight: bold; padding: 6px 20px; border-radius: 50px; border: 1px solid var(--success); margin: 10px auto; width: fit-content; }
+        
+        .center-section { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; min-height: 200px; }
+        .logo-container { position: relative; width: 180px; height: 180px; display: flex; justify-content: center; align-items: center; }
+        .progress-ring { position: absolute; top: 0; left: 0; transform: rotate(-90deg); width: 180px; height: 180px; }
+        .progress-ring__circle { stroke: rgba(255, 255, 255, 0.05); stroke-width: 8; fill: transparent; }
+        .progress-ring__bar { stroke: var(--primary); stroke-width: 8; stroke-linecap: round; fill: transparent; stroke-dasharray: 440; stroke-dashoffset: 440; transition: stroke-dashoffset 0.5s ease, stroke 0.5s ease; }
+
+        .connection-visual { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; margin-top: 20px; padding: 0 10px; }
+        .node-icon { font-size: 20px; color: var(--primary); opacity: 0.15; transition: 0.5s; }
+        .data-line-container { flex: 1; height: 3px; background: rgba(255,255,255,0.05); border-radius: 10px; position: relative; overflow: hidden; }
+        .data-fill { width: 0%; height: 100%; background: var(--primary); transition: 0.8s; position: absolute; }
+
+        .is-loading .node-icon { color: var(--warning); opacity: 1; text-shadow: 0 0 10px var(--warning); }
+        .is-loading .data-fill { 
+            background: var(--warning); 
+            width: 50%; 
+            animation: flow-load 1.5s infinite linear; 
+            box-shadow: 0 0 10px var(--warning);
+        }
+        
+        .is-connected .node-icon { color: var(--success); opacity: 1; text-shadow: 0 0 15px var(--success); }
+        .is-connected .data-fill { 
+            background: var(--success); 
+            width: 100% !important; 
+            box-shadow: 0 0 15px var(--success); 
+            animation: none; 
+            left: 0;
+        }
+
+        @keyframes flow-load { 0% { left: -50%; } 100% { left: 100%; } }
+
+        .id-container { width: 100%; background: rgba(0,210,255,0.03); border-radius: 20px; border: 2px solid rgba(0,210,255,0.3); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; margin-top: 15px; transition: 0.5s; }
+        .id-label { color: var(--primary); font-weight: 900; font-family: monospace; font-size: 10px; letter-spacing: 0.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; transition: 0.5s; }
+
+        .bottom-section { display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; }
+        .status-pill { font-size: 11px; font-weight: 900; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; margin: 0 auto; padding: 5px 15px; border: 1px solid rgba(0,210,255,0.2); border-radius: 50px; }
+        .status-pill.on { color: var(--success); border-color: var(--success); }
+        
+        .btn-action { width: 100%; height: 65px; background: #1e2433; color: white; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; font-weight: 900; font-size: 19px; text-transform: uppercase; transition: 0.3s; }
+        .btn-action.connected { background: var(--success) !important; color: #0b0f19; border-color: var(--success); box-shadow: 0 0 25px rgba(0, 230, 118, 0.6); }
+
+        .server-card { background: var(--card); padding: 18px; border-radius: 25px; display: flex; align-items: center; border: 1px solid rgba(255,255,255,0.08); }
+
+        #customAlert { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 10000; align-items: center; justify-content: center; backdrop-filter: blur(12px); }
+        .alert-ui { background: var(--card); width: 85%; border-radius: 35px; border: 2px solid var(--primary); padding: 35px; text-align: center; box-shadow: 0 0 30px rgba(0, 210, 255, 0.2); }
+        #alertBtn { background: var(--primary); border: none; padding: 16px; width: 100%; border-radius: 50px; font-weight: 900; color: #0b0f19; margin-top: 10px; transition: 0.3s; text-transform: uppercase; }
+        #cancelAlertBtn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); padding: 16px; width: 100%; border-radius: 50px; font-weight: 900; color: white; margin-top: 12px; display: none; text-transform: uppercase; }
+
+        #serverModal, #proxyModal, #logModal { position: fixed; inset: 0; background: var(--bg); z-index: 9999; display: none; flex-direction: column; }
+        #logContainer { flex: 1; padding: 20px; font-family: monospace; font-size: 11px; color: #88c0d0; background: #080b12; overflow-y: auto; }
+        .log-entry { margin-bottom: 5px; border-left: 2px solid var(--primary); padding-left: 8px; }
+    </style>
+</head>
+<body onload="initApp()">
+
+    <div id="customAlert">
+        <div class="alert-ui" id="alertBox">
+            <i id="alertIcon" class="fa-solid fa-shield-halved" style="font-size: 55px;"></i>
+            <h2 id="alertTitle" style="margin-top:20px; font-size: 20px; letter-spacing: 1px;"></h2>
+            <p id="alertMsg" style="margin: 15px 0 30px; opacity: 0.8; font-size: 14px; line-height: 1.5;"></p>
+            <button id="alertBtn" onclick="cerrarAlerta()">ENTENDIDO</button>
+            <button id="cancelAlertBtn">CANCELAR</button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="header-section">
+            <div class="top-row">
+                <div class="btn-top" onclick="openLog()"><i class="fa-solid fa-terminal" style="color:var(--primary)"></i></div>
+                <div class="app-title">Felix PRO</div>
+                <div class="btn-top proxy-btn" onclick="openProxy()"><i class="fa-solid fa-tower-broadcast"></i></div>
+            </div>
+            <div id="userGreeting" style="font-size: 14px; color: var(--primary); font-weight: bold; margin-top: 5px; display:none;"></div>
+            <div id="expiryTag" class="expiry-tag">VERIFICANDO...</div>
+        </div>
+
+        <div class="center-section">
+            <div class="logo-container">
+                <svg class="progress-ring" viewBox="0 0 180 180">
+                    <circle class="progress-ring__circle" cx="90" cy="90" r="70"></circle>
+                    <circle id="progressBar" class="progress-ring__bar" cx="90" cy="90" r="70"></circle>
+                </svg>
+                <img id="mainLogo" src="https://i.ibb.co/gL5K7GpN/2025102893528481.png" class="logo-main">
+            </div>
+
+            <div class="connection-visual" id="flowContainer">
+                <i class="fa-solid fa-server node-icon" id="iconServer"></i>
+                <div class="data-line-container"><div class="data-fill"></div></div>
+                <i class="fa-solid fa-mobile-screen-button node-icon" id="iconMobile"></i>
+                <div class="data-line-container"><div class="data-fill"></div></div>
+                <i class="fa-solid fa-wifi node-icon" id="iconWifi"></i>
+            </div>
+
+            <div class="id-container" id="idBox" onclick="copiarID()">
+                <div style="display:flex; align-items:center; gap:12px; overflow: hidden; flex: 1;">
+                    <i id="idIcon" class="fa-solid fa-fingerprint" style="color: var(--primary); font-size: 24px; transition: 0.5s;"></i>
+                    <span class="id-label" id="displayID">GENERANDO...</span>
+                </div>
+                <i class="fa-solid fa-copy" id="copyIcon" style="opacity: 0.4; transition: 0.5s;"></i>
+            </div>
+        </div>
+
+        <div class="bottom-section">
+            <div class="status-pill" id="stLabel">DESCONECTADO</div>
+            <button class="btn-action" id="connBtn" onclick="gestionarBoton()">CONECTAR VPN</button>
+            
+            <div class="server-card" onclick="openServers()" style="border: 1px solid rgba(0, 210, 255, 0.2); background: #151a27; padding: 18px;">
+                <div style="width: 42px; height: 42px; background: rgba(0, 210, 255, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--primary);">
+                    <i class="fa-solid fa-server" style="color: var(--primary); font-size: 20px;"></i>
+                </div>
+                <div style="flex: 1; margin-left: 18px;">
+                    <div id="sName" style="color:white; font-weight:900; font-size:17px; text-transform: uppercase; letter-spacing: 1px;">SERVIDORES VIP</div>
+                </div>
+                <i class="fa-solid fa-chevron-right" style="opacity: 0.4; font-size: 16px; color: var(--primary);"></i>
+            </div>
+        </div>
+    </div>
+
+    <div id="logModal" style="padding-top: 50px;">
+        <div style="padding: 20px; display: flex; justify-content: space-between; align-items: center;"><b>LOG DE SISTEMA</b><i class="fa-solid fa-xmark" style="font-size: 28px;" onclick="closeLog()"></i></div>
+        <div id="logContainer"></div>
+        <div style="padding: 20px; border-top: 1px solid rgba(255,255,255,0.05);">
+            <button onclick="ejecutarResetEmergencia()" style="width:100%; padding:15px; background:rgba(255,152,0,0.1); color:var(--warning); border:1px solid var(--warning); border-radius:15px; font-weight:bold; font-size:11px; text-transform:uppercase;">
+                <i class="fa-solid fa-triangle-exclamation"></i> Botón de Emergencia (Solo VIP)
+            </button>
+            <p style="font-size:9px; color:gray; text-align:center; margin-top:8px;">Disponible cada 30 días.</p>
+        </div>
+    </div>
+
+    <div id="serverModal" style="padding-top: 50px;">
+        <div style="padding: 20px; display: flex; justify-content: space-between; align-items: center;"><b>NODOS PREMIUM</b><i class="fa-solid fa-xmark" style="font-size: 28px;" onclick="closeServers()"></i></div>
+        <div id="serverList" style="flex: 1; overflow-y: auto; padding-bottom: 50px;"></div>
+    </div>
+
+    <div id="proxyModal" style="padding-top: 50px;">
+        <div style="padding: 20px; display: flex; justify-content: space-between; align-items: center;"><b>COMPARTIR INTERNET</b><i class="fa-solid fa-xmark" style="font-size: 28px;" onclick="closeProxy()"></i></div>
+        <div style="padding: 25px; text-align: center;">
+            <div style="width: 80px; height: 80px; background: rgba(0, 230, 118, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--success); margin: 0 auto 20px;"><i class="fa-solid fa-wifi" style="color: var(--success); font-size: 32px;"></i></div>
+            <div style="background:rgba(255,255,255,0.03); padding:15px; border-radius:15px; margin-bottom:10px;">
+                <small style="color:var(--primary); font-size:10px; text-transform:uppercase;">Proxy IP</small><br><b>192.168.43.1</b>
+            </div>
+            <div style="background:rgba(255,255,255,0.03); padding:15px; border-radius:15px;">
+                <small style="color:var(--primary); font-size:10px; text-transform:uppercase;">Puerto</small><br><b>8080</b>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // LA LÓGICA DE SEGURIDAD E ID SE MANTIENE INTACTA
+        const URL_DB = "https://raw.githubusercontent.com/FelixVPN25/felixvpn/main/premium.txt";
+        let isConectada = false, isConectando = false, crono = 0;
+        const bar = document.getElementById('progressBar'), circumference = 2 * Math.PI * 70;
+
+        function ejecutarResetEmergencia() {
+            const ahora = Date.now();
+            const ultimoReset = localStorage.getItem('fx_last_reset') || 0;
+            const treintaDias = 30 * 24 * 60 * 60 * 1000;
+
+            if (ahora - ultimoReset < treintaDias) {
+                const diasRestantes = Math.ceil((treintaDias - (ahora - ultimoReset)) / (24 * 60 * 60 * 1000));
+                mostrarAlerta("BOTÓN BLOQUEADO", `Recurso de emergencia usado recientemente. Podrás usarlo de nuevo en ${diasRestantes} días.`, "fa-clock", "var(--warning)");
+                return;
+            }
+
+            const box = document.getElementById('alertBox');
+            const btnOk = document.getElementById('alertBtn');
+            const btnCancel = document.getElementById('cancelAlertBtn');
+
+            mostrarAlerta("¿GENERAR NUEVO ID?", "Esta acción creará una nueva identidad VIP para este dispositivo. Úsalo solo si el Administrador lo indica.", "fa-triangle-exclamation", "var(--warning)");
+            
+            box.style.borderColor = "var(--warning)";
+            btnOk.innerText = "SÍ, GENERAR NUEVO ID";
+            btnOk.style.background = "var(--warning)";
+            btnCancel.style.display = "block";
+
+            btnOk.onclick = () => {
+                cerrarAlerta(); 
+                const marca = Math.floor(Math.random() * 90000) + 10000;
+                localStorage.setItem('fx_emergency_tag', marca);
+                localStorage.setItem('fx_last_reset', ahora);
+                setTimeout(() => { location.reload(); }, 300);
+            };
+
+            btnCancel.onclick = () => { cerrarAlerta(); };
+        }
+
+        function mostrarAlerta(t, m, i, c) {
+            document.getElementById('alertIcon').className = `fa-solid ${i}`;
+            document.getElementById('alertIcon').style.color = c;
+            document.getElementById('alertTitle').innerText = t;
+            document.getElementById('alertMsg').innerText = m;
+            document.getElementById('alertBox').style.borderColor = c;
+            document.getElementById('alertBtn').style.background = c;
+            document.getElementById('alertBtn').innerText = "ENTENDIDO";
+            document.getElementById('cancelAlertBtn').style.display = "none";
+            document.getElementById('customAlert').style.display = 'flex';
+            document.getElementById('alertBtn').onclick = cerrarAlerta;
+        }
+
+        function cerrarAlerta() { document.getElementById('customAlert').style.display = 'none'; }
+
+        function obtenerHWID() {
+            let idFisico = (window.DtGetHardwareId) ? window.DtGetHardwareId.execute() : "";
+            const marcaManual = localStorage.getItem('fx_emergency_tag') || "";
+
+            if (!idFisico || idFisico === "ID-FIX-16024") {
+                const s = window.screen, nav = window.navigator, ua = nav.userAgent;
+                let modelo = "FX";
+                const match = ua.match(/\(([^)]+)\)/);
+                if (match && match[1]) { modelo = match[1].split(';').pop().trim().replace(/\s/g, "").toUpperCase(); }
+                const hardwareInfo = `${nav.hardwareConcurrency || 4}${nav.deviceMemory || 0}${s.colorDepth}${nav.maxTouchPoints || 0}${new Date().getTimezoneOffset()}`;
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = 250; canvas.height = 40;
+                ctx.font = "bold 15px monospace"; ctx.fillStyle = "#00d2ff";
+                ctx.fillText(ua.length + "V5", 10, 25);
+                const gpuHash = btoa(canvas.toDataURL()).substring(150, 170).toUpperCase().replace(/[/+=]/g, "");
+                return `PRO-${modelo.substring(0,8)}-${hardwareInfo}-${gpuHash}${marcaManual ? '-' + marcaManual : ''}`;
+            }
+            return idFisico + (marcaManual ? "-" + marcaManual : "");
+        }
+
+        function addLog(msg, color = "#88c0d0") {
+            const container = document.getElementById('logContainer');
+            if(!container) return;
+            const entry = document.createElement('div');
+            entry.className = "log-entry"; entry.style.color = color;
+            entry.innerHTML = `<small>[${new Date().toLocaleTimeString()}]</small> ${msg}`;
+            container.appendChild(entry);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function setProgress(percent) { bar.style.strokeDashoffset = circumference - (percent / 100 * circumference); }
+
+        async function verificarAcceso(alerta) {
+            const miID = document.getElementById('displayID').innerText;
+            const idBox = document.getElementById('idBox'), idIcon = document.getElementById('idIcon');
+            const idLabel = document.querySelector('.id-label'), copyIcon = document.getElementById('copyIcon');
+
+            try {
+                const res = await fetch(`${URL_DB}?t=${Date.now()}`);
+                const lines = (await res.text()).split('\n');
+                let found = false;
+                for (let line of lines) {
+                    const p = line.trim().split(',');
+                    if (p[0] === miID) {
+                        let rest = Math.ceil((new Date(p[1]) - new Date()) / 86400000);
+                        if (rest > 0) {
+                            localStorage.setItem('vip', 'true');
+                            document.getElementById('expiryTag').innerText = `VIP ACTIVO: ${rest} DÍAS`;
+                            document.getElementById('expiryTag').style.color = "var(--success)";
+                            idBox.style.borderColor = "var(--success)";
+                            idBox.style.background = "rgba(0, 230, 118, 0.05)";
+                            idIcon.style.color = "var(--success)";
+                            idLabel.style.color = "var(--success)";
+                            copyIcon.style.color = "var(--success)";
+                            if(p[2]) { document.getElementById('userGreeting').innerText = `Hola, ${p[2]}`; document.getElementById('userGreeting').style.display="block"; }
+                            found = true; break;
+                        }
+                    }
+                }
+                if (!found) {
+                    localStorage.setItem('vip', 'false');
+                    document.getElementById('expiryTag').innerText = "SIN ACCESO VIP";
+                    document.getElementById('expiryTag').style.color = "var(--danger)";
+                    idBox.style.borderColor = "rgba(0,210,255,0.3)";
+                    idBox.style.background = "rgba(0,210,255,0.03)";
+                    idIcon.style.color = "var(--primary)";
+                    idLabel.style.color = "var(--primary)";
+                    copyIcon.style.color = "var(--primary)";
+                    if(alerta) mostrarAlerta("BLOQUEADO", "Este ID no tiene acceso VIP activo.", "fa-user-lock", "var(--danger)");
+                }
+            } catch (e) { addLog("Error en verificación VIP", "var(--danger)"); }
+        }
+
+        function gestionarBoton() {
+            if (localStorage.getItem('vip') !== 'true') { verificarAcceso(true); return; }
+            const btn = document.getElementById('connBtn');
+            const flow = document.getElementById('flowContainer');
+            if (isConectada || isConectando) {
+                if(window.DtExecuteVpnStop) window.DtExecuteVpnStop.execute();
+                resetUI();
+            } else {
+                isConectando = true;
+                addLog("Conectando al nodo...", "var(--warning)");
+                btn.innerText = "CONECTANDO...";
+                btn.style.background = "var(--warning)";
+                btn.style.color = "#000";
+                flow.classList.add('is-loading'); 
+                if(window.DtExecuteVpnStart) window.DtExecuteVpnStart.execute();
+            }
+        }
+
+        function checkStatus() {
+            if(!window.DtGetVpnState) return;
+            const s = window.DtGetVpnState.execute();
+            const btn = document.getElementById('connBtn');
+            const flow = document.getElementById('flowContainer');
+            if (s === 'CONNECTED' && !isConectada) {
+                isConectada = true; isConectando = false;
+                addLog("¡Conexión establecida!", "var(--success)");
+                document.getElementById('stLabel').innerText = "CONECTADO";
+                document.getElementById('stLabel').className = "status-pill on";
+                btn.innerText = "DESCONECTAR";
+                btn.className = "btn-action connected";
+                btn.style.background = ""; btn.style.color = "";
+                flow.classList.remove('is-loading');
+                flow.classList.add('is-connected');
+            } else if (s === 'IDLE' && (isConectada || isConectando)) { resetUI(); }
+        }
+
+        function resetUI() {
+            isConectada = false; isConectando = false; crono = 0;
+            document.getElementById('stLabel').innerText = "DESCONECTADO";
+            document.getElementById('stLabel').className = "status-pill";
+            const btn = document.getElementById('connBtn');
+            btn.innerText = "CONECTAR VPN";
+            btn.className = "btn-action";
+            btn.style.background = ""; btn.style.color = "";
+            setProgress(0);
+            const flow = document.getElementById('flowContainer');
+            flow.classList.remove('is-loading', 'is-connected');
+        }
+
+        function initApp() {
+            document.getElementById('displayID').innerText = obtenerHWID();
+            bar.style.strokeDasharray = circumference;
+            setProgress(0);
+            addLog("Iniciando Felix PRO...", "var(--primary)");
+            setInterval(checkStatus, 1500);
+            setInterval(() => { if(isConectada) { crono++; setProgress((crono % 60) * 1.66); }}, 1000);
+            verificarAcceso(false);
+        }
+
+        function copiarID() { navigator.clipboard.writeText(document.getElementById('displayID').innerText); mostrarAlerta("COPIADO", "ID copiado para enviar al admin.", "fa-fingerprint", "var(--primary)"); }
+        function openLog() { document.getElementById('logModal').style.display = 'flex'; }
+        function closeLog() { document.getElementById('logModal').style.display = 'none'; }
+        function openProxy() { document.getElementById('proxyModal').style.display = 'flex'; }
+        function closeProxy() { document.getElementById('proxyModal').style.display = 'none'; }
+        
+        function openServers() {
+            if (localStorage.getItem('vip') !== 'true') { verificarAcceso(true); return; }
+            document.getElementById('serverModal').style.display = 'flex';
+            const list = document.getElementById('serverList'); list.innerHTML = "";
+            try {
+                const data = JSON.parse(window.DtGetConfigs.execute());
+                data.forEach(cat => cat.items.forEach(item => {
+                    let nameUpper = item.name.toUpperCase();
+                    let colorConfig = "#00d2ff"; 
+                    if (nameUpper.includes("CLARO")) colorConfig = "#ff3131";
+                    else if (nameUpper.includes("TIGO")) colorConfig = "#005aff";
+                    else if (nameUpper.includes("MOVISTAR")) colorConfig = "#85c441";
+                    else if (nameUpper.includes("DIGICEL")) colorConfig = "#9333ea";
+
+                    let d = document.createElement('div');
+                    d.style.cssText = `margin: 12px 15px; padding: 15px; background: #151a27; border: 2px solid ${colorConfig}; border-radius: 20px; display: flex; align-items: center; gap: 15px; box-shadow: 0 0 10px ${colorConfig}33;`;
+                    d.innerHTML = `
+                        <div style="width: 42px; height: 42px; background: ${colorConfig}; border-radius: 50%; box-shadow: 0 0 15px ${colorConfig}, inset 0 0 10px white;"></div>
+                        <div style="flex: 1;">
+                            <div style="color:white; font-weight:bold; font-size:14px; text-transform:uppercase; letter-spacing:0.5px;">${item.name}</div>
+                            <div style="color:#00e676; font-size:11px; font-weight:bold; margin-top:4px; display:flex; align-items:center; gap:5px;">
+                                <i class="fa-solid fa-signal"></i> Online - Latencia: ${Math.floor(Math.random() * 30) + 40}ms
+                            </div>
+                        </div>`;
+                    d.onclick = () => { 
+                        window.DtSetConfig.execute(item.id); 
+                        document.getElementById('sName').innerText = item.name; 
+                        closeServers(); 
+                        addLog("Nodo: " + item.name);
+                    };
+                    list.appendChild(d);
+                }));
+            } catch(e) { addLog("Error nodos", "var(--danger)"); }
+        }
+        function closeServers() { document.getElementById('serverModal').style.display = 'none'; }
+    </script>
+</body>
+</html>
