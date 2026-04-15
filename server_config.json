@@ -1,0 +1,47 @@
+[
+  {
+    "category": "EL SALVADOR 🇸🇻",
+    "items": [
+      {
+        "name": "TIGO SV",
+        "type": "SSH",
+        "server_ip": "206.183.128.49",
+        "server_port": "80",
+        "user": "FpVip",
+        "pass": "FpVip",
+        "payload": "HTTP/2.0 200 ok[crlf]Host: [rotate=www.empire.co.ke.com;www.atresplayer.com;www.aol.com;wap.yy.com;net.supercell.com;www.disney.com;www.bbc.com;www.godaddy.com;adclick.g.doubleclick.net;www.buzzfeed.com;www.alipay.com;www.monster.com;www.playstation.net;mail.hotmail.com;ads.mopub.com;m.weibo.cn;www.flickr.com;d1n212ccp6ldpw.cloudfront.net][crlf][ua]",
+        "sni": ""
+      },
+      {
+        "name": "MOVISTAR",
+        "type": "SSL",
+        "server_ip": "206.183.128.49",
+        "server_port": "443",
+        "user": "FpVip",
+        "pass": "FpVip",
+        "sni": "www.googletagmanager.com",
+        "payload": ""
+      },
+      {
+  "name": "CLARO SLOW",
+  "type": "SLOWDNS",
+  "server_ip": "206.183.128.49",
+  "dns_host": "dns.felixpremiun.shop",
+  "pub_key": "228cdd3485524d7f0b7382afce91548fa6d02524e530184dc535f48824006523",
+  "dns_resolver": "8.8.8.8", 
+  "user": "FpVip",
+  "pass": "FpVip"
+},
+      {
+        "name": "V2RAY PREMIUM 1",
+        "type": "V2RAY",
+        "config": "vless://8086e09b-0b91-48d0-baf8-4ac85e7adb09@206.183.128.49:8888?type=xhttp&encryption=none&path=%2Ffelixpremiumsv&host=www.gameloft.com&mode=auto&security=none#CLARO-VIP"
+      },
+      {
+        "name": "V2RAY PREMIUM 2",
+        "type": "V2RAY",
+        "config": "vless://0a676396-6344-44e2-8740-ae5e05093e43@206.183.128.49:8081?type=xhttp&encryption=none&path=%2F&host=www.gameloft.com&mode=auto&security=none#CLARO%20SV-VIP2"
+      }
+    ]
+  }
+]
