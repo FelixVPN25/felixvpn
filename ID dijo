@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Felix PRO - V4 Ultra</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { 
+            --bg: #0b0f19; --card: #151a27; --primary: #00d2ff; --danger: #ff1744; 
+            --text: #ffffff; --success: #00e676; --warning: #ff9800;
+            --claro: #ff1744; --tigo: #005aff; --movistar: #81c784; --digicel: #ba68ff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+        .main-content { flex: 1; display: flex; flex-direction: column; padding: 60px 22px 30px; justify-content: space-between; }
+        .header-section { text-align: center; }
+        .top-row { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 5px; }
+        .app-title { font-size: 24px; font-weight: 900; letter-spacing: 2px; text-shadow: 0 0 15px var(--primary); flex: 1; text-transform: uppercase; }
+        .user-client-name { font-size: 15px; font-weight: 800; color: var(--success); text-transform: uppercase; margin-top: 5px; text-shadow: 0 0 10px var(--success); display: none; letter-spacing: 1px; }
+        .btn-top { background: rgba(255, 255, 255, 0.05); width: 48px; height: 48px; border-radius: 15px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
+        .proxy-btn { background: rgba(0, 230, 118, 0.1); border-color: var(--success); color: var(--success); }
+        .vip-timer-container { display: flex; justify-content: center; align-items: center; gap: 8px; margin: 10px auto; width: fit-content; }
+        .expiry-tag { background: rgba(0, 230, 118, 0.1); color: var(--success); font-size: 13px; font-weight: bold; padding: 6px 15px; border-radius: 50px 0 0 50px; border: 1px solid var(--success); border-right: none; }
+        .countdown-tag { background: rgba(255, 23, 68, 0.1); color: var(--danger); font-size: 13px; font-weight: bold; padding: 6px 15px; border-radius: 0 50px 50px 0; border: 1px solid var(--danger); min-width: 90px; text-shadow: 0 0 5px var(--danger); font-family: monospace; }
+        .center-section { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; min-height: 250px; }
+        .logo-container { position: relative; width: 220px; height: 220px; display: flex; justify-content: center; align-items: center; }
+        .energy-ring { position: absolute; border-radius: 50%; border: 2px solid transparent; }
+        .energy-ring.one { width: 100%; height: 100%; border-top-color: var(--primary); border-bottom-color: var(--primary); animation: rotateRing 4s linear infinite; filter: drop-shadow(0 0 10px var(--primary)); }
+        .energy-ring.two { width: 85%; height: 85%; border-left-color: rgba(0, 210, 255, 0.5); border-right-color: rgba(0, 210, 255, 0.5); animation: rotateRing 2s linear infinite reverse; }
+        .energy-ring.three { width: 70%; height: 70%; border-top-color: rgba(0, 230, 118, 0.3); border-bottom-color: rgba(0, 230, 118, 0.3); animation: rotateRing 6s linear infinite; }
+        .logo-main { width: 130px; height: 130px; z-index: 2; border-radius: 50%; object-fit: cover; animation: logoPulse 3s ease-in-out infinite; }
+        .particles { position: absolute; width: 100%; height: 100%; animation: rotateRing 10s linear infinite; }
+        .particle { position: absolute; width: 6px; height: 6px; background: var(--primary); border-radius: 50%; filter: blur(1px) drop-shadow(0 0 5px var(--primary)); }
+        .particle.p1 { top: 10%; left: 50%; transform: translateX(-50%); }
+        .particle.p2 { bottom: 10%; left: 50%; transform: translateX(-50%); }
+        .particle.p3 { top: 50%; right: 10%; transform: translateY(-50%); }
+        .particle.p4 { top: 50%; left: 10%; transform: translateY(-50%); }
+        @keyframes rotateRing { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes logoPulse { 0%, 100% { transform: scale(1); filter: drop-shadow(0 0 15px var(--primary)); } 50% { transform: scale(1.03); filter: drop-shadow(0 0 25px var(--primary)); } }
+        .ip-neon-container { margin-top: 20px; text-align: center; }
+        .ip-neon-text { color: var(--primary); font-size: 20px; font-weight: 900; text-shadow: 0 0 10px var(--primary); font-family: monospace; }
+        .id-container { width: 100%; background: rgba(0,210,255,0.03); border-radius: 20px; border: 2px solid rgba(0,210,255,0.3); padding: 18px 15px; display: flex; justify-content: space-between; align-items: center; margin-top: 25px; transition: all 0.4s ease; cursor: pointer; }
+        .id-container.status-active { border-color: var(--success) !important; background: rgba(0, 230, 118, 0.05) !important; box-shadow: 0 0 15px rgba(0, 230, 118, 0.2); }
+        .id-container.status-active .fa-fingerprint { color: var(--success) !important; filter: drop-shadow(0 0 5px var(--success)); }
+        .id-container.status-active .id-label { color: var(--success) !important; text-shadow: 0 0 10px var(--success); }
+        .id-container.status-expired { border-color: var(--warning) !important; background: rgba(255, 152, 0, 0.05) !important; box-shadow: 0 0 15px rgba(255, 152, 0, 0.2); }
+        .id-container.status-expired .fa-fingerprint { color: var(--warning) !important; filter: drop-shadow(0 0 5px var(--warning)); }
+        .id-container.status-expired .id-label { color: var(--warning) !important; text-shadow: 0 0 10px var(--warning); }
+        .id-label { color: var(--primary); font-weight: 900; font-family: monospace; font-size: 17px; letter-spacing: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; text-align: center; transition: 0.3s; }
+        .status-badge { margin-top: 12px; padding: 8px 18px; border-radius: 12px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; display: inline-block; border: 1px solid transparent; transition: all 0.5s ease; opacity: 0; }
+        .status-badge.noreg { color: var(--danger); border-color: rgba(255, 23, 68, 0.4); background: rgba(255, 23, 68, 0.05); text-shadow: 0 0 8px var(--danger); animation: noregPulse 1.5s ease-in-out infinite; }
+        .status-badge.active { color: var(--success); border-color: rgba(0, 230, 118, 0.4); background: rgba(0, 230, 118, 0.05); text-shadow: 0 0 8px var(--success); }
+        .status-badge.expired { color: var(--warning); border-color: rgba(255, 152, 0, 0.4); background: rgba(255, 152, 0, 0.05); text-shadow: 0 0 8px var(--warning); }
+        @keyframes noregPulse { 0%, 100% { opacity: 1; filter: drop-shadow(0 0 5px var(--danger)); } 50% { opacity: 0.6; filter: drop-shadow(0 0 12px var(--danger)); } }
+        #refreshIcon { color: var(--primary); opacity: 0.6; font-size: 28px; display: inline-block; animation: slowSpin 5s linear infinite; transition: color 0.4s ease, filter 0.4s ease; }
+        .turbo-spin { animation: fastSpin 0.5s linear infinite !important; color: var(--success) !important; opacity: 1 !important; filter: drop-shadow(0 0 10px var(--success)); }
+        @keyframes slowSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes fastSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .bottom-section { display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; }
+        .status-pill { font-size: 11px; font-weight: 900; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; margin: 0 auto; padding: 5px 15px; border: 1px solid rgba(0,210,255,0.2); border-radius: 50px; }
+        .status-pill.on { color: var(--success); border-color: var(--success); }
+        .btn-action { width: 100%; height: 65px; background: #1e2433; color: white; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; font-weight: 900; font-size: 19px; text-transform: uppercase; transition: all 0.3s ease; cursor: pointer; }
+        .btn-action.connecting { background: var(--warning) !important; color: white; border-color: var(--warning); box-shadow: 0 0 20px rgba(255, 152, 0, 0.4); }
+        .btn-action.connected { background: var(--success) !important; color: #0b0f19; border-color: var(--success); box-shadow: 0 0 25px rgba(0, 230, 118, 0.6); }
+        .server-card { background: var(--card); padding: 18px; border-radius: 25px; display: flex; align-items: center; border: 1px solid rgba(255,255,255,0.08); cursor: pointer; }
+        #serverIcon { width: 32px; height: 32px; border-radius: 8px; background: rgba(0, 210, 255, 0.1); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 18px; border: 1px solid rgba(0, 210, 255, 0.3); }
+        .premium-node { padding: 15px 20px; margin: 10px 15px; background: rgba(255, 255, 255, 0.02); border: 1.5px solid rgba(0, 210, 255, 0.4); border-radius: 30px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: 0.3s; }
+        .premium-node:active { transform: scale(0.97); background: rgba(255,255,255,0.05); }
+        .premium-node.claro { border-color: var(--claro); box-shadow: 0 0 10px rgba(255, 23, 68, 0.2); }
+        .premium-node.tigo { border-color: var(--tigo); box-shadow: 0 0 10px rgba(0, 90, 255, 0.2); }
+        .premium-node.movistar { border-color: var(--movistar); box-shadow: 0 0 10px rgba(129, 199, 132, 0.2); }
+        .premium-node.digicel { border-color: var(--digicel); box-shadow: 0 0 10px rgba(186, 104, 255, 0.2); }
+        .node-ping-info { text-align: center; min-width: 45px; }
+        .online-text { font-size: 9px; font-weight: bold; color: var(--success); display: block; text-transform: uppercase; }
+        .ms-text { font-size: 9px; font-family: monospace; color: #aaa; }
+        .node-circle { width: 14px; height: 14px; border-radius: 50%; box-shadow: 0 0 8px currentColor; }
+        .node-name-text { flex: 1; font-weight: 800; font-size: 14px; color: #fff; text-transform: uppercase; letter-spacing: 0.5px; }
+        #customAlert { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 10000; align-items: center; justify-content: center; backdrop-filter: blur(10px); }
+        .alert-ui { background: var(--card); width: 85%; border-radius: 35px; border: 1px solid var(--primary); padding: 35px; text-align: center; }
+        #serverModal, #proxyModal, #logModal { position: fixed; inset: 0; background: var(--bg); z-index: 9999; display: none; flex-direction: column; }
+        #logContainer { flex: 1; padding: 20px; font-family: monospace; font-size: 12px; background: #080b12; overflow-y: auto; display: flex; flex-direction: column-reverse; justify-content: flex-end; }
+        .proxy-container { padding: 20px; }
+        .hotspot-card { background: var(--card); padding: 15px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.05); }
+    </style>
+</head>
+<body onload="initApp()">
+
+    <div id="customAlert"><div class="alert-ui"><i id="alertIcon" class="fa-solid fa-triangle-exclamation" style="font-size: 50px;"></i><h2 id="alertTitle" style="margin-top:15px;"></h2><p id="alertMsg" style="margin: 10px 0 25px; opacity: 0.7;"></p><button style="background:var(--primary); border:none; padding:16px; width:100%; border-radius:50px; font-weight:bold; color: #0b0f19;" onclick="cerrarAlerta()">ENTENDIDO</button></div></div>
+
+    <div class="main-content">
+        <div class="header-section">
+            <div class="top-row">
+                <div class="btn-top" onclick="openLog()"><i class="fa-solid fa-terminal" style="color:var(--primary)"></i></div>
+                <div class="app-title">Felix PRO</div>
+                <div class="btn-top proxy-btn" onclick="openProxy()"><i class="fa-solid fa-tower-broadcast"></i></div>
+            </div>
+            <div id="userGreeting" class="user-client-name"></div>
+            <div class="vip-timer-container">
+                <div id="expiryTag" class="expiry-tag">PREMIUM</div>
+                <div id="vipCountdown" class="countdown-tag">00:00:00</div>
+            </div>
+        </div>
+
+        <div class="center-section">
+            <div class="logo-container">
+                <div class="energy-ring one"></div>
+                <div class="energy-ring two"></div>
+                <div class="energy-ring three"></div>
+                <div class="particles">
+                    <div class="particle p1"></div><div class="particle p2"></div><div class="particle p3"></div><div class="particle p4"></div>
+                </div>
+                <img id="mainLogo" src="https://i.ibb.co/gL5K7GpN/2025102893528481.png" class="logo-main">
+            </div>
+            <div class="ip-neon-container">
+                <span class="ip-neon-text">IP: <span id="localIP">0.0.0.0</span></span>
+            </div>
+            
+            <div id="idBox" class="id-container">
+                <div style="display:flex; align-items:center; gap:12px; overflow: hidden; flex: 1;" onclick="copiarID()">
+                    <i class="fa-solid fa-fingerprint" style="color: var(--primary); font-size: 24px;"></i>
+                    <span class="id-label" id="displayID">GENERANDO...</span>
+                </div>
+                <div onclick="verificarAcceso(true)" style="padding: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                    <i id="refreshIcon" class="fa-solid fa-gear"></i>
+                </div>
+            </div>
+            <div id="idStatusBadge" class="status-badge">LISTO</div>
+        </div>
+
+        <div class="bottom-section">
+            <div class="status-pill" id="stLabel">DESCONECTADO</div>
+            <button class="btn-action" id="connBtn" onclick="gestionarBoton()">CONECTAR VPN</button>
+            <div class="server-card" onclick="openServers()">
+                <div id="serverIcon"><i class="fa-solid fa-server"></i></div>
+                <div style="flex: 1; margin-left: 18px;">
+                    <div id="sName" style="color:white; font-weight:bold; font-size:17px; text-transform: uppercase;">SERVIDORES VIP</div>
+                    <div id="pIP" style="font-size: 11px; opacity: 0.5;">Toca para seleccionar</div>
+                </div>
+                <i class="fa-solid fa-chevron-right" style="opacity: 0.3;"></i>
+            </div>
+        </div>
+    </div>
+
+    <div id="logModal" style="padding-top: 50px;">
+        <div style="padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05);"><b>SYSTEM CONSOLE</b><i class="fa-solid fa-xmark" style="font-size: 28px;" onclick="closeLog()"></i></div>
+        <div id="logContainer"></div>
+    </div>
+
+    <div id="proxyModal" style="padding-top: 50px;">
+        <div style="padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05);"><b>HOTSPOT SHARE</b><i class="fa-solid fa-circle-xmark" style="font-size: 30px; color: var(--danger);" onclick="closeProxy()"></i></div>
+        <div class="proxy-container">
+            <div class="hotspot-card" onclick="copiarDato('192.168.43.1')"><div><small>IP</small><br><b>192.168.43.1</b></div><i class="fa-solid fa-copy"></i></div>
+            <div class="hotspot-card" onclick="copiarDato('8080')"><div><small>PUERTO</small><br><b>8080</b></div><i class="fa-solid fa-copy"></i></div>
+        </div>
+    </div>
+
+    <div id="serverModal" style="padding-top: 50px;">
+        <div style="padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05);"><b>NODOS PREMIUM VIP</b><i class="fa-solid fa-xmark" style="font-size: 28px;" onclick="closeServers()"></i></div>
+        <div id="serverList" style="padding-bottom: 30px; overflow-y: auto;"></div>
+    </div>
+
+    <script>
+        const URL_DB = "https://raw.githubusercontent.com/FelixVPN25/felixvpn/main/premium.txt";
+        let isConectada = false;
+        let targetDate = null;
+        let timerInterval = null;
+
+        function obtenerHWID() {
+            let idBase = "USER";
+            try { if (window.DtGetHardwareId) idBase = window.DtGetHardwareId.execute(); } catch (e) { }
+            const mix = idBase + navigator.userAgent + window.screen.width + "x" + window.screen.height + "FELIX_V4_SECURE";
+            let h1 = 0x811c9dc5;
+            for (let i = 0; i < mix.length; i++) {
+                h1 ^= mix.charCodeAt(i);
+                h1 = Math.imul(h1, 16777619);
+            }
+            const res = "FX" + Math.abs(h1).toString(36).toUpperCase().substring(0, 9);
+            if (!localStorage.getItem('f_init')) {
+                localStorage.setItem('show_w', 'true');
+                localStorage.setItem('f_init', 'true');
+            }
+            return res;
+        }
+
+        async function verificarAcceso(mostrarMsj) {
+            const refreshIcon = document.getElementById('refreshIcon');
+            if(mostrarMsj && refreshIcon) refreshIcon.classList.add('turbo-spin');
+            const miID = document.getElementById('displayID').innerText;
+            const badge = document.getElementById('idStatusBadge');
+            const expiryTag = document.getElementById('expiryTag');
+            const idBox = document.getElementById('idBox');
+            const greeting = document.getElementById('userGreeting');
+
+            try {
+                const res = await fetch(`${URL_DB}?t=${Date.now()}`);
+                const text = await res.text(), lines = text.split('\n');
+                let found = false;
+                for (let line of lines) {
+                    const p = line.trim().split(',');
+                    if (p[0] === miID) {
+                        targetDate = new Date(p[1]);
+                        let diff = targetDate - new Date();
+                        if (diff > 0) {
+                            localStorage.setItem('vip', 'true');
+                            if(p[2]) { greeting.innerText = `HOLA, ${p[2]}`; greeting.style.display = "block"; }
+                            expiryTag.innerText = `VIP: ${Math.ceil(diff/86400000)} DÍAS`;
+                            badge.innerText = "✓ ACCESO PREMIUM ACTIVO";
+                            badge.className = "status-badge active";
+                            badge.style.opacity = "1";
+                            idBox.className = "id-container status-active";
+                            iniciarCronometro();
+                            found = true;
+                        } else { manejarExpiracion(); found = true; }
+                        break;
+                    }
+                }
+                
+                // --- AJUSTE DE SEGURIDAD SI EL ID NO ESTÁ ---
+                if (!found) {
+                    localStorage.setItem('vip', 'false');
+                    greeting.style.display = "none";
+                    expiryTag.innerText = "SIN ACCESO";
+                    document.getElementById('vipCountdown').innerText = "00:00:00";
+                    
+                    if (isConectada) {
+                        if(window.DtExecuteVpnStop) window.DtExecuteVpnStop.execute();
+                        resetUI();
+                        mostrarAlerta("ACCESO REVOCADO", "Tu ID ha sido removida del sistema.", "fa-user-slash", "var(--danger)");
+                    }
+
+                    badge.innerText = "✗ ID NO REGISTRADA";
+                    badge.className = "status-badge noreg";
+                    badge.style.opacity = "1";
+                    idBox.className = "id-container";
+                    if(timerInterval) clearInterval(timerInterval);
+                    if(mostrarMsj) mostrarAlerta("LLAVE INACTIVA", "Tu ID no está en nuestra base de datos VIP.", "fa-user-lock", "var(--danger)");
+                }
+            } catch (e) {
+                console.log("Sincronización en segundo plano...");
+            } finally { if(mostrarMsj) setTimeout(() => { if(refreshIcon) refreshIcon.classList.remove('turbo-spin'); }, 1500); }
+        }
+
+        function manejarExpiracion() {
+            localStorage.setItem('vip', 'false');
+            document.getElementById('userGreeting').style.display = "none";
+            document.getElementById('expiryTag').innerText = "SIN ACCESO";
+            document.getElementById('vipCountdown').innerText = "00:00:00";
+            const badge = document.getElementById('idStatusBadge');
+            const idBox = document.getElementById('idBox');
+            badge.innerText = "⚠ ID EXPIRADO";
+            badge.className = "status-badge expired";
+            badge.style.opacity = "1";
+            idBox.className = "id-container status-expired";
+            if (isConectada) { if(window.DtExecuteVpnStop) window.DtExecuteVpnStop.execute(); resetUI(); mostrarAlerta("TIEMPO AGOTADO", "Tu suscripción ha vencido.", "fa-clock", "var(--danger)"); }
+        }
+
+        function iniciarCronometro() {
+            if(timerInterval) clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                if (!targetDate) return;
+                const diff = targetDate.getTime() - new Date().getTime();
+                if (diff <= 0) { clearInterval(timerInterval); manejarExpiracion(); return; }
+                const h = Math.floor((diff % 86400000) / 3600000), m = Math.floor((diff % 3600000) / 60000), s = Math.floor((diff % 60000) / 1000);
+                document.getElementById('vipCountdown').innerText = `${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+            }, 1000);
+        }
+
+        function gestionarBoton() {
+            if (localStorage.getItem('vip') !== 'true') { verificarAcceso(true); return; }
+            const btn = document.getElementById('connBtn');
+            if (isConectada || btn.classList.contains('connecting')) { if(window.DtExecuteVpnStop) window.DtExecuteVpnStop.execute(); resetUI();
+            } else { btn.innerText = "CONECTANDO..."; btn.className = "btn-action connecting"; if(window.DtExecuteVpnStart) window.DtExecuteVpnStart.execute(); }
+        }
+
+        function checkStatus() {
+            try {
+                const ipDetectada = (window.DtGetSockIp) ? window.DtGetSockIp.execute() : (window.DtGetLocalIP ? window.DtGetLocalIP.execute() : "0.0.0.0");
+                document.getElementById('localIP').innerText = ipDetectada;
+                if(!window.DtGetVpnState) return;
+                const s = window.DtGetVpnState.execute();
+                const btn = document.getElementById('connBtn'), pill = document.getElementById('stLabel');
+                if (s === 'CONNECTED' && !isConectada) {
+                    isConectada = true;
+                    pill.innerText = "SISTEMA PROTEGIDO"; pill.className = "status-pill on";
+                    btn.innerText = "DESCONECTAR"; btn.className = "btn-action connected";
+                } else if (s === 'IDLE' || s === 'DISCONNECTED') { if (isConectada) resetUI(); }
+            } catch(e) {}
+        }
+
+        function resetUI() { isConectada = false; const btn = document.getElementById('connBtn'); btn.innerText = "CONECTAR VPN"; btn.className = "btn-action"; document.getElementById('stLabel').innerText = "DESCONECTADO"; document.getElementById('stLabel').className = "status-pill"; }
+
+        function initApp() {
+            document.getElementById('displayID').innerText = obtenerHWID();
+            setInterval(checkStatus, 1000);
+            setInterval(() => { verificarAcceso(false); }, 8000);
+            verificarAcceso(false);
+            if (localStorage.getItem('show_w') === 'true') {
+                mostrarAlerta("NUEVA LLAVE", "Tu ID ha sido optimizada. Pásale el nuevo código a soporte.", "fa-fingerprint", "var(--primary)");
+                localStorage.removeItem('show_w');
+            }
+        }
+
+        function mostrarAlerta(t, m, i, c) { document.getElementById('alertIcon').className = `fa-solid ${i}`; document.getElementById('alertIcon').style.color = c; document.getElementById('alertTitle').innerText = t; document.getElementById('alertMsg').innerText = m; document.getElementById('customAlert').style.display = 'flex'; }
+        function cerrarAlerta() { document.getElementById('customAlert').style.display = 'none'; }
+        function copiarID() { const id = document.getElementById('displayID').innerText; navigator.clipboard.writeText(id); mostrarAlerta("ID COPIADO", "Pega este código en el chat de soporte.", "fa-copy", "var(--success)"); }
+        function copiarDato(v) { navigator.clipboard.writeText(v); }
+        function openLog() { document.getElementById('logModal').style.display = 'flex'; }
+        function closeLog() { document.getElementById('logModal').style.display = 'none'; }
+        function openProxy() { document.getElementById('proxyModal').style.display = 'flex'; }
+        function closeProxy() { document.getElementById('proxyModal').style.display = 'none'; }
+        
+        // --- SECCIÓN DE SERVIDORES (SIN CAMBIOS DE DISEÑO) ---
+        function openServers() {
+            document.getElementById('serverModal').style.display = 'flex';
+            try {
+                const data = JSON.parse(window.DtGetConfigs.execute()), list = document.getElementById('serverList'); list.innerHTML = "";
+                data.forEach(cat => cat.items.forEach(item => {
+                    let el = document.createElement('div'), sName = item.name.toUpperCase(), opClass = "";
+                    if(sName.includes("CLARO")) opClass = "claro"; else if(sName.includes("TIGO")) opClass = "tigo"; else if(sName.includes("MOVISTAR")) opClass = "movistar"; else if(sName.includes("DIGICEL")) opClass = "digicel";
+                    el.className = `premium-node ${opClass}`;
+                    el.innerHTML = `<div class="node-ping-info"><span class="online-text">Online</span><span class="ms-text">${Math.floor(Math.random()*15)+10}ms</span></div><div class="node-circle" style="color:var(--${opClass || 'primary'}); background:var(--${opClass || 'primary'});"></div><b class="node-name-text">${item.name}</b><i class="fa-solid fa-chevron-right" style="opacity:0.2; font-size:12px;"></i>`;
+                    el.onclick = () => { window.DtSetConfig.execute(item.id); document.getElementById('sName').innerText = item.name; closeServers(); };
+                    list.appendChild(el);
+                }));
+            } catch(e){}
+        }
+        function closeServers() { document.getElementById('serverModal').style.display = 'none'; }
+    </script>
+</body>
+</html>
