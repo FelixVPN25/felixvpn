@@ -1,1 +1,3 @@
 21-04-2026|¡Hola Felix! Este es un mensaje de prueba para todos tus clientes.
+21/04/2026 | Se agregó nueva seguridad al sistema VIP.
+20/04/2026 | Lanzamiento oficial del proyecto Felix PRO.
