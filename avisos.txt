@@ -1,2 +1,2 @@
-21/04/2026 | Vamos hacer una nueva actulizacion ya que el id se cambia si hay alguna actualizacion del sistema. trqbajaremos con resolución de teléfono ya que ahi no habra fallo ya que es la medida del teléfono en físico.
 19/04/2026 | Actualización de id fifo para la app.
+21/04/2026 | Vamos hacer una nueva actulizacion ya que el id se cambia si hay alguna actualizacion del sistema. trabajaremos con resolución de teléfono ya que ahi no habra fallo ya que es la medida del teléfono en físico.
