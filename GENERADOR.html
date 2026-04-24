@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg: #0b0f19;
-            --card: #151a27;
+            --bg: #05080f;
+            --card: #111622;
             --primary: #00d2ff;
             --success: #00e676;
-            --warning: #ff9800;
             --text: #ffffff;
             --code-bg: #080b12;
+            --glow: rgba(0, 210, 255, 0.3);
         }
+
         body {
             background-color: var(--bg);
             color: var(--text);
@@ -22,49 +23,69 @@
             display: flex;
             justify-content: center;
             padding: 20px;
+            margin: 0;
         }
+
+        @keyframes pulse-cyan {
+            0% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.5); }
+            70% { box-shadow: 0 0 0 12px rgba(0, 210, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0); }
+        }
+
         .admin-container {
             width: 100%;
-            max-width: 700px;
+            max-width: 600px;
             background: var(--card);
             padding: 25px;
             border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.7);
         }
-        h2 { text-align: center; color: var(--primary); margin-bottom: 25px; letter-spacing: 2px; text-transform: uppercase; }
+
+        h2 { 
+            text-align: center; 
+            color: var(--primary); 
+            margin-bottom: 25px; 
+            letter-spacing: 3px; 
+            text-transform: uppercase;
+            text-shadow: 0 0 10px var(--glow);
+        }
+
         .input-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-size: 14px; opacity: 0.8; font-weight: bold; }
+        label { display: block; margin-bottom: 8px; font-size: 13px; opacity: 0.7; font-weight: bold; text-transform: uppercase; }
+
         input {
             width: 100%;
-            padding: 12px;
-            background: rgba(0,0,0,0.2);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 10px;
+            padding: 14px;
+            background: #080b12;
+            border: 1px solid #2d364a;
+            border-radius: 12px;
             color: white;
             outline: none;
             box-sizing: border-box;
-        }
-        input:focus { border-color: var(--primary); }
-        .actions { display: flex; gap: 10px; margin: 20px 0; }
-        button {
-            flex: 1;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            font-weight: bold;
-            cursor: pointer;
             transition: 0.3s;
+        }
+
+        input:focus { border-color: var(--primary); box-shadow: 0 0 8px var(--glow); }
+
+        .btn-gen {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 900;
+            cursor: pointer;
+            background: linear-gradient(45deg, var(--primary), #008fb3);
+            color: #05080f;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
             text-transform: uppercase;
+            animation: pulse-cyan 2s infinite;
+            margin-top: 10px;
         }
-        .btn-gen { background: var(--primary); color: #0b0f19; }
-        .btn-gen:hover { transform: scale(1.02); }
-        
-        /* Secciones de Salida */
+
         .output-box {
             margin-top: 20px;
             background: var(--code-bg);
@@ -72,11 +93,11 @@
             padding: 15px;
             border: 1px solid rgba(255,255,255,0.05);
         }
+
         .github-box { border-left: 4px solid var(--primary); }
         .client-box { border-left: 4px solid var(--success); }
 
         .box-header { 
-            color: var(--primary); 
             font-size: 11px; 
             font-weight: 900; 
             margin-bottom: 10px; 
@@ -84,30 +105,30 @@
             justify-content: space-between; 
             align-items: center;
         }
+
         .btn-copy-small {
-            background: rgba(255,255,255,0.1);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 6px;
             font-size: 10px;
             cursor: pointer;
-            border: none;
+            border: 1px solid rgba(255,255,255,0.1);
         }
-        .btn-copy-small:hover { background: var(--primary); color: #000; }
 
         textarea {
             width: 100%;
             background: transparent;
             border: none;
             color: #ccc;
-            font-family: monospace;
+            font-family: 'Consolas', monospace;
             font-size: 13px;
             resize: none;
             outline: none;
-            padding: 0;
         }
-        #rawOutput { color: var(--primary); height: 60px; }
-        #clientOutput { color: var(--success); height: 120px; }
+
+        #rawOutput { color: var(--primary); height: 40px; }
+        #clientOutput { color: var(--success); height: 130px; }
 
         .history-table {
             margin-top: 25px;
@@ -115,19 +136,29 @@
             border-collapse: collapse;
             font-size: 12px;
         }
-        .history-table th { text-align: left; padding: 10px; border-bottom: 2px solid rgba(255,255,255,0.1); color: var(--primary); }
-        .history-table td { padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+
+        .history-table th { text-align: left; padding: 12px; color: var(--primary); }
+        .history-table td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        
+        .status-badge {
+            background: rgba(0, 230, 118, 0.1);
+            color: var(--success);
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: bold;
+            border: 1px solid var(--success);
+        }
     </style>
 </head>
 <body>
 
 <div class="admin-container">
-    <h2><i class="fa-solid fa-user-shield"></i> PANEL FELIX PREMIUM</h2>
+    <h2><i class="fa-solid fa-user-gear"></i> FELIX PREMIUM</h2>
     
     <div style="display: flex; gap: 15px;">
         <div class="input-group" style="flex: 2;">
             <label>Nombre del Cliente</label>
-            <input type="text" id="clientName" placeholder="Nombre completo" autocomplete="off">
+            <input type="text" id="clientName" placeholder="Ej: felix254" autocomplete="off">
         </div>
         <div class="input-group" style="flex: 1;">
             <label>Días</label>
@@ -136,31 +167,33 @@
     </div>
 
     <button class="btn-gen" onclick="generateToken()">
-        <i class="fa-solid fa-plus-circle"></i> GENERAR ACCESO VIP
+        <i class="fa-solid fa-bolt"></i> ACTIVAR ACCESO
     </button>
 
-    <div class="output-box github-box">
-        <div class="box-header">
-            <span><i class="fa-brands fa-github"></i> PEGAR EN GITHUB (PREMIUM.TXT)</span>
-            <button class="btn-copy-small" onclick="copyText('rawOutput')">COPIAR</button>
+    <div id="outputs" style="display: none;">
+        <div class="output-box github-box">
+            <div class="box-header" style="color: var(--primary);">
+                <span><i class="fa-brands fa-github"></i> GITHUB (PREMIUM.TXT)</span>
+                <button class="btn-copy-small" onclick="copyText('rawOutput')">COPIAR</button>
+            </div>
+            <textarea id="rawOutput" readonly></textarea>
         </div>
-        <textarea id="rawOutput" readonly placeholder="Esperando generación..."></textarea>
-    </div>
 
-    <div class="output-box client-box">
-        <div class="box-header" style="color: var(--success);">
-            <span><i class="fa-brands fa-whatsapp"></i> INFO PARA EL CLIENTE (MENSAJE)</span>
-            <button class="btn-copy-small" onclick="copyText('clientOutput')">COPIAR MENSAJE</button>
+        <div class="output-box client-box">
+            <div class="box-header" style="color: var(--success);">
+                <span><i class="fa-brands fa-whatsapp"></i> MENSAJE PARA CLIENTE</span>
+                <button class="btn-copy-small" onclick="copyText('clientOutput')">COPIAR MENSAJE</button>
+            </div>
+            <textarea id="clientOutput" readonly></textarea>
         </div>
-        <textarea id="clientOutput" readonly placeholder="Esperando generación..."></textarea>
     </div>
 
     <table class="history-table">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>CLIENTE</th>
-                <th>VENCE</th>
+                <th>USUARIO</th>
+                <th>PIN</th>
+                <th>ESTADO</th>
             </tr>
         </thead>
         <tbody id="historyBody"></tbody>
@@ -172,58 +205,57 @@
 
     function generateToken() {
         const nameInput = document.getElementById('clientName');
-        const name = nameInput.value.trim() || "CLIENTE";
+        const nameRaw = nameInput.value.trim() || "NUEVO_CLIENTE";
+        // Reemplazar espacios por guiones bajos para que no dé problemas en la lista
+        const name = nameRaw.replace(/\s+/g, '_').toLowerCase();
+        
         const days = parseInt(document.getElementById('daysAccess').value) || 30;
         
-        // Generar ID
-        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        let token = "";
-        for (let i = 0; i < 8; i++) { token += chars.charAt(Math.floor(Math.random() * chars.length)); }
+        // Generar PIN Aleatorio de 4 dígitos
+        const pin = Math.floor(1000 + Math.random() * 9000);
 
-        // Fecha
+        // Fechas
         const date = new Date();
         date.setDate(date.getDate() + days);
         const dateStr = date.toISOString().split('T')[0] + " 23:59:59";
-        const dateSimple = date.toISOString().split('T')[0];
+        const dateSimple = date.toLocaleDateString();
 
         const data = {
-            id: token,
+            username: name,
+            pin: pin,
             expiry: dateStr,
-            client: name.toUpperCase(),
             simpleDate: dateSimple
         };
 
         tokenList.push(data);
+        document.getElementById('outputs').style.display = 'block';
         updateUI(data);
         nameInput.value = ""; 
     }
 
     function updateUI(last) {
-        // Actualizar Tabla
         const body = document.getElementById('historyBody');
         body.innerHTML = "";
         tokenList.slice().reverse().forEach(t => {
             body.innerHTML += `<tr>
-                <td style="color:var(--success); font-family:monospace; font-weight:bold;">${t.id}</td>
-                <td>${t.client}</td>
-                <td style="opacity:0.7;">${t.simpleDate}</td>
+                <td style="color:var(--primary); font-weight:bold;">${t.username}</td>
+                <td style="font-family:monospace; color:var(--text);">${t.pin}</td>
+                <td><span class="status-badge">ACTIVO</span></td>
             </tr>`;
         });
 
-        // Formato GitHub
-        document.getElementById('rawOutput').value = `${last.id},${last.expiry},1234,${last.client.toLowerCase()},0`;
+        // Formato para PREMIUM.TXT: nombre,fecha,pin,nombre_min,0
+        document.getElementById('rawOutput').value = `${last.username},${last.expiry},${last.pin},${last.username},0`;
 
-        // Formato Cliente
+        // Mensaje WhatsApp
         const msg = `⚡ *FELIX PREMIUM VIP* ⚡\n\n` +
-                    `Hola *${last.client}*, tu acceso ha sido activado.\n\n` +
-                    `🔑 *TU ID:* ${last.id}\n` +
-                    `📅 *VENCE:* ${last.simpleDate}\n` +
-                    `🛡️ *ESTADO:* Premium Activo\n\n` +
+                    `Hola *${last.username.toUpperCase()}*, tu acceso ha sido activado.\n\n` +
+                    `👤 *USUARIO:* \`${last.username}\`\n` +
+                    `🔑 *PIN DE ACCESO:* \`${last.pin}\`\n` +
+                    `📅 *VENCE:* ${last.simpleDate}\n\n` +
                     `*Instrucciones:*\n` +
-                    `1. Abre la App\n` +
-                    `2. Pega tu ID en la casilla correspondiente\n` +
-                    `3. Dale al icono de engranaje para validar\n` +
-                    `4. ¡Disfruta la conexión!`;
+                    `Ingresa tu usuario y PIN en la App para conectar.\n\n` +
+                    `🚀 *Gracias por confiar en Felix Premium.*`;
         
         document.getElementById('clientOutput').value = msg;
     }
@@ -233,7 +265,7 @@
         if(!area.value) return;
         area.select();
         document.execCommand('copy');
-        alert("Copiado al portapapeles");
+        alert("¡Copiado con éxito!");
     }
 </script>
 
