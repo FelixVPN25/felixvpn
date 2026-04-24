@@ -7,8 +7,8 @@
         "type": "SSH",
         "server_ip": "206.183.128.49",
         "server_port": "80",
-        "user": "FpVip",
-        "pass": "FpVip",
+        "user": "motomoco",
+        "pass": "motomococo",
         "payload": "HTTP/2.0 200 ok[crlf]Host: [rotate=www.empire.co.ke.com;www.atresplayer.com;www.aol.com;wap.yy.com;net.supercell.com;www.disney.com;www.bbc.com;www.godaddy.com;adclick.g.doubleclick.net;www.buzzfeed.com;www.alipay.com;www.monster.com;www.playstation.net;mail.hotmail.com;ads.mopub.com;m.weibo.cn;www.flickr.com;d1n212ccp6ldpw.cloudfront.net][crlf][ua]",
         "sni": ""
       },
@@ -17,8 +17,8 @@
         "type": "SSL",
         "server_ip": "206.183.128.49",
         "server_port": "443",
-        "user": "FpVip",
-        "pass": "FpVip",
+        "user": "motomoco",
+        "pass": "motomococo",
         "sni": "www.googletagmanager.com",
         "payload": ""
       },
@@ -29,8 +29,8 @@
   "dns_host": "dns.felixpremiun.shop",
   "pub_key": "228cdd3485524d7f0b7382afce91548fa6d02524e530184dc535f48824006523",
   "dns_resolver": "8.8.8.8", 
-  "user": "FpVip",
-  "pass": "FpVip"
+  "user": "motomoco",
+  "pass": "motomococo"
 },
       {
         "name": "V2RAY PREMIUM 1",
