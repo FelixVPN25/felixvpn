@@ -3,111 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Felix Admin - Ordenador Masivo</title>
+    <title>Felix Admin - Generador VIP Pro</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg: #0b0f19;
-            --card: #151a27;
+            --bg: #05080f;
+            --card: #111622;
             --primary: #00d2ff;
             --success: #00e676;
+            --warning: #ff9800;
             --text: #ffffff;
             --code-bg: #080b12;
+            --glow: rgba(0, 210, 255, 0.3);
         }
-        body {
-            background-color: var(--bg); color: var(--text);
-            font-family: 'Segoe UI', sans-serif; padding: 20px;
-            display: flex; justify-content: center;
-        }
-        .container {
-            width: 100%; max-width: 900px;
-            background: var(--card); padding: 30px;
-            border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);
-        }
-        h2 { text-align: center; color: var(--primary); text-transform: uppercase; margin-bottom: 25px; }
-        
-        .panels { display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; }
-        .panel { flex: 1; min-width: 300px; }
-        
-        label { display: block; margin-bottom: 10px; font-size: 12px; font-weight: 900; color: var(--primary); }
-        
-        textarea {
-            width: 100%; height: 350px;
-            background: var(--code-bg); border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 15px; color: #ccc; padding: 15px;
-            font-family: monospace; font-size: 13px; resize: none; outline: none;
-            box-sizing: border-box;
-        }
-        textarea:focus { border-color: var(--primary); }
 
-        .btn-main {
-            width: 100%; padding: 20px; background: var(--primary);
-            color: #0b0f19; border: none; border-radius: 15px;
-            font-weight: 900; cursor: pointer; font-size: 16px;
-            transition: 0.3s; margin-bottom: 20px;
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* Animación de pulso para el botón */
+        @keyframes pulse-cyan {
+            0% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.5); }
+            70% { box-shadow: 0 0 0 12px rgba(0, 210, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0); }
+        }
+
+        .admin-container {
+            width: 100%;
+            max-width: 600px;
+            background: var(--card);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+        }
+
+        h2 { 
+            text-align: center; 
+            color: var(--primary); 
+            margin-bottom: 25px; 
+            letter-spacing: 3px; 
+            text-transform: uppercase;
+            text-shadow: 0 0 10px var(--glow);
+        }
+
+        .input-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 8px; font-size: 13px; opacity: 0.7; font-weight: bold; text-transform: uppercase; }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            background: #080b12;
+            border: 1px solid #2d364a;
+            border-radius: 12px;
+            color: white;
+            outline: none;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+
+        input:focus { border-color: var(--primary); box-shadow: 0 0 8px var(--glow); }
+
+        .btn-gen {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 900;
+            cursor: pointer;
+            background: linear-gradient(45deg, var(--primary), #008fb3);
+            color: #05080f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-transform: uppercase;
+            animation: pulse-cyan 2s infinite;
+            margin-top: 10px;
+        }
+
+        .output-box {
+            margin-top: 20px;
+            background: var(--code-bg);
+            border-radius: 15px;
+            padding: 15px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+
+        .github-box { border-left: 4px solid var(--primary); }
+        .client-box { border-left: 4px solid var(--success); }
+
+        .box-header { 
+            font-size: 11px; 
+            font-weight: 900; 
+            margin-bottom: 10px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+        }
+
+        .btn-copy-small {
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 10px;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.1);
             text-transform: uppercase;
         }
-        .btn-main:hover { transform: scale(1.01); box-shadow: 0 0 20px rgba(0, 210, 255, 0.4); }
-        
-        .stats { font-size: 12px; opacity: 0.6; text-align: right; }
+
+        .btn-copy-small:hover { background: var(--text); color: #000; }
+
+        textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: #ccc;
+            font-family: 'Consolas', monospace;
+            font-size: 13px;
+            resize: none;
+            outline: none;
+        }
+
+        #rawOutput { color: var(--primary); height: 40px; }
+        #clientOutput { color: var(--success); height: 130px; }
+
+        .status-badge {
+            background: rgba(0, 230, 118, 0.1);
+            color: var(--success);
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: bold;
+            border: 1px solid var(--success);
+        }
+
+        .history-table {
+            margin-top: 25px;
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .history-table th { background: rgba(255,255,255,0.02); text-align: left; padding: 12px; color: var(--primary); }
+        .history-table td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h2><i class="fa-solid fa-layer-group"></i> Ordenador de GitHub - Felix</h2>
+<div class="admin-container">
+    <h2><i class="fa-solid fa-shield-halved"></i> FELIX PREMIUM</h2>
     
-    <div class="panels">
-        <div class="panel">
-            <label>1. PEGA AQUÍ TU LISTA DESORDENADA</label>
-            <textarea id="inputList" placeholder="ID,FECHA,PIN,NOMBRE,LIMITE..."></textarea>
+    <div style="display: flex; gap: 15px;">
+        <div class="input-group" style="flex: 2;">
+            <label>Cliente</label>
+            <input type="text" id="clientName" placeholder="Nombre de usuario" autocomplete="off">
         </div>
-        <div class="panel">
-            <label>2. LISTA ORDENADA (A-Z)</label>
-            <textarea id="outputList" readonly placeholder="El resultado aparecerá aquí..."></textarea>
+        <div class="input-group" style="flex: 1;">
+            <label>Días</label>
+            <input type="number" id="daysAccess" value="30">
         </div>
     </div>
 
-    <button class="btn-main" onclick="procesarLista()">
-        <i class="fa-solid fa-arrow-down-a-z"></i> Organizar por Nombre ahora
+    <button class="btn-gen" onclick="generateToken()">
+        <i class="fa-solid fa-bolt"></i> GENERAR ACCESO VIP
     </button>
-    
-    <div class="stats" id="contador">Clientes detectados: 0</div>
+
+    <div id="outputs" style="display: none;">
+        <div class="output-box github-box">
+            <div class="box-header" style="color: var(--primary);">
+                <span><i class="fa-brands fa-github"></i> GITHUB (PREMIUM.TXT)</span>
+                <button class="btn-copy-small" onclick="copyText('rawOutput')">COPIAR</button>
+            </div>
+            <textarea id="rawOutput" readonly></textarea>
+        </div>
+
+        <div class="output-box client-box">
+            <div class="box-header" style="color: var(--success);">
+                <span><i class="fa-brands fa-whatsapp"></i> MENSAJE PARA CLIENTE</span>
+                <button class="btn-copy-small" onclick="copyText('clientOutput')">COPIAR MENSAJE</button>
+            </div>
+            <textarea id="clientOutput" readonly></textarea>
+        </div>
+    </div>
+
+    <table class="history-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>CLIENTE</th>
+                <th>ESTADO</th>
+            </tr>
+        </thead>
+        <tbody id="historyBody"></tbody>
+    </table>
 </div>
 
 <script>
-    function procesarLista() {
-        const input = document.getElementById('inputList').value.trim();
-        if (!input) return alert("Pega algo primero, Felix.");
+    let tokenList = [];
 
-        // Convertimos el texto en un array de líneas
-        let lineas = input.split('\n');
+    function generateToken() {
+        const nameInput = document.getElementById('clientName');
+        const name = nameInput.value.trim() || "NUEVO CLIENTE";
+        const days = parseInt(document.getElementById('daysAccess').value) || 30;
         
-        // Filtramos líneas vacías y procesamos el ordenado
-        let listaProcesada = lineas
-            .filter(linea => linea.trim() !== "") // Quitar líneas en blanco
-            .map(linea => {
-                let partes = linea.split(',');
-                return {
-                    original: linea.trim(),
-                    nombre: partes[3] ? partes[3].trim().toLowerCase() : "zzzz" // Usamos el nombre (posición 3) para ordenar
-                };
-            });
+        // Generar ID Aleatorio
+        const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+        let token = "";
+        for (let i = 0; i < 8; i++) { token += chars.charAt(Math.floor(Math.random() * chars.length)); }
 
-        // Ordenar de la A a la Z usando el nombre
-        listaProcesada.sort((a, b) => a.nombre.localeCompare(b.nombre));
+        // Fechas
+        const date = new Date();
+        date.setDate(date.getDate() + days);
+        const dateStr = date.toISOString().split('T')[0] + " 23:59:59";
+        const dateSimple = date.toLocaleDateString();
 
-        // Reconstruir el texto final
-        let resultado = listaProcesada.map(obj => obj.original).join('\n');
+        const data = {
+            id: token,
+            expiry: dateStr,
+            client: name.toUpperCase(),
+            simpleDate: dateSimple
+        };
 
-        document.getElementById('outputList').value = resultado;
-        document.getElementById('contador').innerText = `Clientes detectados: ${listaProcesada.length}`;
+        tokenList.push(data);
+        document.getElementById('outputs').style.display = 'block';
+        updateUI(data);
+        nameInput.value = ""; 
+    }
+
+    function updateUI(last) {
+        const body = document.getElementById('historyBody');
+        body.innerHTML = "";
+        tokenList.slice().reverse().forEach(t => {
+            body.innerHTML += `<tr>
+                <td style="color:var(--primary); font-family:monospace; font-weight:bold;">${t.id}</td>
+                <td>${t.client}</td>
+                <td><span class="status-badge">ACTIVO</span></td>
+            </tr>`;
+        });
+
+        // Formato exacto para PREMIUM.TXT
+        document.getElementById('rawOutput').value = `${last.id},${last.expiry},1234,${last.client.toLowerCase()},0`;
+
+        // Mensaje WhatsApp Profesional
+        const msg = `⚡ *FELIX PREMIUM VIP* ⚡\n\n` +
+                    `Hola *${last.client}*, tu acceso ha sido activado con éxito.\n\n` +
+                    `🔑 *TU ID:* \`${last.id}\`\n` +
+                    `📅 *VENCIMIENTO:* ${last.simpleDate}\n` +
+                    `🛡️ *SERVICIO:* Premium Sin Límites\n\n` +
+                    `*Instrucciones de uso:*\n` +
+                    `1. Copia tu ID arriba.\n` +
+                    `2. Abre la App oficial.\n` +
+                    `3. Pega el ID y activa el servicio.\n\n` +
+                    `🚀 *Gracias por tu preferencia.*`;
         
-        // Efecto visual de copiado automático al terminar
-        const output = document.getElementById('outputList');
-        output.select();
+        document.getElementById('clientOutput').value = msg;
+    }
+
+    function copyText(id) {
+        const area = document.getElementById(id);
+        if(!area.value) return;
+        area.select();
         document.execCommand('copy');
-        alert("¡Listo! Lista ordenada y copiada al portapapeles.");
+        alert("¡Copiado con éxito, Felix!");
     }
 </script>
 
