@@ -2,3 +2,4 @@
 21/04/2026 | Vamos hacer una nueva actulizacion ya que el id se cambia si hay alguna actualizacion del sistema. trabajaremos con resolución de teléfono ya que ahi no habra fallo ya que es la medida del teléfono en físico.
 21/04/2026 | NOTA: Si tu ID cambia es poque hubo una actualización en tu sistema y eso hace que tu ID cambie. Si eso pasara enviar id al admin para que lo registre... estamos trabajando para que todo este al 100.
 24/04/2026 | El dia viernes 24 se ara una actualización para que podamos ingresaras tranquilo usando lo que un usuario ya que vimos que los ID hay momentos que cambia por razones de actulizaciones del teléfono. Entonces cuando salga para  poner nombre o ID se comunican con admin y brindab un nombre ej: Felix186
+25/04/2016 | Esté dia sabado 25 se hizo una nueva actualización de la app dando un modo limpio y mas seguro, corriegiendo todos los errores que tenia, ahora ingresan con us usuario que se dio ej:FELIX1234
