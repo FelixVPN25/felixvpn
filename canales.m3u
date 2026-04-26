@@ -1,15 +1,10 @@
 #EXTM3U
-#EXTINF:-1,NOTICIAS 24H
-https://rt-esp.akamaized.net/hls/esp/main/index.m3u8
 
-#EXTINF:-1,CANAL EVENTOS PRO
-https://d2e1asnsl7br7b.cloudfront.net/772c4e8469b64da69cf3b3275983ad07/index.m3u8
+#EXTINF:-1, CANAL DE NOTICIAS (YOUTUBE)
+https://www.youtube.com/live/kWmZrqOr_t0?si=AkilYIbu3XwwPBE0
 
-#EXTINF:-1,TELE SUR
-https://telesur.cloud.edge.vustreams.com/telesur/smil:telesur.smil/playlist.m3u8
+#EXTINF:-1, MUSICA EN VIVO 24/7
+https://youtu.be/OTRO_ID
 
-#EXTINF:-1,PELICULAS TV
-https://fcc3dafe.fcc.world.m9.top/live/fcc3dafe/playlist.m3u8
-
-#EXTINF:-1,MUSIC MIX
-https://topatutv.com/topatutv/index.m3u8
+#EXTINF:-1, CANAL LOCAL (M3U8)
+https://servidor.com/lista/canal.m3u8
