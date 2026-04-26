@@ -1,15 +1,15 @@
 #EXTM3U
-#EXTINF:-1,TV EL SALVADOR (CANAL 10)
-https://d138zshobm7o6.cloudfront.net/out/v1/fdf749712a9648939c36829707e770f1/index.m3u8
+#EXTINF:-1,NOTICIAS 24H
+https://rt-esp.akamaized.net/hls/esp/main/index.m3u8
 
-#EXTINF:-1,NOTICIAS GLOBAL (RT)
-https://rt-esp.akamaized.net/hls/esp/main/1600/index.m3u8
+#EXTINF:-1,CANAL EVENTOS PRO
+https://d2e1asnsl7br7b.cloudfront.net/772c4e8469b64da69cf3b3275983ad07/index.m3u8
 
-#EXTINF:-1,PELICULAS ACCIÓN (RAKUTEN)
-https://rakuten-action-6-es.samsung.wurl.tv/playlist.m3u8
+#EXTINF:-1,TELE SUR
+https://telesur.cloud.edge.vustreams.com/telesur/smil:telesur.smil/playlist.m3u8
 
-#EXTINF:-1,MUSICA TOP (Vevo)
-https://linear-413.vrtz.tv/playlist.m3u8
+#EXTINF:-1,PELICULAS TV
+https://fcc3dafe.fcc.world.m9.top/live/fcc3dafe/playlist.m3u8
 
-#EXTINF:-1,ANIMALES Y NATURALEZA
-https://wilder-samsunguk.amagi.tv/playlist.m3u8
+#EXTINF:-1,MUSIC MIX
+https://topatutv.com/topatutv/index.m3u8
