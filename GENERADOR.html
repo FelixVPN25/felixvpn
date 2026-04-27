@@ -3,199 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Felix Admin - Generador VIP Pro</title>
+    <title>Felix Admin Pro - Seguridad Máxima</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg: #05080f;
-            --card: #111622;
-            --primary: #00d2ff;
-            --success: #00e676;
-            --danger: #ff4d4d; /* Rojo para advertencias */
-            --text: #ffffff;
-            --code-bg: #080b12;
-            --glow: rgba(0, 210, 255, 0.3);
+            --bg: #05080f; --card: #111622; --primary: #00d2ff; --success: #00e676;
+            --danger: #ff4d4d; --warning: #f1c40f; --text: #ffffff; --code-bg: #080b12;
         }
 
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Segoe UI', sans-serif;
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-            margin: 0;
-        }
-
-        @keyframes pulse-cyan {
-            0% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.5); }
-            70% { box-shadow: 0 0 0 12px rgba(0, 210, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0); }
-        }
-
-        .admin-container {
-            width: 100%;
-            max-width: 600px;
-            background: var(--card);
-            padding: 25px;
-            border-radius: 20px;
-            border: 1px solid rgba(0, 210, 255, 0.2);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.7);
-        }
-
-        h2 { 
-            text-align: center; 
-            color: var(--primary); 
-            margin-bottom: 25px; 
-            letter-spacing: 3px; 
-            text-transform: uppercase;
-            text-shadow: 0 0 10px var(--glow);
-        }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; padding: 20px; margin: 0; }
+        .admin-container { width: 100%; max-width: 900px; background: var(--card); padding: 25px; border-radius: 20px; border: 1px solid rgba(0, 210, 255, 0.2); box-shadow: 0 10px 40px rgba(0,0,0,0.7); }
+        
+        h2 { text-align: center; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; text-shadow: 0 0 10px rgba(0, 210, 255, 0.4); }
 
         .input-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 8px; font-size: 13px; opacity: 0.7; font-weight: bold; text-transform: uppercase; }
+        label { display: block; margin-bottom: 8px; font-size: 11px; opacity: 0.7; font-weight: bold; text-transform: uppercase; }
+        input { width: 100%; padding: 12px; background: #080b12; border: 1px solid #2d364a; border-radius: 10px; color: white; outline: none; box-sizing: border-box; }
 
-        input {
-            width: 100%;
-            padding: 14px;
-            background: #080b12;
-            border: 1px solid #2d364a;
-            border-radius: 12px;
-            color: white;
-            outline: none;
-            box-sizing: border-box;
-            transition: 0.3s;
-            text-transform: uppercase;
-        }
+        .quick-select { display: flex; gap: 5px; margin-top: 5px; flex-wrap: wrap; }
+        .btn-qs { flex: 1; padding: 8px; font-size: 10px; background: #1a233a; border: 1px solid #2d364a; color: #00d2ff; border-radius: 6px; cursor: pointer; transition: 0.2s; font-weight: bold; }
+        .btn-qs:hover { background: var(--primary); color: #000; }
 
-        input:focus { border-color: var(--primary); box-shadow: 0 0 8px var(--glow); }
+        .btn-gen { width: 100%; padding: 16px; border: none; border-radius: 12px; font-weight: 900; cursor: pointer; background: linear-gradient(45deg, var(--primary), #008fb3); color: #05080f; text-transform: uppercase; margin-top: 15px; box-shadow: 0 0 15px rgba(0, 210, 255, 0.3); }
 
-        .btn-gen {
-            width: 100%;
-            padding: 16px;
-            border: none;
-            border-radius: 12px;
-            font-weight: 900;
-            cursor: pointer;
-            background: linear-gradient(45deg, var(--primary), #008fb3);
-            color: #05080f;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            text-transform: uppercase;
-            animation: pulse-cyan 2s infinite;
-            margin-top: 10px;
-        }
+        .output-box { margin-top: 15px; background: var(--code-bg); border-radius: 12px; padding: 12px; border: 1px solid rgba(255,255,255,0.05); }
+        textarea { width: 100%; background: transparent; border: none; color: #ccc; font-family: monospace; font-size: 12px; resize: none; outline: none; }
 
-        .output-box {
-            margin-top: 20px;
-            background: var(--code-bg);
-            border-radius: 15px;
-            padding: 15px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .github-box { border-left: 4px solid var(--primary); }
-        .client-box { border-left: 4px solid var(--success); }
-
-        .box-header { 
-            font-size: 11px; 
-            font-weight: 900; 
-            margin-bottom: 10px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
-        }
-
-        .btn-copy-small {
-            background: rgba(255,255,255,0.05);
-            color: #fff;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 10px;
-            cursor: pointer;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        textarea {
-            width: 100%;
-            background: transparent;
-            border: none;
-            color: #ccc;
-            font-family: 'Consolas', monospace;
-            font-size: 13px;
-            resize: none;
-            outline: none;
-        }
-
-        #rawOutput { color: var(--primary); height: 40px; }
-        #clientOutput { color: var(--success); height: 160px; } /* Un poco más alto por el texto nuevo */
-
-        .history-table {
-            margin-top: 25px;
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 12px;
-        }
-
-        .history-table th { text-align: left; padding: 12px; color: var(--primary); }
+        .history-table { margin-top: 25px; width: 100%; border-collapse: collapse; font-size: 11px; }
+        .history-table th { text-align: left; padding: 12px; color: var(--primary); border-bottom: 2px solid rgba(0, 210, 255, 0.2); }
         .history-table td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
         
-        .status-badge {
-            background: rgba(0, 230, 118, 0.1);
-            color: var(--success);
-            padding: 3px 8px;
-            border-radius: 6px;
-            font-weight: bold;
-            border: 1px solid var(--success);
-        }
+        .status-badge { padding: 4px 6px; border-radius: 4px; font-weight: bold; font-size: 9px; text-transform: uppercase; }
+        .vip-badge { background: linear-gradient(45deg, #ffd700, #b8860b); color: #000; box-shadow: 0 0 8px rgba(255, 215, 0, 0.3); }
+        .pending-badge { background: #333; color: #aaa; }
+
+        .actions { display: flex; gap: 4px; }
+        .btn-action { width: 28px; height: 28px; border-radius: 6px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px; transition: 0.2s; }
+        .btn-pay { background: var(--warning); color: #000; }
+        .btn-view { background: #34495e; color: white; }
+        .btn-edit { background: var(--primary); color: #000; }
+        .btn-suspend { background: #666; color: white; }
+        .btn-delete { background: var(--danger); color: white; }
+        .btn-action:hover { transform: scale(1.1); filter: brightness(1.2); }
     </style>
 </head>
 <body>
 
 <div class="admin-container">
-    <h2><i class="fa-solid fa-user-shield"></i> FELIX PREMIUM</h2>
+    <h2><i class="fa-solid fa-crown"></i> FELIX ADMIN PRO</h2>
     
+    <div class="input-group">
+        <label>Nombre del Cliente</label>
+        <input type="text" id="clientName" placeholder="NOMBRE DEL USUARIO">
+    </div>
+
     <div style="display: flex; gap: 15px;">
-        <div class="input-group" style="flex: 2;">
-            <label>Nombre del Cliente</label>
-            <input type="text" id="clientName" placeholder="EJ: FELIX254" autocomplete="off">
-        </div>
-        <div class="input-group" style="flex: 1;">
-            <label>Días</label>
+        <div style="flex: 1;">
+            <label>Días de Acceso</label>
             <input type="number" id="daysAccess" value="30">
+            <div class="quick-select">
+                <button class="btn-qs" onclick="setVal('daysAccess', 30)">1 Mes</button>
+                <button class="btn-qs" onclick="setVal('daysAccess', 60)">2 Meses</button>
+                <button class="btn-qs" onclick="setVal('daysAccess', 90)">3 Meses</button>
+            </div>
+        </div>
+        <div style="flex: 1;">
+            <label>Límite Dispositivos</label>
+            <input type="number" id="deviceLimit" value="1">
+            <div class="quick-select">
+                <button class="btn-qs" onclick="setVal('deviceLimit', 1)">1 EQ</button>
+                <button class="btn-qs" onclick="setVal('deviceLimit', 2)">2 EQ</button>
+                <button class="btn-qs" onclick="setVal('deviceLimit', 4)">4 EQ</button>
+                <button class="btn-qs" onclick="setVal('deviceLimit', 10)">10 EQ</button>
+            </div>
         </div>
     </div>
 
     <button class="btn-gen" onclick="generateToken()">
-        <i class="fa-solid fa-bolt"></i> ACTIVAR ACCESO VIP
+        <i class="fa-solid fa-plus-circle"></i> GENERAR ACCESO VIP
     </button>
 
     <div id="outputs" style="display: none;">
-        <div class="output-box github-box">
-            <div class="box-header" style="color: var(--primary);">
-                <span><i class="fa-brands fa-github"></i> GITHUB (PREMIUM.TXT)</span>
-                <button class="btn-copy-small" onclick="copyText('rawOutput')">COPIAR</button>
-            </div>
-            <textarea id="rawOutput" readonly></textarea>
+        <div class="output-box" style="border-left: 3px solid var(--primary);">
+            <div style="display:flex; justify-content:space-between; font-size:10px; margin-bottom:5px; font-weight:bold; color:var(--primary);">GITHUB DATA <button class="btn-qs" style="padding:2px 6px; flex:none;" onclick="copyT('rawOutput')">COPIAR</button></div>
+            <textarea id="rawOutput" style="height: 20px;" readonly></textarea>
         </div>
 
-        <div class="output-box client-box">
-            <div class="box-header" style="color: var(--success);">
-                <span><i class="fa-brands fa-whatsapp"></i> MENSAJE PARA CLIENTE</span>
-                <button class="btn-copy-small" onclick="copyText('clientOutput')">COPIAR MENSAJE</button>
-            </div>
-            <textarea id="clientOutput" readonly></textarea>
+        <div class="output-box" style="border-left: 3px solid var(--success);">
+            <div style="display:flex; justify-content:space-between; font-size:10px; margin-bottom:5px; font-weight:bold; color:var(--success);">MENSAJE WHATSAPP <button class="btn-qs" style="padding:2px 6px; flex:none;" onclick="copyT('clientOutput')">COPIAR</button></div>
+            <textarea id="clientOutput" style="height: 160px;" readonly></textarea>
         </div>
     </div>
 
     <table class="history-table">
         <thead>
             <tr>
-                <th>USUARIO (MAYÚSC)</th>
-                <th>PIN</th>
+                <th>ID USUARIO</th>
+                <th>RESTAN</th>
+                <th>EQ</th>
                 <th>ESTADO</th>
+                <th>ACCIONES</th>
             </tr>
         </thead>
         <tbody id="historyBody"></tbody>
@@ -205,66 +112,119 @@
 <script>
     let tokenList = [];
 
-    function generateToken() {
-        const nameInput = document.getElementById('clientName');
-        const nameRaw = nameInput.value.trim() || "CLIENTE_VIP";
-        const name = nameRaw.replace(/\s+/g, '_').toUpperCase();
-        const days = parseInt(document.getElementById('daysAccess').value) || 30;
-        const pin = Math.floor(1000 + Math.random() * 9000);
+    function setVal(id, val) { document.getElementById(id).value = val; }
 
-        const date = new Date();
-        date.setDate(date.getDate() + days);
-        const dateStr = date.toISOString().split('T')[0] + " 23:59:59";
-        const dateSimple = date.toLocaleDateString();
-
-        const data = {
-            username: name,
-            pin: pin,
-            expiry: dateStr,
-            simpleDate: dateSimple
-        };
-
-        tokenList.push(data);
-        document.getElementById('outputs').style.display = 'block';
-        updateUI(data);
-        nameInput.value = ""; 
+    function getExactDays(expiry) {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); 
+        const expDate = new Date(expiry);
+        const diffTime = expDate.getTime() - today.getTime();
+        const days = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        return Math.max(0, days);
     }
 
-    function updateUI(last) {
+    function generateToken() {
+        const nameInput = document.getElementById('clientName');
+        const name = (nameInput.value.trim() || "CLIENTE").toUpperCase();
+        const randomSuffix = Math.floor(Math.random() * 999).toString().padStart(3, '0');
+        const fullID = `${name}_${randomSuffix}`;
+        const days = parseInt(document.getElementById('daysAccess').value);
+        const devices = document.getElementById('deviceLimit').value;
+
+        const date = new Date();
+        date.setHours(0,0,0,0);
+        date.setDate(date.getDate() + days);
+        const dateStr = date.toISOString().split('T')[0] + " 23:59:59";
+
+        const data = { id: fullID, name: name, expiry: dateStr, devices: devices, status: 'PENDIENTE', daysBase: days };
+        tokenList.push(data);
+        updateAll();
+        nameInput.value = "";
+    }
+
+    function updateAll() {
+        renderTable();
+        if(tokenList.length > 0) showOutput(tokenList[tokenList.length-1]);
+    }
+
+    function renderTable() {
         const body = document.getElementById('historyBody');
         body.innerHTML = "";
-        tokenList.slice().reverse().forEach(t => {
+        tokenList.slice().reverse().forEach((t, i) => {
+            const idx = tokenList.length - 1 - i;
+            const rem = getExactDays(t.expiry);
             body.innerHTML += `<tr>
-                <td style="color:var(--primary); font-weight:bold;">${t.username}</td>
-                <td style="font-family:monospace; color:var(--text);">${t.pin}</td>
-                <td><span class="status-badge">ACTIVO</span></td>
+                <td style="color:var(--primary); font-weight:bold;">${t.id}</td>
+                <td style="font-weight:bold;">${rem} Días</td>
+                <td style="text-align:center;">${t.devices}</td>
+                <td><span class="status-badge ${t.status === 'VIP' ? 'vip-badge' : 'pending-badge'}">${t.status}</span></td>
+                <td>
+                    <div class="actions">
+                        <button class="btn-action btn-pay" title="Activar Pago" onclick="activateVip(${idx})"><i class="fa-solid fa-dollar-sign"></i></button>
+                        <button class="btn-action btn-view" title="Ver de nuevo" onclick="showOutputById(${idx})"><i class="fa-solid fa-eye"></i></button>
+                        <button class="btn-action btn-edit" title="Editar" onclick="editUser(${idx})"><i class="fa-solid fa-pen"></i></button>
+                        <button class="btn-action btn-suspend" title="Suspender" onclick="suspendUser(${idx})"><i class="fa-solid fa-pause"></i></button>
+                        <button class="btn-action btn-delete" title="Borrar" onclick="deleteUser(${idx})"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </td>
             </tr>`;
         });
+    }
 
-        document.getElementById('rawOutput').value = `${last.username},${last.expiry},${last.pin},${last.username},0`;
+    function activateVip(idx) {
+        tokenList[idx].status = 'VIP';
+        renderTable();
+        showOutput(tokenList[idx]);
+    }
 
-        // Mensaje WhatsApp con ADVERTENCIA
-        const msg = `⚡ *FELIX PREMIUM VIP* ⚡\n\n` +
-                    `Hola *${last.username}*, tu acceso ha sido activado con éxito.\n\n` +
-                    `👤 *USUARIO:* \`${last.username}\`\n` +
-                    `🔑 *PIN DE ACCESO:* \`${last.pin}\`\n` +
-                    `📅 *VENCE:* ${last.simpleDate}\n\n` +
-                    `⚠️ *IMPORTANTE:* No comparta su usuario con nadie más. El sistema detecta conexiones simultáneas; si lo comparte, *perderá su acceso VIP inmediatamente* sin derecho a reclamo.\n\n` +
-                    `*Instrucciones:*\n` +
-                    `Ingresa tu usuario y PIN en la App para conectar.\n\n` +
-                    `🚀 *Gracias por preferir Felix Premium.*`;
+    function showOutput(data) {
+        document.getElementById('outputs').style.display = 'block';
+        document.getElementById('rawOutput').value = `${data.id},${data.expiry},${data.name},${data.devices}`;
         
+        // MENSAJE CON ADVERTENCIA PERSONALIZADA POR DISPOSITIVOS
+        const msg = `⚡ *FELIX PREMIUM VIP* ⚡\n\n` +
+                    `¡Hola *${data.name}*!, tu acceso ha sido activado con éxito.\n\n` +
+                    `👤 *ID DE ACCESO:* \`${data.id}\`\n` +
+                    `📱 *DISPOSITIVOS:* ${data.devices} Equipo(s)\n` +
+                    `📅 *DURACIÓN:* ${getExactDays(data.expiry)} Días\n\n` +
+                    `⚠️ *IMPORTANTE:* Este ID es personal y único. El sistema monitorea el límite de *${data.devices}* dispositivo(s) en tiempo real. Si excede el límite permitido o comparte su acceso, el sistema lo detectará como fraude y *su cuenta será bloqueada automáticamente* sin previo aviso.\n\n` +
+                    `🚀 *Gracias por preferir Felix Premium.*`;
+                    
         document.getElementById('clientOutput').value = msg;
     }
 
-    function copyText(id) {
+    function showOutputById(idx) { showOutput(tokenList[idx]); }
+
+    function editUser(idx) {
+        const u = tokenList[idx];
+        document.getElementById('clientName').value = u.name;
+        document.getElementById('daysAccess').value = u.daysBase;
+        document.getElementById('deviceLimit').value = u.devices;
+        alert("Datos cargados. Modifica y genera de nuevo.");
+    }
+
+    function suspendUser(idx) {
+        if(confirm("¿Suspender este usuario permanentemente?")) {
+            tokenList[idx].status = 'SUSPENDIDO';
+            tokenList[idx].expiry = '2000-01-01 23:59:59';
+            updateAll();
+        }
+    }
+
+    function deleteUser(idx) {
+        if(confirm("¿Eliminar este registro?")) { 
+            tokenList.splice(idx, 1); 
+            updateAll();
+            if(tokenList.length === 0) document.getElementById('outputs').style.display = 'none';
+        }
+    }
+
+    function copyT(id) {
         const area = document.getElementById(id);
-        if(!area.value) return;
         area.select();
         document.execCommand('copy');
-        alert("¡Copiado con éxito!");
+        alert("Copiado al portapapeles");
     }
 </script>
-
 </body>
 </html>
