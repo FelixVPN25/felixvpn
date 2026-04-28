@@ -5,20 +5,20 @@
       {
         "name": "TIGO SV",
         "type": "SSH",
-        "server_ip": "206.183.128.49",
+        "server_ip": "66.70.188.143",
         "server_port": "80",
-        "user": "motomoco",
-        "pass": "motomococo",
+        "user": "vip-pro",
+        "pass": "vip-pro",
         "payload": "HTTP/2.0 200 ok[crlf]Host: [rotate=www.empire.co.ke.com;www.atresplayer.com;www.aol.com;wap.yy.com;net.supercell.com;www.disney.com;www.bbc.com;www.godaddy.com;adclick.g.doubleclick.net;www.buzzfeed.com;www.alipay.com;www.monster.com;www.playstation.net;mail.hotmail.com;ads.mopub.com;m.weibo.cn;www.flickr.com;d1n212ccp6ldpw.cloudfront.net][crlf][ua]",
         "sni": ""
       },
       {
         "name": "MOVISTAR",
         "type": "SSL",
-        "server_ip": "206.183.128.49",
+        "server_ip": "66.70.188.143",
         "server_port": "443",
-        "user": "motomoco",
-        "pass": "motomococo",
+        "user": "vip-pro",
+        "pass": "vip-pro",
         "sni": "www.googletagmanager.com",
         "payload": ""
       },
@@ -27,7 +27,7 @@
   "type": "SLOWDNS",
   "server_ip": "206.183.128.49",
   "dns_host": "dns.felixpremiun.shop",
-  "pub_key": "228cdd3485524d7f0b7382afce91548fa6d02524e530184dc535f48824006523",
+  "pub_key": "a481dcf17f4bb0695e16c97824ee594ed90d41bf264f5e4e456839d0202dbd4d",
   "dns_resolver": "8.8.8.8", 
   "user": "motomoco",
   "pass": "motomococo"
