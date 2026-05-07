@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.46",
+   "Version": "1.0.47",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
       "Sms":"",
@@ -44,7 +44,7 @@
     ],
     "Servers": [
         {
-            "Name": "FELIX PREMIUM 1.0.46",
+            "Name": "FELIX PREMIUM 1.0.47",
             "TYPE": "PREMIUM",
             "FLAG": "ca.png",
             "ServerIP": "66.70.188.143",
@@ -57,7 +57,7 @@
     ],
     "Networks": [
     {
-            "Name": "CLARO PQTE $1.25 TikTok🚀",
+            "Name": "CLARO PQTE TikTok🚀",
             "FLAG": "ice_vivo",
             "Payload": "",
             "SNI": "www.tiktok.com",
@@ -67,7 +67,7 @@
             "Info": "Ssl"                
         },  
         {
-            "Name": "CLARO PQTE $1.25 YouTube🚀",
+            "Name": "CLARO PQTE YouTube🚀",
             "FLAG": "ice_vivo",
             "Payload": "HEAD / HTTP/1.1[crlf]Host: outlook.giphy.com[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[lf]Host: d2m24xf7q38mvj.cloudfront.net[lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
             "SNI": "",
@@ -77,9 +77,19 @@
             "Info": "Proxy"                
         },  
         {
-            "Name": "CLARO CONGELA MG🥶",
+            "Name": "CLARO CONGELA MG 1🥶",
             "FLAG": "claro",
             "Payload": "HEAD / HTTP/1.1[crlf]Host: mobile2.twimg.com[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[lf]Host: d2m24xf7q38mvj.cloudfront.net[lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "mobile2.twimg.com",
+            "ProxyPort": "80",
+            "Info": "Proxy"                   
+        },
+                {
+            "Name": "CLARO CONGELA MG 2🥶",
+            "FLAG": "claro",
+            "Payload": "HEAD / HTTP/1.1[crlf]Host: mobile2.twimg.com[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[lf]Host: d1viw2fof69lbs.cloudfront.net[lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
             "SNI": "",
             "TlsIP": "",
             "ProxyIP": "mobile2.twimg.com",
@@ -116,8 +126,18 @@
             "ProxyPort": "80",
             "Info": "Proxy"                
         }, 
+        {
+            "Name": "TIGO CONGELA MG 1🥶",
+            "FLAG": "tim",
+            "Payload": "HEAD / HTTP/1.1[crlf]Host: mobile2.twimg.com[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[lf]Host: d2m24xf7q38mvj.cloudfront.net[lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
+            "SNI": "",
+            "TlsIP": "",
+            "ProxyIP": "mobile2.twimg.com",
+            "ProxyPort": "80",
+            "Info": "Proxy"                   
+        },
                 {
-            "Name": "TIGO CONGELA MG🥶",
+            "Name": "TIGO CONGELA MG 2🥶",
             "FLAG": "tim",
             "Payload": "HEAD / HTTP/1.1[crlf]Host: mobile2.twimg.com[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[lf]Host: d1viw2fof69lbs.cloudfront.net[lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
             "SNI": "",
