@@ -1,5 +1,5 @@
 {
-   "Version": "1.0.48",
+   "Version": "1.0.49",
     "ReleaseNotes": "NUEVA ACTUALIZACIÓN 😎",
     "UrlUpdate": "https://raw.githubusercontent.com/FelixVPN25/felixvpn/refs/heads/main/config.json",
       "Sms":"",
@@ -44,10 +44,10 @@
     ],
     "Servers": [
         {
-            "Name": "FELIX PREMIUM 1.0.48",
+            "Name": "FELIX PREMIUM 1.0.49",
             "TYPE": "PREMIUM",
             "FLAG": "ca.png",
-            "ServerIP": "193.106.248.73",
+            "ServerIP": "144.217.160.162",
             "CheckUser": "",
             "ServerPort": "22",
             "SSLPort": "443",
@@ -62,7 +62,7 @@
             "Payload": "",
             "SNI": "www.tiktok.com",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.73",
+            "ProxyIP": "144.217.160.162",
             "ProxyPort": "443",
             "Info": "Ssl"                
         },  
@@ -76,18 +76,8 @@
             "ProxyPort": "80",
             "Info": "Proxy"                
         },  
-        {
-            "Name": "CLARO CONGELA MG 1🥶",
-            "FLAG": "claro",
-            "Payload": "HEAD / HTTP/1.1[crlf]Host: mobile2.twimg.com[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[lf]Host: d2m24xf7q38mvj.cloudfront.net[lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
-            "SNI": "",
-            "TlsIP": "",
-            "ProxyIP": "mobile2.twimg.com",
-            "ProxyPort": "80",
-            "Info": "Proxy"                   
-        },
                 {
-            "Name": "CLARO CONGELA MG 2🥶",
+            "Name": "CLARO CONGELA MG 🥶",
             "FLAG": "claro",
             "Payload": "HEAD / HTTP/1.1[crlf]Host: mobile2.twimg.com[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[lf]Host: d1viw2fof69lbs.cloudfront.net[lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
             "SNI": "",
@@ -102,7 +92,7 @@
             "Payload": "",
             "SNI": "pruebat.org",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.73",
+            "ProxyIP": "144.217.160.162",
             "ProxyPort": "443",
             "Info": "Ssl"         
         },  
@@ -112,7 +102,7 @@
             "Payload": "GET / HTTP/1.1[crlf]Host: pruebat.org[crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.73",
+            "ProxyIP": "144.217.160.162",
             "ProxyPort": "80",
             "Info": "Proxy"         
         },  
@@ -126,18 +116,8 @@
             "ProxyPort": "80",
             "Info": "Proxy"                
         }, 
-        {
-            "Name": "TIGO CONGELA MG 1🥶",
-            "FLAG": "tim",
-            "Payload": "HEAD / HTTP/1.1[crlf]Host: mobile2.twimg.com[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[lf]Host: d2m24xf7q38mvj.cloudfront.net[lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
-            "SNI": "",
-            "TlsIP": "",
-            "ProxyIP": "mobile2.twimg.com",
-            "ProxyPort": "80",
-            "Info": "Proxy"                   
-        },
                 {
-            "Name": "TIGO CONGELA MG 2🥶",
+            "Name": "TIGO CONGELA MG 🥶",
             "FLAG": "tim",
             "Payload": "HEAD / HTTP/1.1[crlf]Host: mobile2.twimg.com[crlf]Expect: 100-continue[lf][lf][split][lf][lf]GET / HTTP/1.1[lf]Host: d1viw2fof69lbs.cloudfront.net[lf]Expect: 100-continue[lf]Connection: Upgrade[lf]Upgrade: websocket[lf]User-Agent: Googlebot/2.1 (+http://www.google.com/bot.html)[lf][lf]",
             "SNI": "",
@@ -152,7 +132,7 @@
             "Payload": "HTTP/1.6 200 ok[crlf]Host: [rotate=www.empire.co.ke.com;www.atresplayer.com;www.aol.com;wap.yy.com;net.supercell.com;www.disney.com;www.bbc.com;www.godaddy.com;adclick.g.doubleclick.net;www.buzzfeed.com;www.alipay.com;www.monster.com;www.playstation.net;mail.hotmail.com;ads.mopub.com;m.weibo.cn;www.flickr.com;d1n212ccp6ldpw.cloudfront.net][crlf][ua]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.73",
+            "ProxyIP": "144.217.160.162",
             "ProxyPort": "80",
             "Info": "Proxy"                    
         },
@@ -162,7 +142,7 @@
             "Payload": "HTTP/2 200 ok[crlf]Host:http://axiomac.com:80.google.com;https://itunes.apple.com[crlf]Connexion :keep-alive[crlf]auth.mtn.ci[crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.73",
+            "ProxyIP": "144.217.160.162",
             "ProxyPort": "80",
             "Info": "Proxy"                   
         },
@@ -172,7 +152,7 @@
        "Payload": "HTTP/2.0  200[crlf]Host:[random=chaparrita.colochita.org;about.meituan.com;tv.kankan.com;store.steampowered.com;map.baidu.com;list.tmall.com;yandex.com;qzone.qq.com;v.qq.com;y.qq.com;www.bb.com.br;ok.ru;www.dropbox.com;www.epicgames.com;youku.com;sll.zc.qq.com;www.tiktok.com;tidal.com;www.funk.com;gsuite.google.com;www.voxer.com]\n200 Connection established\nProxy-Connection: close\nConnection-Keep-true\nControl-Cache: no-cache\nContent-Length: 9999999999999999999\nUser-Agent: Yes \nContent-Encoding: 88888888\nContent-Language: 00000000\nContent-Length: 55555555\nContent-Location:33333333[crlf]",
             "SNI": "",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.73",
+            "ProxyIP": "144.217.160.162",
             "ProxyPort": "80",
             "Info": "Proxy"                  
         },
@@ -182,7 +162,7 @@
             "Payload": "",
             "SNI": "www.googletagmanager.com",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.73",
+            "ProxyIP": "144.217.160.162",
             "ProxyPort": "443",
             "Info": "Ssl"         
         },
@@ -192,7 +172,7 @@
             "Payload": "",
             "SNI": "www.google.com",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.73",
+            "ProxyIP": "144.217.160.162",
             "ProxyPort": "443",
             "Info": "Ssl"         
         },
@@ -202,7 +182,7 @@
             "Payload": "",
             "SNI": "www.who.int",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.73",
+            "ProxyIP": "144.217.160.162",
             "ProxyPort": "443",
             "Info": "Ssl"         
         },
@@ -212,7 +192,7 @@
             "Payload": "",
             "SNI": "mda.digicelgroup.com",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.73",
+            "ProxyIP": "144.217.160.162",
             "ProxyPort": "443",
             "Info": "Ssl"               
         },
@@ -222,7 +202,7 @@
             "Payload": "",
             "SNI": "mi.digicel.com.sv",
             "TlsIP": "",
-            "ProxyIP": "193.106.248.73",
+            "ProxyIP": "144.217.160.162",
             "ProxyPort": "443",
             "Info": "Ssl"               
         }
